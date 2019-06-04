@@ -1,0 +1,432 @@
+$helveticaRegular: 'Helvetica World W01';
+$helveticaItalic: 'HelveticaWorldW01-Itali';
+$helveticaBold: 'HelveticaWorldW01-Bold';
+$helveticaBoldItalic:'HelveticaWorldW01-BdIt';
+$helveticaBoldCondensed: 'HelveticaNeueW01-77BdCn_692722';
+$helveticaCondensed: 'Helvetica LT W01 Light Cond';
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0; }
+
+.clearfix {
+    display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix {
+    height: 1%; }
+
+.clearfix {
+    display: block; }
+
+::-webkit-input-placeholder {
+    color: #FFF;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #FFF;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #FFF;
+}
+
+:-ms-input-placeholder {
+    color: #FFF;
+}
+
+.form-control-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px 10px;
+    font-family: $helveticaBoldCondensed;
+    font-size: 28px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #0a5992;
+    text-align: center;
+    border: 0;
+    outline: none;
+    background: #fec90e;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #fec90e 50%, #fdb307 53%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #fec90e), color-stop(53%, #fdb307));
+    background: -webkit-linear-gradient(top, #fec90e 50%, #fdb307 53%);
+    background: -o-linear-gradient(top, #fec90e 50%, #fdb307 53%);
+    background: -ms-linear-gradient(top, #fec90e 50%, #fdb307 53%);
+    background: linear-gradient(to bottom, #fec90e 50%, #fdb307 53%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec90e', endColorstr='#fdb307',GradientType=0 );
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    text-shadow: 1px 1px 1px #fff;
+    -webkit-text-shadow: 1px 1px 1px #fff;
+    -moz-text-shadow: 1px 1px 1px #fff;
+}
+
+.container {
+    .yellow-line {
+        background-color: #fec90e;
+        height: 5px;
+    }
+    .header {
+        .sub-heading-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            .logo {
+                float: left;
+                background: url(../images/logo.png) no-repeat;
+                width: 118px;
+                height: 52px;
+                margin-top: 6px;
+            }
+            .sub-heading-phone {
+                float: right;
+                h1 {
+                    font-family: "HelveticaNeueW01-77BdCn_692722";
+                    font-size: 48px;
+                    color: #0d5a8e;
+                    font-weight: normal;
+                    margin: 0;
+                    line-height: 1;
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+    .hero-form {
+        position: relative;
+        background: url(../images/truck1_dr_january.jpg) no-repeat;
+        min-height: 950px;
+        background-size: cover !important;
+        background-position: top center !important;
+        background-color: #000;
+        .benefits {
+            width: 100%;
+            max-width: 1200px;
+            height: 157px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -600px;
+        }
+        .form-desktop {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .form-wrap {
+            .form-heading {
+                color: #FFF;
+                h1 {
+                    margin-bottom: 0px;
+                }
+                .headline {
+                    font-size: 20px;
+                    margin-top: 8px;
+                    font-family: $helveticaCondensed;
+                }
+                .year {
+                    font-size: 189px;
+                    letter-spacing: -12px;
+                    font-weight: lighter;
+                    float: left;
+                    width: 315px;
+                    line-height: 0.8;
+                    font-family: $helveticaCondensed;
+                }
+                .text {
+                    float: right;
+                    font-size: 63px;
+                    width: 205px;
+                    line-height: 0.8;
+                    font-weight: bold;
+                    font-family: $helveticaBoldCondensed;
+                }
+            }
+            input[type="text"], select {
+                font-size: 118%;
+                line-height: normal;
+                padding: 8px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+                border: 2px solid #FFF;
+                background: none;
+                margin: 4px 0;
+                color: #FFF;
+                box-sizing: border-box;
+            }
+
+            input[type="text"].half, select.half {
+                width: 257px;
+            }
+
+            input[type="text"].full, select.full {
+                width: 100%;
+            }
+            /*            input[type="text"].error-input, select.error-input{
+                            border: 1px solid #f00;
+                        }*/
+
+            select {
+                height: 42px;
+            }
+
+            position: absolute;
+            width: 520px;
+            top: 62px;
+            right: 0;
+        }
+
+        .form-wrap.over {
+            input[type="text"], select {
+                border-color: rgba(0, 0, 0, 0);
+                background: #FFF;
+                color: #999;
+            }
+
+            ::-webkit-input-placeholder {
+                color: #999;
+            }
+
+            :-moz-placeholder { /* Firefox 18- */
+                color: #999;
+            }
+
+            ::-moz-placeholder {  /* Firefox 19+ */
+                color: #999;
+            }
+
+            :-ms-input-placeholder {
+                color: #999;
+            }
+            input[type="text"].error-input, select.error-input{
+                border: 2px solid #f00;
+            }
+
+        }
+        .benefits {
+            font-family: $helveticaBoldCondensed;
+            font-size: 14px;
+            .top {
+                height: 1px;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+50,ffffff+100&0+0,1+50,0+100 */
+                background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+
+            }
+            .benefit {
+                img {
+                    display: block;
+                    margin: 0 auto;
+                    max-width: 100%;
+                }
+                float: left;
+                width: 16.66%;
+                background-image: url(../images/divider.png);
+                background-repeat: no-repeat;
+                background-position: top right;
+                height: 157px;
+                text-align: center;
+                color: #FFF;
+            }
+            .last {
+                background: none;
+            }
+        }
+    }
+    .details {
+        padding-top: 63px;
+        padding-bottom: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        h2 {
+            text-transform: uppercase;
+            color: #0a5992;
+        }
+        .left-side {
+            h2 {
+                font-family: "HelveticaNeueW01-77BdCn_692722";
+                font-size: 32px;
+                margin: 0 100px 0 0;
+            }
+            p {
+                font-family: Arial;
+                font-size: 18px;
+                color: #666;
+                line-height: 26px;
+                padding-right: 100px;
+            }
+            float: left;
+            width: 63%;
+        }
+        .right-side {
+            float: left;
+            width: 37%;
+            h4 {
+                font-family: "HelveticaNeueW01-77BdCn_692722";
+                font-size: 70px;
+                color: #0a5992;
+                margin: 0;
+                text-transform: uppercase;
+                line-height: 1;
+            }
+            h3 {
+                font-family: "HelveticaNeueW01-77BdCn_692722";
+                font-size: 24px;
+                color: #0a5992;
+                margin: 0;
+                text-transform: uppercase;
+                line-height: 1;
+            }
+        }
+    }
+    .footer {
+        width: 100%;
+        max-width: 100%;
+        min-height: 277px;
+        background-color: #0a5992;
+        margin: 0 auto;
+        .footer-wrap {
+            p {
+                font-family: Arial;
+                font-size: 12px;
+                text-transform: uppercase;
+                color: #fff;
+                margin: 0;
+            }
+            ul {
+                a {
+                    font-family: Arial, sans-serif;
+                    font-size: 14px;
+                    color: #fff;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                }
+                span {
+                    margin: 0 10px;
+                    color: #fff;
+                }
+                li {
+                    float: left;
+                }
+                list-style: none;
+                padding: 0;
+                margin: 10px 0 0 0;
+            }
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+    }
+}
+
+.errors-form{
+    display: none;
+    font-size: 16px;
+    font-family: $helveticaRegular;
+    color: #f00;
+}
+
+.lead-form-mobile{
+    display:none;
+    background-color: #0d5a8e;
+    padding: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    input[type="text"], select {
+        width: 100%;
+        font-size: 14px;
+        padding: 6px 8px;
+        margin: 0 0 10px 0;;
+        color: #999;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+    }
+
+    select{
+        height: 30px;
+    }
+    ::-webkit-input-placeholder {
+        color: #999;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+        color: #999;
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+        color: #999;
+    }
+
+    :-ms-input-placeholder {
+        color: #999;
+    }
+    input[type="text"].first-name-field, input[type="text"].last-name-field{
+        float: left;
+        width: 49%;
+    }
+    input[type="text"].last-name-field{
+        margin-left: 2%;
+    }
+
+    input[type="text"].error-input, select.error-input{
+        border: 1px solid #f00;
+    }
+    .form-heading-mobile {
+        h1 {
+            font-family: $helveticaBoldCondensed;
+            font-size: 48px;
+            color: #ffc847;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0;
+            font-weight: normal;
+        }
+        p {
+            font-family: Arial;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 0;
+        }
+    }
+}
+
+.btnGroup-mobile {
+    display: none;
+    margin: 0 auto;
+    background-color: #0c5e98;
+    padding: 10px 5px;
+    .grouBtn-wrap {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    a {
+        margin-top: 0;
+        font-size: 18px;
+        float: left;
+        max-width: 150px;
+        padding: 9px 0;
+        text-decoration: none;
+    }
+    #callBtn {
+        margin-right: 10px;
+    }
+}
+
+@import "responsive.scss";

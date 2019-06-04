@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+input[type='text'], select{
+    padding:6px 0 0 0px;
+    margin-bottom:4px;
+    line-height:normal;
+
+}
+
+.row-fluid [class*='span']{ min-height:22px;}
+
+select{ width:100%; margin-top:0; height:26px; border:0;}
+input.span12{ width:97.5% !important; padding-left:2%;}
+
+input[type='text']{height:18px}
+.button{ width:100%;}
+.visible-tablet{ display:block !important;}

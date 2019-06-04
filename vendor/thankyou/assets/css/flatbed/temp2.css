@@ -1,0 +1,671 @@
+/* --- Reference Info -----
+
+	
+	--- FONTS ---
+	Typekit - Aktiv Grotest: "aktiv-grotesk-std", 200, 300, 300 italic, 800, 800 italic;
+	Google -  Sail: 'sail';
+
+
+	--- COLORS ---
+	red: #fb4234;
+	yellow-gold: #dd9420;
+	gold: #d7bb74;
+	light brown: #988375, rgba(152, 131, 117);
+	medium brown: 6b544c;
+	dark brown: #402d26;
+	cream: #e2decc;
+	bottom input brown: #5b4740;
+
+
+	--- INDEX ---
+
+	Wrap Styles
+	Header Styles
+	Main Styles
+	Footer Styles
+	Typography Styles
+	Form Styles
+	Media Queries 
+
+------ */
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:900,700,300italic,300);
+
+/* ======= WRAP STYLES =================== */
+
+body {
+	padding-top: 0;
+}
+
+.container {
+	width: 100%;
+}
+
+/* ======= HEADER STYLES =================== */
+
+header {
+	padding-top: 20px;
+	max-height: 70px;
+}
+
+header img {
+	width: 100%;
+	max-width: 150px;
+	margin-left: 7%;
+}
+
+
+/* ======= MAIN STYLES =================== */
+
+.top {
+	min-height: 750px;
+}
+
+.top-left {
+	background-image: url('http://joinswift.com/landing-pages/wp-content/themes/swift/assets/img/flatbed/flatbed_topman.png');
+	background-repeat: no-repeat;
+	min-height: 750px;
+	z-index: -1;
+	background-size: 100%;
+}
+
+.thank-top-left {
+	background-image: url('http://joinswift.com/landing-pages/wp-content/themes/swift/assets/img/flatbed/flatbed_topman.png');
+	background-repeat: no-repeat;
+	min-height: 750px;
+	z-index: -1;
+	background-size: contain;
+	background-position: center;
+}
+
+.top-mid {
+	padding-right: 5%;
+}
+
+.top-mid hr, .bottom hr {
+	height: 6px;
+	width: 90%;
+	float: left;
+	border-top: 1px solid #d7d7d7;
+	border-bottom: 1px solid #d7d7d7;
+}
+
+.hat {
+	max-width: 30%;
+	float: right;
+	padding-right: 5%;
+	margin-top: -20%;
+}
+
+.top .form {
+	background: #f4f9fa; 
+	box-shadow: 0 0 2px #111;
+	right: 50px;
+	min-height: 400px;
+	padding: 0;
+	position: absolute;
+    max-width: 500px;
+}
+
+#thank .mid-mid {
+    margin-top: 5%;
+}
+
+.middle {
+	background-color: #23a9e1;
+	min-height: 520px;
+}
+
+.mid-left {
+	padding-top: 5%;
+	padding-left: 5%;
+}
+
+.mid-right {
+	background-image: url('http://joinswift.com/landing-pages/wp-content/themes/swift/assets/img/flatbed/flatbed_midtrucks.png');
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: 90%;
+	min-height: 500px;
+	margin-top: 3%;
+}
+
+.bottom {
+	background: #353c42;
+	min-height: 460px;
+	position: relative;
+}
+
+.bottom-left {
+	background-image: url('http://joinswift.com/landing-pages/wp-content/themes/swift/assets/img/flatbed/swift_bestinclass.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	min-height: 240px;
+	background-position: center;
+	margin-top: 5%;
+}
+
+.bottom-left-mobile img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+	height: 100%;
+	max-width: 250px;
+}
+
+.bottom-left-mobile a {
+	margin-top: 15%;
+}
+
+.bottom_icons img {
+	float: left;
+	width: 80px;
+}
+
+.bottom_icons ul {
+	max-height: 200px;
+}
+
+.bottom_icons p {
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 500;
+	line-height: 1.4em;
+}
+
+@keyframes mainform-down {
+  0%   { top: 0; }
+  100% { top: -250px; }
+}
+
+@-webkit-keyframes mainform-down {
+  0%   { top: 0; }
+  100% { top: -250px; }
+}
+
+
+
+
+
+/* ======= FOOTER STYLES =================== */
+
+.footer .button {
+	float: right;
+	background-color: #004f7d;
+	max-width: 200px;
+	text-align: center;
+	margin: 20px 0px;
+	padding: 10px;
+	margin-right: 5%;
+}
+
+.footer a {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+.button:hover {
+	background-color: #23a9e1;
+}
+
+
+/* ======= TYPOGRAPHY STYLES =================== */
+
+* {
+	font-size: 16px;
+	width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, ul, li, input {
+	color: #000;
+	font-family: "roboto", 'helvetica-neue', helvetica, sans-serif;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+}
+.center {
+	text-align: center;
+}
+
+h1 {
+	font-family: "roboto", 'helvetica-neue', helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 4em;
+	line-height: 1em;
+	margin: 100px 0 0 0;
+}
+
+h2 {
+	font-family: "roboto", 'helvetica-neue', helvetica, sans-serif;
+	font-weight: 700;
+	font-size: 1.75em;
+	text-transform: uppercase;
+}
+
+.top-mid h2 {
+	font-size: 4.2em;
+	margin-bottom: 20px;
+}
+
+.top-mid p {
+	font-size: 1.6em;
+	line-height: 1.2em;
+	width: 70%;
+}
+
+.middle h3, .middle h4, .middle p {
+	color: #fff;
+}
+
+.bottom h3 {
+	margin-top: 5%;
+	font-size: 3.2em;
+	color: #fff;
+}
+
+
+h3 {
+	font-size: 2.5em;
+}
+
+h4 {
+	font-size: 1.5em;
+}
+
+p {
+	font-size: 1.1em;
+	font-weight: 300;
+	line-height: 1.75em;
+	margin: 5px 0;
+}
+
+.form h2 {
+	background-color: #23a9e1;
+	padding: 13px;
+	font-weight: 800;
+	color: #fff;
+}
+
+.form p {
+	font-size: 1em;
+	line-height: 1.25em;
+	font-weight: 300;
+	color: #000;
+	padding: 13px;
+}
+
+.form-footer p {
+	font-style: italic;
+	color: #787878;
+	font-size: 0.8em;
+}
+
+footer p {
+	display: block;
+	font-weight: 800;
+	margin: 0 auto;
+	text-align: center;
+}
+
+a, a:hover, a:link {
+	text-decoration: none;
+}
+
+.bottom a {
+	transition: background-color 0.5s ease;
+	background-color: #23a9e1;
+	clear:both;
+	display: block;
+	margin: 20px auto 0 auto;
+	padding: 10px;
+	width: 70%;
+	max-width: 300px;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+a {
+	font-size: 1em;
+}
+
+footer a {
+	font-size: .85em;
+	text-align: left;
+}
+
+.bottom a:hover {
+	background-color: #f9cf40;
+	text-decoration: none;
+}
+
+#thank-you .main a {
+	transition: background-color 0.5s ease;
+	background-color: #dd9420;
+	-moz-border-radius: 20px 0px;
+	-webkit-border-radius: 0px 0px;
+	border-radius: 20px 0px;
+	-khtml-border-radius: 20px 0px; /* for old Konqueror browsers */
+	clear:both;
+	display: block;
+	font-family: 'sail', cursive;
+	font-size: 1.65em;
+	margin: 20px auto 0 auto;
+	padding: 5px;
+	width: 50%;
+} 
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	clear: both;
+	font-weight: 800;
+}
+
+.opportunities li {
+
+}
+
+span {
+	font-size: 1em;
+}
+
+br {
+	line-height: 1;
+}
+
+.bold {
+	font-weight: 800;
+}
+
+.medium {
+	font-weight: 600;
+}
+
+.blue {
+	color: #23a9e1;
+}
+.navy {
+	color: #054d81;
+}
+
+.yellow {
+	color: #f9cf40 !important;
+}
+
+.smaller {
+	font-size: .6em;
+}
+.tight {
+	letter-spacing: -.05em;
+	margin-right: 6px;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+
+/* ======= FORM STYLES =================== */
+
+.form hr {
+	width: 90%;
+	margin-top: 0px;
+	border-top: 1px solid #d7d7d7;
+}
+
+label {
+	margin-bottom: 0px;
+}
+
+textarea {
+	width: 100%;
+}
+
+input {
+	color: #402d26;
+	font-size: 1em;
+	font-weight: 300;
+	height: 30px;
+	margin: 10px 0 0 0;
+	padding: 2px 10px;
+	width: 100%;
+}
+
+input::-moz-placeholder {
+	color: #402d26;
+	font-size: 1em;
+	font-weight: 300;
+	height: 30px;
+	margin: 10px 0 0 0;
+	padding: 2px 10px;
+	width: 100%;
+}
+
+.radio-inline {
+	margin-bottom: 20px;
+}
+
+.radio-inline span {
+	position: absolute;
+	margin-top: 10px;
+}
+
+input[type=submit] {
+	transition: background-color 0.5s ease;
+	background-color: #f9cf40;
+	border: none;
+	color: #fff;
+	font-family: "roboto", 'helvetica-neue', helvetica, sans-serif;
+	font-weight: 900;
+	font-size: 1.75em;
+	height: 50px;
+	margin-top: 0px;
+	padding: 5px 5px 10px 0;
+	width: 100%;
+}
+
+input[type=submit]:hover {
+	background-color: #23a9e1;
+
+}
+
+.radio-inline+.radio-inline {
+	margin-left: 0px;
+}
+
+.state {
+	position: relative;
+	border-radius: 0;
+	-webkit-appearance: none;
+	background: #fff;
+	background-image: url('http://joinswift.com/landing-pages/wp-content/themes/swift/assets/img/flatbed/arrow-black.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	height: 30px;
+	margin-top: 9px;
+}
+
+.cdl {
+	position: relative;
+	border-radius: 0;
+	-webkit-appearance: none;
+	background: #fff;
+	background-image: url('http://joinswift.com/landing-pages/wp-content/themes/swift/assets/img/flatbed/arrow-black.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	height: 30px;
+}
+
+.cdl option {
+	border-radius: 0;
+}
+
+
+/* ======= MEDIA QUERIES =================== */
+
+/* ipad landscape */
+	@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+  	
+	}
+
+    /* Large desktop */
+    @media (min-width: 1200px) {  }
+
+    /* Device Only */
+	@media (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) { 
+        * {
+    		font-size: 12px;
+    	}
+    }
+     
+    @media (min-device-width: 481px) and (max-device-width: 1024px) { 
+
+    	header {
+    		max-height: 70px;
+    	}
+
+     }
+
+     @media (min-width: 768px) and (max-width: 991px) {
+	h1 {
+		font-size: 2.7em;
+	}
+
+	h2 {
+		font-size: 1.7em;
+	}
+
+	.top-mid h2 {
+		font-size: 3.3em;
+	}
+
+	.top p {
+		font-size: 1.2em;
+	}
+
+	.form-footer p {
+	font-style: italic;
+	color: #787878;
+	font-size: 0.6em;
+	}
+
+	.top {
+		min-height: 780px;
+	}
+
+	.bottom {
+		min-height: 800px;
+	}
+}
+     
+     
+    /* Landscape phone to portrait tablet */
+    @media (max-width: 767px) {
+
+    	* {
+    		font-size: 14px;
+    		width: 100%;
+    	}
+
+    	.mid-mid {
+    		margin-left: 20px;
+    	}
+
+    	.hat {
+    		margin-top: -15%;
+    		margin-bottom: 5%;
+    	}
+
+    	.top .form {
+    		float: none;
+    		margin: 0 auto;
+    		min-height: 350px;
+    		position: relative;
+    		overflow-x: hidden;
+    		right: auto;
+    		width: 90%;
+    		margin-bottom: 10px;
+    	}
+
+    	.middle {
+    		min-height: 400px;
+    	}
+
+    	.bottom {
+    		min-height: 900px;
+    	}
+
+
+		hr {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+
+    	/*--- Typography ---*/
+
+    	h1 {
+    		font-size: 2.6em;
+    		text-align: center;
+    		margin-top: 15px;
+    	}
+
+    	h2 {
+    		font-size: 2.2em;
+    		text-align: center;
+    	}
+
+    	h3 {
+    		font-size: 1.6em;
+    	}
+
+    	h4 {
+    		font-size: 1.4em;
+    	}
+
+		.top-mid h2 {
+			font-size: 3em;
+		}
+
+		.top-mid p {
+			font-size: 1.4em;
+		}
+
+		.middle h4 {
+			font-size: 1.2em;
+		}
+
+		.bottom h3 {
+			font-size: 1.8em;
+		}
+
+    }
+     
+    /* Landscape phones and down */
+    @media (max-width: 480px) { 
+
+    	 .top {
+    		min-height: 620px
+    	}
+
+    	.middle {
+    		min-height: 420px;
+    	}
+
+    	.bottom {
+			min-height: 820px;
+		}
+
+		.bottom a {
+			width: 100%;
+		}
+
+	}
+
+

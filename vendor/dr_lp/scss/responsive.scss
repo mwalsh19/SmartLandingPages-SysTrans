@@ -1,0 +1,196 @@
+
+
+@media screen and (max-width: 1200px) {
+    .container .hero-form .benefits {
+        left: 0;
+        right: 0;
+        margin-left: 0;
+    }
+
+    .container .details {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .container .details .right-side h3 {
+        font-size: 22px;
+    }
+
+    .container .details .right-side h4 {
+        font-size: 66px;
+    }
+
+    .container .footer .footer-wrap {
+        width: auto;
+        padding: 30px 10px 10px 10px;
+    }
+
+    .container .hero-form .form-wrap {
+        right: 10px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container .details .right-side h3 {
+        font-size: 17px;
+    }
+
+    .container .details .right-side h4 {
+        font-size: 49px;
+    }
+
+    .container .details .left-side h2 {
+        font-size: 20px;
+    }
+
+    .container .details .left-side p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 898px) {
+    .container .hero-form .benefits {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container .header .sub-heading-wrap {
+        padding: 0 10px;
+    }
+    .container .hero-form .benefits .benefit {
+        background: none;
+        width: 33.33%;
+    }
+
+    .container .hero-form .benefits {
+        height: 300px;
+    }
+
+    .container .hero-form {
+        background-size: auto !important;
+        min-height: 1040px;
+    }
+
+    .container .hero-form .benefits {
+        font-size: 14px;
+    }
+
+    .container .hero-form .benefits .top {
+        display: none;
+    }
+
+    .container .hero-form .form-desktop {
+        max-width: 520px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .hideOnMobile{
+        display: none !important;
+    }
+    .showOnMobile{
+        display: block !important;
+    }
+
+    .container .hero-form .form-wrap .form-heading .year {
+        font-size: 70px;
+        letter-spacing: -3px;
+        width: auto;
+        line-height: 0.8;
+    }
+    .container .hero-form .form-wrap .form-heading .text {
+        float: left;
+        font-size: 21px;
+        width: auto;
+        line-height: 0.9;
+        margin-left: 7px;
+    }
+
+    .container .hero-form .form-wrap{
+        top: 0;
+        left: 10px;
+        right: 10px;
+        width: auto;
+    }
+    .container .hero-form .form-desktop {
+        max-width: 100%;
+    }
+
+    .container .details {
+        padding-top: 30px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .container .details .left-side, .container .details .right-side{
+        float: none;
+        width: auto;
+        padding: 0 10px;
+    }
+    .container .details .left-side h2, .container .details .left-side p{
+        margin-right: 0;
+        padding-right: 0;
+    }
+    .container .details .left-side h2{
+        font-size: 32px;
+    }
+    .container .details .left-side p{
+        font-size: 16px;
+    }
+    .container .details .right-side{
+        text-align: center;
+    }
+
+    .lead-form-mobile{
+        display: block;
+
+    }
+    .btnGroup-mobile{
+        display: block;
+    }
+    .container .header .sub-heading-wrap .logo {
+        float: none;
+        margin: 6px auto;
+    }
+    .errors-form{
+        color: #fec90e;
+        font-size: 14px;
+    }
+
+
+}
+
+@media screen and (max-width: 767px){
+    .container .hero-form {
+        background: url(../images/truck1_dr_january_m_l.jpg) no-repeat;
+        min-height: 660px;
+        background-size: contain !important;
+        background-position: top center !important;
+        background-color: #000;
+    }
+}
+
+@media screen and (max-width: 568px){
+    .container .hero-form {
+        min-height: 600px;
+    }
+}
+@media screen and (max-width: 479px){
+    .container .hero-form .benefits {
+        height: 360px;
+        bottom: 20px;
+    }
+    .container .hero-form .benefits .benefit {
+        width: 50%;
+        height: 120px;
+    }
+
+    .container .hero-form {
+    }
+}
+@media screen and (max-width: 360px){
+    .container .hero-form {
+        min-height: 550px;
+    }
+}
+
