@@ -60,6 +60,11 @@ $this->renderPartial('_alerts');
                 $templates_recent_student = Yii::app()->db->createCommand('SELECT tbl_master.id_master, tbl_master.template_type, tbl_recent_student.type FROM tbl_master LEFT JOIN tbl_recent_student ON tbl_recent_student.id_master = tbl_master.id_master WHERE tbl_master.path LIKE "%base%" AND tbl_master.template_type = "tbl_recent_student" ORDER BY tbl_recent_student.type ASC')->queryAll();
                 $templates_intermodal = Yii::app()->db->createCommand('SELECT tbl_master.id_master, tbl_master.template_type, tbl_intermodal.type FROM tbl_master LEFT JOIN tbl_intermodal ON tbl_intermodal.id_master = tbl_master.id_master WHERE tbl_master.path LIKE "%base%" AND tbl_master.template_type = "tbl_intermodal" ORDER BY tbl_intermodal.type ASC')->queryAll();
                 $templates_dr_january = Yii::app()->db->createCommand('SELECT tbl_master.id_master, tbl_master.template_type FROM tbl_master LEFT JOIN tbl_dr_january ON tbl_dr_january.id_master = tbl_master.id_master WHERE tbl_master.path LIKE "%base%" AND tbl_master.template_type = "tbl_dr_january"')->queryAll();
+
+
+                // system trans templates start here
+                $templates_sys_trans = Yii::app()->db->createCommand('SELECT tbl_master.id_master, tbl_master.template_type, tbl_sys_trans.type FROM tbl_master LEFT JOIN tbl_sys_trans ON tbl_sys_trans.id_master = tbl_master.id_master WHERE tbl_master.template_type = "tbl_sys_trans" ORDER BY tbl_sys_trans.type ASC')->queryAll();
+
                 $swap_templates_Base = array();
 
                 if (!empty($templates_recent_student)) {
@@ -132,6 +137,20 @@ $this->renderPartial('_alerts');
                         $label = 'Style C - ' . 'DR January General';
 
                         $swap_templates_Base[$templates_dr_january[$index]['id_master']] = $label;
+                    }
+                }
+                if (!empty($templates_sys_trans)) {
+
+                    for ($index = 0; $index < count($templates_sys_trans); $index++) {
+
+                        $label = '';
+                        switch ($templates_sys_trans[$index]['type']) {
+                            case 'R':
+                                $label = 'Style A - ' . 'SYS Trans';
+                                break;
+                        }
+
+                        $swap_templates_Base[$templates_sys_trans[$index]['id_master']] = $label;
                     }
                 }
 

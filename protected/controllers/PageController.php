@@ -93,14 +93,23 @@ class PageController extends Controller {
                     $model = MRecentStudent::model()->find('id_master=:id_master', array(':id_master' => $master->id_master));
                     $model->scenario = 'update';
                     break;
+                // systrans here
                 case 'tbl_intermodal':
-                    $dir_files = "webroot.uploads.intermodal_files";
+                    $dir_files = "webroot.uploads.systrans_files";
                     $data = $_POST['MIntermodal'];
                     $model = MIntermodal::model()->find('id_master=:id_master', array(':id_master' => $master->id_master));
                     $model->scenario = 'update';
                     $current_lat = $model->lat;
                     $current_lng = $model->lng;
                     break;
+                /*case 'tbl_intermodal':
+                    $dir_files = "webroot.uploads.intermodal_files";
+                    $data = $_POST['MIntermodal'];
+                    $model = MIntermodal::model()->find('id_master=:id_master', array(':id_master' => $master->id_master));
+                    $model->scenario = 'update';
+                    $current_lat = $model->lat;
+                    $current_lng = $model->lng;
+                    break;*/
                 case 'tbl_dr_january':
                     $data = $_POST['MDrJanuary'];
                     $model = MDrJanuary::model()->find('id_master=:id_master', array(':id_master' => $master->id_master));
@@ -121,13 +130,14 @@ class PageController extends Controller {
             $model->attributes = $data;
 
             if ($master->template_type == 'tbl_recent_student' || $master->template_type == 'tbl_intermodal') {
-
                 $model->benef1_figure = CUploadedFile::getInstance($model, 'benef1_figure');
                 $model->benef2_figure = CUploadedFile::getInstance($model, 'benef2_figure');
                 $model->benef3_figure = CUploadedFile::getInstance($model, 'benef3_figure');
                 $model->benef4_figure = CUploadedFile::getInstance($model, 'benef4_figure');
                 $model->benef5_figure = CUploadedFile::getInstance($model, 'benef5_figure');
                 $model->benef6_figure = CUploadedFile::getInstance($model, 'benef6_figure');
+                $model->region_graphic = CUploadedFile::getInstance($model, 'region_graphic');
+                $model->region_graphic_mobile = CUploadedFile::getInstance($model, 'region_graphic_mobile');
                 if ($master->template_type == 'tbl_recent_student' || $type == 'SO') {
                     $model->background = CUploadedFile::getInstance($model, 'background');
                     $model->background_mobile = CUploadedFile::getInstance($model, 'background_mobile');
@@ -204,6 +214,26 @@ class PageController extends Controller {
                             $model->benef6_figure = $_POST['h_b_6'];
                         }
 
+                        // region graphic
+                        if (!empty($model->region_graphic)) {
+                            $image = Utils::saveImage($model, 'region_graphic', $originalDir, array());
+                            if ($image) {
+                                $model->region_graphic = $image;
+                            }
+                        } else {
+                            $model->region_graphic = $_POST['h_b_9'];
+                        }
+
+                        // region graphic mobile
+                        if (!empty($model->region_graphic_mobile)) {
+                            $image = Utils::saveImage($model, 'region_graphic_mobile', $originalDir, array());
+                            if ($image) {
+                                $model->region_graphic_mobile = $image;
+                            }
+                        } else {
+                            $model->region_graphic_mobile = $_POST['h_b_10'];
+                        }
+
                         // background
                         if ($master->template_type == 'tbl_recent_student' || $type == 'SO') {
                             if (!empty($model->background)) {
@@ -261,6 +291,8 @@ class PageController extends Controller {
                     $model->benef4_figure = $_POST['h_b_4'];
                     $model->benef5_figure = $_POST['h_b_5'];
                     $model->benef6_figure = $_POST['h_b_6'];
+                    $model->region_graphic = $_POST['h_b_9'];
+                    $model->region_graphic_mobile = $_POST['h_b_10'];
 
                     if ($master->template_type == 'tbl_recent_student' || $type == 'SO') {
                         $model->background = $_POST['h_b_7'];
@@ -381,6 +413,8 @@ class PageController extends Controller {
                 $model->benef6_figure = CUploadedFile::getInstance($model, 'benef6_figure');
                 $model->background = CUploadedFile::getInstance($model, 'background');
                 $model->background_mobile = CUploadedFile::getInstance($model, 'background_mobile');
+                $model->region_graphic = CUploadedFile::getInstance($model, 'region_graphic');
+                $model->region_graphic_mobile = CUploadedFile::getInstance($model, 'region_graphic_mobile');
             }
 
             if ($master_model->validate()) {
@@ -450,6 +484,26 @@ class PageController extends Controller {
                             $model->benef6_figure = $_POST['h_b_6'];
                         }
 
+                        // region_graphic
+                        if (!empty($model->region_graphic)) {
+                            $image = Utils::saveImage($model, 'region_graphic', $originalDir, array());
+                            if ($image) {
+                                $model->region_graphic = $image;
+                            }
+                        } else {
+                            $model->region_graphic = $_POST['h_b_9'];
+                        }
+
+                        // region_graphic_mobile
+                        if (!empty($model->region_graphic_mobile)) {
+                            $image = Utils::saveImage($model, 'region_graphic_mobile', $originalDir, array());
+                            if ($image) {
+                                $model->region_graphic_mobile = $image;
+                            }
+                        } else {
+                            $model->region_graphic_mobile = $_POST['h_b_10'];
+                        }
+
                         // background
                         if (!empty($model->background)) {
                             $image = Utils::saveImage($model, 'background', $originalDir, array());
@@ -489,6 +543,8 @@ class PageController extends Controller {
                         $model->benef6_figure = $_POST['h_b_6'];
                         $model->background = !empty($_POST['h_b_7']) ? $_POST['h_b_7'] : '';
                         $model->background_mobile = !empty($_POST['h_b_8']) ? $_POST['h_b_8'] : '';
+                        $model->benef5_figure = $_POST['h_b_9'];
+                        $model->benef6_figure = $_POST['h_b_10'];
                     }
 
                     if (empty($model->lat) && empty($model->lng)) {

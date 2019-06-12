@@ -194,6 +194,22 @@ return array(
                     ),
                     'depends' => array('jquery')
                 ),
+                // systrans work starts here
+                'systrans' => array(
+                    'baseUrl' => 'vendor/',
+                    'css' => array(
+                        'template/css/normalize.css',
+                        'systrans/css/fonts.css',
+                        'systrans/css/main.css',
+                    ),
+                    'js' => array(
+                        'template/js/modernizr.js',
+                        'systrans/js/jquery.validate.min.js',
+                        'template/js/jquery.maskedinput.min.js',
+                        'systrans/js/main.js'
+                    ),
+                    'depends' => array('jquery')
+                ),
             )
         ),
         'user' => array(
@@ -248,7 +264,8 @@ return array(
                         'recent_student_files' => array('width' => 300, 'height' => 300),
                         'recent_student_background' => array('width' => 600, 'height' => 600),
                         'intermodal_files' => array('width' => 150, 'height' => 150),
-                        'intermodal_background' => array('width' => 600, 'height' => 600)
+                        'intermodal_background' => array('width' => 600, 'height' => 600),
+                        'intermodal_region_graphic' => array('width' => 600, 'height' => 600)
                     ),
                 ),
                 'CSSImageDisplayer' => array(
