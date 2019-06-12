@@ -1,5 +1,4 @@
-# smartlandingpages
-Smart Landing Pages
+# Smart Landing Pages App
 
 ## Instructions
 
