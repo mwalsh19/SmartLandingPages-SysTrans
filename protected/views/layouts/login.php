@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Login</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <link rel="icon" type="image/png" href="<?php echo Yii::app()->getBaseUrl(true) ?>/favicon_ST.ico">
 
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

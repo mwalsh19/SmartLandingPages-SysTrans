@@ -18,6 +18,7 @@
 
 /* close commented backslash hack */
 .form-control {
+  height: 50px;
   display: block;
   width: 100%;
   padding: 4px 10px;
@@ -316,12 +317,12 @@ body.apply-form-showing {
 #apply-form-overlay {
   display: none;
   position: fixed;
-  top: 76px;
+  top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 20;
-  background-color: rgba(0, 0, 0, 0.8); }
+  z-index: 21;
+  background-color: rgba(33, 38, 52, 0.95); }
 
 .apply-form-showing .heading-separator {
   position: fixed;
@@ -332,12 +333,62 @@ body.apply-form-showing {
 .apply-form-showing .sub-heading {
   position: fixed;
   top: 10px;
-  background-color: #fff;
   left: 0;
   right: 0;
   z-index: 21; }
 .apply-form-showing .main {
   padding-top: 76px; }
+
+.btn {
+    color: white;
+    font-size: 20px;
+    font-family: helvetica;
+    line-height: 2em;
+    text-shadow: none;
+}
+
+.container-form .form-control {
+    font-family: helvetica;
+    border-radius: 3px;
+    background: #bdc3c7;
+    color: black;
+}
+
+@media screen and (min-width: 951px) {
+  .col-half-desktop {
+    width: 50% !important;
+  }
+
+  .flex-center-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-margin {
+    margin-right: 30px !important;
+    margin: 10px;
+  }
+
+  .container-form {
+    width: 600px;
+  }
+
+  #submit {
+    background: #d71e26;
+    width: 280px;
+    height: 50px;
+    line-height: 1em;
+    margin-left: 10px;
+  }
+
+  .desktop-heading {
+    color: #bdc3c7;
+    margin-left: 10px;
+    line-height: .5em;
+    font-family: helvetica;
+  }
+}
 
 .container-form {
   display: none;
@@ -345,12 +396,10 @@ body.apply-form-showing {
   top: 136px;
   left: 50%;
   z-index: 21;
-  width: 490px;
   height: 580px;
   margin-left: -245px; }
   .container-form .form-control {
-    font-family: "Helvetica LT W01 Light Cond";
-    font-size: 26px; }
+    font-size: 16px; }
 
 .email-control input {
   background-color: transparent;
@@ -358,8 +407,7 @@ body.apply-form-showing {
 
 .firstname-control, .phone-control, .state-control {
   float: left;
-  width: 49%;
-  margin-right: 9px; }
+  width: 49%; }
 
 .lastname-control, .email-control, .zip-control {
   float: left;
@@ -530,6 +578,10 @@ body.apply-form-showing {
   text-align: center;
 }
 
+.capitalize {
+  text-transform: uppercase;
+}
+
 .desktop-only {
   display: block;
 }
@@ -666,10 +718,6 @@ body.apply-form-showing {
       }
 
       #callBtn {
-        background: #d71e26;
-      }
-
-      #submit {
         background: #d71e26;
       }
 

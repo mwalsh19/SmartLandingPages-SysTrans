@@ -11,7 +11,7 @@ $baseUrl = Yii::app()->getBaseUrl(true);
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title><?php echo $this->getPageTitle() ?></title>
         <meta name="description" content="">
-        <link rel="icon" type="image/png" href="<?php echo Yii::app()->getBaseUrl(true) ?>/favicon_swift.ico">
+        <link rel="icon" type="image/png" href="<?php echo Yii::app()->getBaseUrl(true) ?>/favicon_ST.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <?php

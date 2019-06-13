@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title><?php echo $this->getPageTitle(); ?></title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <link rel="icon" type="image/png" href="<?php echo Yii::app()->getBaseUrl(true) ?>/favicon_swift.ico">
+        <link rel="icon" type="image/png" href="<?php echo Yii::app()->getBaseUrl(true) ?>/favicon_ST.ico">
 
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -19,7 +19,7 @@
         <header class="header">
             <a href="<?php echo Yii::app()->getBaseUrl(true); ?>" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                <img src="<?php echo Yii::app()->baseurl; ?>/manager/images/swift_analytics.jpg" />
+                <img width="150" src="<?php echo Yii::app()->baseurl; ?>/manager/images/system-trans-logo.png" />
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">

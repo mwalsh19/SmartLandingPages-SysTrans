@@ -1,7 +1,7 @@
 
 <div class="form-box" id="login-box">
     <!--<div class="header"><img src="<?php echo Yii::app()->baseUrl ?>/manager/images/williams_sm_logo.png" class="icon"></div>-->
-    <div class="header" style="background-color: #919194;" ><img src="<?php echo Yii::app()->baseurl; ?>/manager/images/swift_analytics.png" /></div>
+    <div class="header" style="background-color: #919194;" ><img src="<?php echo Yii::app()->baseurl; ?>/manager/images/system-trans-logo.png" /></div>
 
     <?php
     $form = $this->beginWidget('CActiveForm', array(

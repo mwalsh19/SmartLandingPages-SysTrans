@@ -233,30 +233,37 @@ switch ($data->type) {
                     Just fill out our short application below and a recruiter will call you.
                 </p>
             </div>
+    <div class="desktop-heading desktop-only">
+        <h3 class="capitalize">You're Almost There!</h3>
+        <p>
+            Finish entering your info and a recruiter will contact you.
+        </p>
+    </div>
     <div class="form">
         <div class="form-wrap">
             <form action="" method="post" id="leadForm" novalidate="novalidate">
                 <div class="groupfields flex-center">
-                    <div class="firstname-control col-half">
+                    <div class="firstname-control col-half col-half-desktop form-margin">
                         <input type="text" name="first_name" placeholder="First name" class="form-control">
                     </div>
-                    <div class="lastname-control col-half">
+                    <div class="lastname-control col-half col-half-desktop">
                         <input type="text" name="last_name" placeholder="Last name" class="form-control">
                     </div>
                 </div>
-                <div class="groupfields clearfix">
-                    <div class="email-control">
+                <div class="groupfields clearfix flex-center-desktop">
+                    <div class="email-control col-half-desktop form-margin">
                         <input type="text" name="email" placeholder="Email Address" class="form-control">
                     </div>
-                    <div class="phone-control">
+                    <div class="phone-control col-half-desktop">
                         <input type="text" name="phone" placeholder="Phone number" class="form-control">
                     </div>
                 </div>
-
-                <input type="text" name="street_address" placeholder="Street Address" class="form-control">
-                <input type="text" name="city" placeholder="City" class="form-control">
+                <div class="groupfields clearfix flex-center-desktop">
+                    <input type="text" name="street_address" placeholder="Street Address" class="form-control col-half-desktop form-margin">
+                    <input type="text" name="city" placeholder="City" class="form-control col-half-desktop">
+                </div>
                 <div class="groupfields flex-center">
-                    <div class="state-control col-half">
+                    <div class="state-control col-half form-margin">
                         <select name="state" id="state" class="form-control">
                             <option value="">Select a state</option>
                             <option value="AL">Alabama</option>
@@ -309,21 +316,23 @@ switch ($data->type) {
                     </div>
                 </div>
 
-                <div class="cdl-valid-control clearfix">
-                    <select name="moving_violation" class="form-control">
-                        <option>Years of Experience?</option>
-                        <option value="Beginner">1-3</option>
-                        <option value="Novice">3-5</option>
-                        <option value="Intermediate">5-9</option>
-                        <option value="Experienced">10+</option>
-                    </select>
-                </div>
-                <div class="cdl-valid-control clearfix">
-                    <select name="cdl_valid" class="form-control">
-                        <option>Do you have your Class A CDL?</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                    </select>
+                <div class="groupfields clearfix flex-center-desktop">
+                    <div class="cdl-valid-control col-half-desktop form-margin">
+                        <select name="moving_violation" class="form-control">
+                            <option>Years of Experience?</option>
+                            <option value="Beginner">1-3</option>
+                            <option value="Novice">3-5</option>
+                            <option value="Intermediate">5-9</option>
+                            <option value="Experienced">10+</option>
+                        </select>
+                    </div>
+                    <div class="cdl-valid-control col-half-desktop">
+                        <select name="cdl_valid" class="form-control">
+                            <option>Do you have your Class A CDL?</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
                 </div>
                 <input type="hidden" name="form_type" value="T3">
                 <input id="submit" type="submit" value="Submit Application" class="form-control-btn btn">
