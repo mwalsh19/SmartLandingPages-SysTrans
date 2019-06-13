@@ -24,3 +24,5 @@
 - If you cannot see your .htaccess file, it may be hidden, in a terminal run the command below:
 
 > defaults write com.apple.finder AppleShowAllFiles YES
+
+- Test
