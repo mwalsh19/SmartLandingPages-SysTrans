@@ -345,7 +345,7 @@ FileETag None
 
 <IfModule mod_rewrite.c>
 #  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_URI} !(js|css|png|jpg|gif|ico|html|htm|php)$
+  RewriteCond %{REQUEST_URI} !(js|css|png|jpg|gif|ico|html|htm|php|woff|ttf)$
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . index.php
 </IfModule>
