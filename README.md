@@ -25,4 +25,4 @@
 
 > defaults write com.apple.finder AppleShowAllFiles YES
 
-- Test
+This is test.
