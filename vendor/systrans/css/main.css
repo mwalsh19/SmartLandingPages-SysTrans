@@ -222,7 +222,8 @@ font-family: Conv_Vitesse-Bold;
 }
 
 .icon-section .icons {
-  margin: 2em 0;
+  margin: 2em 0 2em 0;
+  /*border: 1px solid #000;*/
 }
 
 .icon-section ul {
@@ -232,9 +233,9 @@ font-family: Conv_Vitesse-Bold;
 .icon-section img {
   width: 55px;
   height: 55px;
-  padding: 15px;
+  padding: 0px 15px 0px 15px;
   position: relative;
-  top: -20px;
+  top: 0px;
 }
 
 .icon-section h2 {
@@ -245,18 +246,21 @@ font-family: Conv_Vitesse-Bold;
 }
 
 .icon-section .section-text {
-  width: 250px;
+  width: 260px;
+  /*border: 1px solid #000;*/
 }
 
 .icon-section .section-text h3 {
   font-family: 'helvetica';
   font-size: 18px;
   font-weight: bold;
+  color: #212634;
 }
 
 .icon-section .section-text p {
   font-family: 'helvetica';
   font-size: 14px;
+  color: #212634;
   line-height: 1.5em;
 }
 
@@ -270,7 +274,7 @@ font-family: Conv_Vitesse-Bold;
 
 .invest-section {
   width: 100%;
-  height: 550px;
+  height: 600px;
   background: #212634;
   margin-bottom: -36px;
   padding-bottom: 40px;
@@ -538,6 +542,7 @@ body.apply-form-showing {
 
 .inline-block {
   display: inline-block;
+  vertical-align: top;
 }
 
 .col-3 {

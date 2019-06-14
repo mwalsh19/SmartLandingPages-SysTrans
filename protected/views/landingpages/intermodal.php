@@ -103,10 +103,9 @@ switch ($data->type) {
                         <p>
                             <img src="/vendor/systrans/Version-A/images/icon-st-truck-checkmark.png" alt="invest-1" />
                         </p>
-                        <h4>Lorem ipsum dolor sit Lorem dolor</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        <h4>METICULOUSLY MAINTAINED<br>FOR YOUR SAFETY</h4>
+                        <p><span style="color: #abb0b4;">
+                            Your safety is paramount to us. Every tractor has a lane departure & forward collision warning system, hard brake monitoring, and a satellite communication device installed. We have invested in building our own shops, staffing a 24/7/365 road service staff, and we have developed a robust network of outside shops to keep our trucks rolling. If a truck needs repairs, it’s not going out until it is 100% ready to the hit the road again safely with you at the wheel. You can count on that.</span>
                         </p>
                     </div>
 
@@ -114,10 +113,9 @@ switch ($data->type) {
                         <p>
                             <img src="/vendor/systrans/Version-A/images/icon-st-driver-portal.png" alt="invest-1" />
                         </p>
-                        <h4>Lorem ipsum dolor sit Lorem dolor</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        <h4>DRIVER PORTAL: SUPPORT 24/7</h4>
+                        <p><span style="color: #abb0b4;">
+                            Experience an award-winning app, The Driver Portal, made for drivers by drivers. With a simple tap, you will receive real-time updates and alerts, access your pay, current trip data, messages/notifications, available PTO, contact information, and so much more! Use the Notification Center to stay in touch when you’re out of your truck. You won’t be sitting in the tractor waiting for dispatch. Instead, conveniently stay informed with your cell while living your life. Access your driver portal anywhere on any device, anytime.</span> 
                         </p>
                     </div>
 
@@ -125,10 +123,9 @@ switch ($data->type) {
                         <p>
                             <img src="/vendor/systrans/Version-A/images/icon-st-referral-program.png" alt="invest-1" />
                         </p>
-                        <h4>Lorem ipsum dolor sit Lorem dolor</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        <h4>REFERRAL PROGRAM</h4>
+                        <p><span style="color: #abb0b4;">
+                            No one knows good drivers better than you. At System Transport, our drivers make us who we are – they are the face, heart, and backbone of this company. Their hard work and dedication to get the job done make us proud every day, and set us apart from our competition. If you have met someone you think would be a great addition to the System Transport family, we want an introduction. Your truck driver referrals could earn you up to $1,500!</span>
                         </p>
                     </div>
                 </div>
@@ -353,7 +350,7 @@ switch ($data->type) {
                 </div>
                 <div class="terms">
                     <p>
-                        *By completing this form, I agree to receive correspondence from Swift Transportation. This includes receiving autodialed telephone calls, prerecorded messages, text messages and emails about trucking job opportunities at the contact number and address I have provided above. I understand that I am not required to provide my consent as a condition of submitting my application.
+                        *BY COMPLETING THIS FORM, I AGREE TO RECEIVE CORRESPONDENCE FROM SYSTEM TRANSPORT. THIS INCLUDES RECEIVING PRERECORDED MESSAGES, TEXT MESSAGES AND EMAILS ABOUT TRUCKING JOB OPPORTUNITIES AT THE CONTACT NUMBER AND ADDRESS I HAVE PROVIDED ABOVE. I UNDERSTAND THAT I AM NOT REQUIRED TO PROVIDE MY CONSENT AS A CONDITION OF SUBMITTING MY APPLICATION.
                     </p>
                     <ul>
                         <li><a href="<?php echo Yii::app()->createUrl('landing-pages/privacy-policy'); ?>" target="_blank">Privacy Policy</a><span>|</span></li>
