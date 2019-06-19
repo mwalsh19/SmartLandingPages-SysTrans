@@ -49,7 +49,6 @@
   outline: none;
   text-decoration: none;
   background: #fec90e;
-  background: url(../Version-A/images/btn-st-next.png);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -145,9 +144,7 @@ color: #fff; }
     line-height: 1;
     font-weight: normal;
     letter-spacing: 5px; }
-  .main-description h3 span {
-    color: #d71e26;
-  }
+  .main-description h3 span {}
   .main-description .primary-description {
     margin-bottom: 5px; }
   .main-description .secondary-description {
@@ -437,7 +434,6 @@ body.apply-form-showing {
   background-color: #f2f3f4; }
 
 .background-middle {
-  background: url(../Version-A/images/system-trans-experienced-driver-gfx.jpg) no-repeat;
   background-size: cover;
   background-position-x: 0;
 }
@@ -684,9 +680,6 @@ body.apply-form-showing {
     display: block;
     max-width: 100%;
     height: auto; }
-  .sub-heading {
-    background: rgb(33, 38, 52, 1) !important;
-  }  
   .sub-heading-wrap {
     padding: 0 10px; }
     .sub-heading-wrap .sub-heading-phone {

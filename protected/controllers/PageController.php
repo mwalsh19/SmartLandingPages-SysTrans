@@ -64,8 +64,6 @@ class PageController extends Controller {
 
             $data = "";
             $dir_files = "";
-            $current_lat = '';
-            $current_lng = '';
             switch ($master->template_type) {
                 case 'tbl_apply':
                     $data = $_POST['MApply'];
@@ -99,16 +97,12 @@ class PageController extends Controller {
                     $data = $_POST['MIntermodal'];
                     $model = MIntermodal::model()->find('id_master=:id_master', array(':id_master' => $master->id_master));
                     $model->scenario = 'update';
-                    $current_lat = $model->lat;
-                    $current_lng = $model->lng;
                     break;
                 /*case 'tbl_intermodal':
                     $dir_files = "webroot.uploads.intermodal_files";
                     $data = $_POST['MIntermodal'];
                     $model = MIntermodal::model()->find('id_master=:id_master', array(':id_master' => $master->id_master));
                     $model->scenario = 'update';
-                    $current_lat = $model->lat;
-                    $current_lng = $model->lng;
                     break;*/
                 case 'tbl_dr_january':
                     $data = $_POST['MDrJanuary'];
@@ -117,14 +111,6 @@ class PageController extends Controller {
             }
 
             $type = !empty($model->type) ? $model->type : '';
-
-            if ($type != 'SO' && $master->template_type == 'tbl_intermodal') {
-                $model->scenario = 'isNotSpecialOffer';
-            }
-
-            if ($type == 'SO' && $master->template_type == 'tbl_intermodal') {
-                $model->scenario = 'isSpecialOffer';
-            }
 
             $master->attributes = $_POST['MMaster'];
             $model->attributes = $data;
@@ -138,10 +124,8 @@ class PageController extends Controller {
                 $model->benef6_figure = CUploadedFile::getInstance($model, 'benef6_figure');
                 $model->region_graphic = CUploadedFile::getInstance($model, 'region_graphic');
                 $model->region_graphic_mobile = CUploadedFile::getInstance($model, 'region_graphic_mobile');
-                if ($master->template_type == 'tbl_recent_student' || $type == 'SO') {
-                    $model->background = CUploadedFile::getInstance($model, 'background');
-                    $model->background_mobile = CUploadedFile::getInstance($model, 'background_mobile');
-                }
+                $model->background = CUploadedFile::getInstance($model, 'background');
+                $model->background_mobile = CUploadedFile::getInstance($model, 'background_mobile');
             }
 
 
@@ -235,7 +219,7 @@ class PageController extends Controller {
                         }
 
                         // background
-                        if ($master->template_type == 'tbl_recent_student' || $type == 'SO') {
+                        if ($master->template_type == 'tbl_recent_student' || $type == 'LP1' || $type == 'LP2' || $type == 'LP3') {
                             if (!empty($model->background)) {
                                 $image = Utils::saveImage($model, 'background', $originalDir, array());
                                 if ($image) {
@@ -256,30 +240,6 @@ class PageController extends Controller {
                         }
                     }
 
-                    //INTERMODAL TEMPLATE MODULE
-                    /* CHECK IF MAP HAS BEFORE SAVED */
-                    if ($master->template_type == 'tbl_intermodal' && $type != 'SO') {
-
-                        if ($current_lat != $_POST['MIntermodal']['lat'] && $current_lng != $_POST['MIntermodal']['lng']) {
-                            if (!empty($model->map_source)) {
-                                $baseDir = Yii::getPathOfAlias('webroot.uploads.intermodal_maps');
-                                Utils::deleteFileFromRecord($baseDir, array($model->map_source));
-                                $model->map_source = '';
-                            }
-                        }
-
-                        if (empty($model->map_source)) {
-                            $basePath = Yii::getPathOfAlias('webroot.uploads.intermodal_maps');
-                            $random_image_name = Utils::generateRandomString(30) . '_map.jpg';
-                            $image_url = "https://maps.googleapis.com/maps/api/staticmap?size=459x150&center={$model->lat},{$model->lng}&zoom=11&markers=color:red|{$model->lat},{$model->lng}";
-                            $all_done = $this->downloadImage($image_url, $basePath . '/' . $random_image_name);
-
-                            if ($all_done) {
-                                $model->map_source = $random_image_name;
-                            }
-                        }
-                    }
-
                     if ($master->save() && $model->save()) {
                         $this->redirect($this->createUrl('page/index'));
                     }
@@ -287,21 +247,13 @@ class PageController extends Controller {
                 if ($master->hasErrors() || $model->hasErrors()) {
                     $model->benef1_figure = $_POST['h_b_1'];
                     $model->benef2_figure = $_POST['h_b_2'];
-                    $model->benef3_figure = $_POST['h_b_3'];
                     $model->benef4_figure = $_POST['h_b_4'];
                     $model->benef5_figure = $_POST['h_b_5'];
                     $model->benef6_figure = $_POST['h_b_6'];
                     $model->region_graphic = $_POST['h_b_9'];
                     $model->region_graphic_mobile = $_POST['h_b_10'];
-
-                    if ($master->template_type == 'tbl_recent_student' || $type == 'SO') {
-                        $model->background = $_POST['h_b_7'];
-                        $model->background_mobile = $_POST['h_b_8'];
-                    }
-
-                    if (empty($model->lat) && empty($model->lng)) {
-                        $model->addError('lat', "Please search a map location");
-                    }
+                    $model->background = $_POST['h_b_7'];
+                    $model->background_mobile = $_POST['h_b_8'];
                 }
             }
         } else {
@@ -546,10 +498,6 @@ class PageController extends Controller {
                         $model->benef5_figure = $_POST['h_b_9'];
                         $model->benef6_figure = $_POST['h_b_10'];
                     }
-
-                    if (empty($model->lat) && empty($model->lng)) {
-                        $model->addError('lat', "Please search a map location");
-                    }
                 }
             }
         } else {
@@ -737,11 +685,11 @@ class PageController extends Controller {
                         $sql2 = "INSERT INTO tbl_intermodal(referral_code, intelliapp_referral_code,"
                                 . " main_title, sub_title, main_description, benef1_caption, benef2_caption, benef3_caption, benef4_caption,"
                                 . " benef5_caption, benef6_caption, benef1_figure, benef2_figure, benef3_figure, benef4_figure,"
-                                . " benef5_figure, benef6_figure, body_copy, phone, lat, lng, map_address, map_source, type, background, ga_lp, ga_tp, id_master)"
+                                . " benef5_figure, benef6_figure, body_copy, phone, map_address, map_source, type, background, ga_lp, ga_tp, id_master)"
                                 . " SELECT '{$templateToSwapData->referral_code}', '{$templateToSwapData->intelliapp_referral_code}',"
                                 . " main_title, sub_title, main_description, benef1_caption, benef2_caption, benef3_caption, benef4_caption,"
                                 . " benef5_caption, benef6_caption, benef1_figure, benef2_figure, benef3_figure, benef4_figure,"
-                                . " benef5_figure, benef6_figure, body_copy, '{$phone}', lat, lng, map_address, map_source, type, background, ga_lp, ga_tp, '{$lastIdMaster}'"
+                                . " benef5_figure, benef6_figure, body_copy, '{$phone}', map_address, map_source, type, background, ga_lp, ga_tp, '{$lastIdMaster}'"
                                 . " FROM tbl_intermodal WHERE id_master={$templateBase->id_master}";
                     }
 

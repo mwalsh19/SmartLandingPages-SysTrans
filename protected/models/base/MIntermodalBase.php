@@ -55,7 +55,6 @@ class MIntermodalBase extends CActiveRecord
 			array('main_title, benef1_caption, benef2_caption, benef3_caption, benef4_caption, benef5_caption, benef6_caption', 'length', 'max'=>100),
 			array('benef1_figure, benef2_figure, benef3_figure, benef4_figure, benef5_figure, benef6_figure', 'length', 'max'=>64),
 			array('phone', 'length', 'max'=>20),
-			array('lat, lng, map_source', 'length', 'max'=>45),
 			array('type', 'length', 'max'=>1),
 			array('id_master', 'length', 'max'=>10),
 			// The following rule is used by search().
@@ -101,8 +100,6 @@ class MIntermodalBase extends CActiveRecord
 			'benef6_figure' => 'Benef6 Figure',
 			'body_copy' => 'Body Copy',
 			'phone' => 'Phone',
-			'lat' => 'Lat',
-			'lng' => 'Lng',
 			'map_source' => 'Map Source',
 			'type' => 'Type',
 			'create_date' => 'Create Date',
@@ -147,8 +144,6 @@ class MIntermodalBase extends CActiveRecord
 		$criteria->compare('benef6_figure',$this->benef6_figure,true);
 		$criteria->compare('body_copy',$this->body_copy,true);
 		$criteria->compare('phone',$this->phone,true);
-		$criteria->compare('lat',$this->lat,true);
-		$criteria->compare('lng',$this->lng,true);
 		$criteria->compare('map_source',$this->map_source,true);
 		$criteria->compare('type',$this->type,true);
 		$criteria->compare('create_date',$this->create_date,true);

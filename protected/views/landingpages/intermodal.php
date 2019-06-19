@@ -2,33 +2,107 @@
 
 <?php
     Yii::app()->clientScript->registerPackage('systrans');
-    $directory = Yii::app()->getBaseUrl(true) . '/vendor/systrans';
+    $main_directory = Yii::app()->getBaseUrl(true) . '/vendor/systrans';
     $uploadsPath = Yii::app()->getBaseUrl(true) . '/';
     
     $type = '';
     switch ($data->type) {
-        case 'I':
-            $type = 'intermodal';
+        case 'LP1':
+            $type = 'landing-page-1';
+            $name = 'st';
+            $company = 'System Transport';
+            $primary_color = "#d71e26";
+            $rgba_secondary_full = "rgb(33, 38, 52, 1)";
+            $rgba_secondary = "rgb(33, 38, 52, 0.8)";
+            $overlay_secondary = "rgb(33, 38, 52, .9)";
+            $invest_section_color = '#212634';
+            $invest_section_inner = '#161924';
+            $footer_color = '#1d1d1d';
+            $website_name = 'systemtrans.com';
+            $website_url = '';
+            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/Version-A/images';
             break;
-        case 'D':
-            $type = 'dedicated';
+        case 'LP2':
+            $type = 'landing-page-2';
+            $name = 'jjw';
+            $company = 'James J. Williams';
+            $primary_color = "#f8e084";
+            $rgba_secondary_full = "rgba(0, 27, 21, 1)";
+            $rgba_secondary = "rgba(0, 27, 21, .75)";
+            $overlay_secondary = "rgba(0, 27, 21, .9)";
+            $invest_section_color = '#005844';
+            $invest_section_inner = '#004c3b';
+            $footer_color = '#252525';
+            $website_name = 'jjwilliams.com';
+            $website_url = '';
+            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/Version-B/images';
             break;
-        case 'SO':
-            $type = 'special-offer';
+        case 'LP3':
+            $type = 'landing-page-3';
+            $name = 'twt';
+            $company = 'TWT Refrigerated Service Transport';
+            $primary_color = "#ec9f23";
+            $rgba_secondary_full = "rgba(0, 41, 33, 1)";
+            $rgba_secondary = "rgba(0, 41, 33, .75)";
+            $overlay_secondary = "rgba(0, 41, 33, .9)";
+            $invest_section_color = '#01a787';
+            $invest_section_inner = '#00987b';
+            $footer_color = '#1d1d1d';
+            $website_name = 'twtrans.com';
+            $website_url = 'http://twtrans.com';
+            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/Version-C/images';
             break;
         default:
-            $type = 'intermodal';
+            $type = 'landing-page-1';
+            $name = 'st';
+            $primary_color = "#d71e26";
+            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/Version-A/images';
             break;
     }
     ?>
-<div class="main swift-<?php echo $type; ?>" id="swift-<?php echo $type; ?>">
+
+<style>
+    .main-description h3 span {
+        color: <?php echo $primary_color ?>;
+    }
+    .sub-heading {
+        background: <?php echo $rgba_secondary ?>;
+    }
+    #callBtn, #quickFormBtn, #submit, .form-heading {
+        background: <?php echo $primary_color ?>;
+    }
+    .invest-section {
+        background: <?php echo $invest_section_color ?>;
+    }
+    .invest-section .box {
+        background: <?php echo $invest_section_inner ?>;
+    }
+    .footer-container {
+        background: <?php echo $footer_color ?>;
+    }
+
+    #apply-form-overlay {
+        background: <?php echo $overlay_secondary ?>;
+    }
+
+    .apply-form-showing #sub-heading {
+        background: <?php echo $rgba_secondary_full ?> !important;
+    }
+
+    @media screen and (max-width: 950px) {
+        .sub-heading {
+            background: <?php echo $rgba_secondary_full ?>;
+        }
+    }
+</style>
+<div class="main systrans-<?php echo $type; ?>" id="systrans-<?php echo $type; ?>">
     <div class="main-wrap">
-        <div class="sub-heading">
+        <div id="sub-heading" class="sub-heading" data-name="<?php echo $name ?>">
             <div class="sub-heading-wrap clearfix">
-                <div class="logo"></div>
+                <div class="logo" style="background: url(<?php echo $assets; ?>/<?php echo $name; ?>-logo.png) no-repeat"></div>
                 <div class="sub-heading-phone">
                     <span>Call now to speak with a recruiter</span>
-                    <h1><?php echo $data->phone ?></h1>
+                    <h1 style="color: <?php echo $primary_color ?>"><?php echo $data->phone ?></h1>
                 </div>
             </div>
         </div>
@@ -40,7 +114,17 @@
         </div>
         <div class="top-container">
             <div class="top-container-wrap">
-                <div class="landscape-container" <?php echo ($data->type == 'SO') ? "style='background: url({$uploadsPath}uploads/systrans_files/{$data->background}) no-repeat;'" : "" ?>>
+                <div class="landscape-container" 
+                    <?php if ($data->type == 'LP1') {
+                        echo "style='background: url({$uploadsPath}uploads/systrans_files/{$data->background}) no-repeat;'";
+                    } else if ($data->type == 'LP2') {
+                        echo "style='background: url({$uploadsPath}uploads/systrans_files/{$data->background}) no-repeat;'";
+                    } else if ($data->type == 'LP3') {
+                        echo "style='background: url({$uploadsPath}uploads/systrans_files/{$data->background}) no-repeat;'";
+                    } else {
+                        echo "";
+                    } ?>
+                >
                     <div class="landscape-wrap">
                         <div class="main-description">
                             <div class="primary-description">
@@ -56,7 +140,7 @@
                                 <p>Enter your email address below to get started.</p>
                                 <input type="text" id="apply-email-field" class="form-control" placeholder="Please Enter Your Email Address">
                                 <a href="javascript:void(0);
-                                    " id="apply-btn" class="form-control-btn"></a>
+                                    " id="apply-btn" class="form-control-btn" style="background: url(<?php echo $assets; ?>/btn-<?php echo $name; ?>-next.png);"></a>
                             </div>
                         </div>
                     </div>
@@ -65,15 +149,15 @@
         </div>
         <div class="middle-container relative">
             <div class="quote-mobile mobile-only">
-                <img src="<?php echo $directory ?>/Version-A/images/quote-experienced-driver.png" />
+                <img src="<?php echo $assets ?>/quote-experienced-driver.png" />
             </div>
             <div class="row middle-container-wrap clearfix">
-                <div class="col-2 col background-middle"></div>
+                <div class="col-2 col background-middle" style="background: url(<?php echo $assets; ?>/<?php echo $name; ?>-experienced-driver-gfx.jpg) no-repeat; background-size: cover;"></div>
                 <div class="col-2 col">
                     <div class="text">
                         <div class="middle-copy flex-center">
                             <div class="quote desktop-only">
-                                <img src="<?php echo $directory ?>/Version-A/images/quote-experienced-driver.png" />
+                                <img src="<?php echo $assets ?>/quote-experienced-driver.png" />
                             </div>
                             <div class="copy">
                                 <?php
@@ -85,7 +169,7 @@
                 </div>
             </div>
         </div>
-        <div class="open-road" <?php echo ($data->type == 'SO') ? "style='background: url({$uploadsPath}uploads/systrans_files/{$data->region_graphic}) no-repeat center;'" : "" ?>>
+        <div class="open-road" <?php echo "style='background: url({$uploadsPath}uploads/systrans_files/{$data->region_graphic}) no-repeat center; background-size: cover;'" ?>>
             <div class="">
                 <h3><?php echo $data->sub_title; ?></h3>
             </div>
@@ -96,7 +180,7 @@
                 <div class="flex-container">
                     <div class="box">
                         <p>
-                            <img src="/vendor/systrans/Version-A/images/icon-st-truck-checkmark.png" alt="invest-1" />
+                            <img src="<?php echo $assets; ?>/icon-<?php echo $name; ?>-truck-checkmark.png" alt="invest-1" />
                         </p>
                         <h4>METICULOUSLY MAINTAINED<br>FOR YOUR SAFETY</h4>
                         <p><span style="color: #abb0b4;">
@@ -105,7 +189,7 @@
                     </div>
                     <div class="box">
                         <p>
-                            <img src="/vendor/systrans/Version-A/images/icon-st-driver-portal.png" alt="invest-1" />
+                            <img src="<?php echo $assets; ?>/icon-<?php echo $name; ?>-driver-portal.png" alt="invest-1" />
                         </p>
                         <h4>DRIVER PORTAL: SUPPORT 24/7</h4>
                         <p><span style="color: #abb0b4;">
@@ -114,11 +198,11 @@
                     </div>
                     <div class="box">
                         <p>
-                            <img src="/vendor/systrans/Version-A/images/icon-st-referral-program.png" alt="invest-1" />
+                            <img src="<?php echo $assets; ?>/icon-<?php echo $name; ?>-referral-program.png" alt="invest-1" />
                         </p>
                         <h4>REFERRAL PROGRAM</h4>
                         <p><span style="color: #abb0b4;">
-                            No one knows good drivers better than you. At System Transport, our drivers make us who we are – they are the face, heart, and backbone of this company. Their hard work and dedication to get the job done make us proud every day, and set us apart from our competition. If you have met someone you think would be a great addition to the System Transport family, we want an introduction. Your truck driver referrals could earn you up to $1,500!</span>
+                            No one knows good drivers better than you. At <?php echo $company; ?>, our drivers make us who we are – they are the face, heart, and backbone of this company. Their hard work and dedication to get the job done make us proud every day, and set us apart from our competition. If you have met someone you think would be a great addition to the System Transport family, we want an introduction. Your truck driver referrals could earn you up to $1,500!</span>
                         </p>
                     </div>
                 </div>
@@ -328,17 +412,17 @@
             <div class="footer-wrap">
                 <div class="phone-number-footer">
                     <h4>Call now to speak with a recruiter.</h4>
-                    <h3>
+                    <h3 style="color: <?php echo $primary_color ?>">
                         <?php echo $data->phone ?>
                     </h3>
                 </div>
                 <div class="terms">
                     <p>
-                        *BY COMPLETING THIS FORM, I AGREE TO RECEIVE CORRESPONDENCE FROM SYSTEM TRANSPORT. THIS INCLUDES RECEIVING PRERECORDED MESSAGES, TEXT MESSAGES AND EMAILS ABOUT TRUCKING JOB OPPORTUNITIES AT THE CONTACT NUMBER AND ADDRESS I HAVE PROVIDED ABOVE. I UNDERSTAND THAT I AM NOT REQUIRED TO PROVIDE MY CONSENT AS A CONDITION OF SUBMITTING MY APPLICATION.
+                        *BY COMPLETING THIS FORM, I AGREE TO RECEIVE CORRESPONDENCE FROM <?php echo $company; ?>. THIS INCLUDES RECEIVING PRERECORDED MESSAGES, TEXT MESSAGES AND EMAILS ABOUT TRUCKING JOB OPPORTUNITIES AT THE CONTACT NUMBER AND ADDRESS I HAVE PROVIDED ABOVE. I UNDERSTAND THAT I AM NOT REQUIRED TO PROVIDE MY CONSENT AS A CONDITION OF SUBMITTING MY APPLICATION.
                     </p>
                     <ul>
                         <li><a href="<?php echo Yii::app()->createUrl('landing-pages/privacy-policy'); ?>" target="_blank">Privacy Policy</a><span>|</span></li>
-                        <li><a target="blank" href="http://swifttrans.com/careers/for-drivers">systemtrans.com</a><span>|</span></li>
+                        <li><a target="blank" href="<?php echo $website_url ?>"><?php echo $website_name ?></a><span>|</span></li>
                         <li><a href="https://intelliapp2.driverapponline.com/c/swiftcomp?r=<?php echo $data->intelliapp_referral_code ?>" target="_blank">Online Application</a></li>
                     </ul>
                 </div>

@@ -1,6 +1,6 @@
 <?php
 $baseUrl = Yii::app()->getBaseUrl(true);
-if ($model->type !== 'SO') {
+if ($model->type !== 'LP1') {
     Yii::app()->clientScript->registerScriptFile($baseUrl . '/manager/js/search.js', CClientScript::POS_END);
 }
 ?>
@@ -25,26 +25,6 @@ if ($model->type !== 'SO') {
         <?php echo $form->error($model, 'phone', array('class' => 'help-block errorMessage')); ?>
     </div>
 </div>
-<?php
-if ($model->type !== 'SO') {
-    ?>
-    <div class="form-group">
-        <label class="col-sm-2 control-label required">Template variant</label>
-        <div class="col-sm-6">
-            <?php
-            echo $form->dropDownList($model, 'type', array(
-                'D' => 'Dedicated',
-                'I' => 'Intermodal',
-                    ), array('class' => 'form-control input-sm'));
-            ?>
-            <?php echo $form->error($model, 'type', array('class' => 'help-block errorMessage')); ?>
-        </div>
-    </div>
-    <?php
-} else {
-    echo $form->hiddenField($model, 'type', array('value' => 'SO'));
-}
-?>
 <div class="form-group">
     <label class="col-sm-2 control-label required">Main Title</label>
     <div class="col-sm-6">
@@ -52,9 +32,7 @@ if ($model->type !== 'SO') {
         <?php echo $form->error($model, 'main_title', array('class' => 'help-block errorMessage')); ?>
     </div>
 </div>
-<?php
-if ($model->type == 'SO') {
-    ?>
+
     <div class="form-group">
         <label class="col-sm-2 control-label required">SubTitle</label>
         <div class="col-sm-6">
@@ -62,9 +40,7 @@ if ($model->type == 'SO') {
             <?php echo $form->error($model, 'sub_title', array('class' => 'help-block errorMessage')); ?>
         </div>
     </div>
-    <?php
-}
-?>
+
 <div class="form-group">
     <label class="col-sm-2 control-label required">Main Description</label>
     <div class="col-sm-10">
@@ -86,9 +62,7 @@ if ($model->type == 'SO') {
 
     </div>
 </div>
-<?php
-if ($model->type == 'SO') {
-    ?>
+
     <div class="form-group">
         <label class="col-sm-2 control-label required">Google Analytic code<br><small>(landing page)</small></label>
         <div class="col-sm-6">
@@ -103,62 +77,8 @@ if ($model->type == 'SO') {
             <?php echo $form->error($model, 'ga_tp', array('class' => 'help-block errorMessage')); ?>
         </div>
     </div>
-    <?php
-}
-?>
-<?php
-if ($model->type !== 'SO') {
-    ?>
-    <hr>
-    <h3>Map</h3>
-    <br>
-    <div class="row">
-        <div class="form-group">
-            <label class="col-sm-2 control-label required">Map heading:</label>
-            <div class="col-sm-6">
-                <?php echo $form->textField($model, 'map_address', array('class' => 'form-control input-sm')); ?>
-                <span>Please type a city name with a state name (i.e. New Jersey, NY)</span>
-                <?php echo $form->error($model, 'map_address', array('class' => 'help-block errorMessage')); ?>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-2 control-label required">
-                <label>Search address: </label>
-            </div>
-            <div class="col-sm-6">
-                <?php echo $form->textField($model, 'search_address_input', array('class' => 'form-control input-sm', 'id' => 'search-input')); ?>
-                <span>Please type a city name with a state name (i.e. New Jersey NY)</span>
-                <?php echo $form->hiddenField($model, 'lat', array('class' => 'mapLat')) ?>
-                <?php echo $form->hiddenField($model, 'lng', array('class' => 'mapLng')) ?>
-                <?php echo $form->error($model, 'lat', array('class' => 'help-block errorMessage')); ?>
-            </div>
-            <div class="col-sm-2">
-                <button  id="search-btn" class="btn btn-primary btn-sm">Search</button>
-                <img id="loading" src="<?php echo Yii::app()->getBaseUrl(true) . '/images/loading_1.gif' ?>" style="max-width:16px; display: none; margin-left: 10px;"><br>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-12">
-                <label style="display: none;" class="notfoundlabel">Not found, please try with a different keyword</label>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-6 col-sm-offset-2" id="map-preview">
-                <?php
-                if (!empty($model->lat) && !empty($model->lng) && !empty($model->map_source)) {
-                    $map_url = $baseUrl . '/uploads/intermodal_maps/' . $model->map_source;
-                    echo "<img src='{$map_url}'>";
-                }
-                ?>
-            </div>
-        </div>
-    </div>
-    <?php
-}
-?>
-<?php
-if ($model->type == 'SO') {
-    ?>
+
+
     <hr>
     <h3>Background</h3>
     <div class="row">
@@ -218,13 +138,7 @@ if ($model->type == 'SO') {
             </div>
         </div>
     </div>
-    <?php
-}
-?>
 <!-- added region graphic here -->
-<?php
-if ($model->type == 'SO') {
-    ?>
     <hr>
     <h3>Region Graphic</h3>
     <div class="row">
@@ -271,9 +185,6 @@ if ($model->type == 'SO') {
             </div>
         </div>
     </div>
-    <?php
-}
-?>
 <hr>
 <h3>Benefits</h3>
 
