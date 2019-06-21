@@ -1868,3 +1868,191 @@ Stack trace:
 #6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
 #7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
 REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:12:15 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:14:17 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:15:26 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:15:39 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:21:16 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:22:12 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:28:24 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:29:57 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:31:28 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:32:30 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:33:31 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:35:11 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:38:02 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:42:31 [error] [php] Trying to get property 'template_type' of non-object (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:327)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/vendor/thankyou2/css/styles.css.map
+2019/06/21 23:45:50 [error] [exception.ParseError] ParseError: syntax error, unexpected '*' in /Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:616
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(276): CWebApplication->createController('index/')
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('landingpages/in...')
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#3 /Applications/MAMP/htdocs/index.php(18): CApplication->run()
+#4 {main}
+REQUEST_URI=/landing-pages/systemtrans/experience-cdl-a-drivers?no-track
+HTTP_REFERER=http://localhost:8888/page/index
+---
+2019/06/21 23:49:08 [error] [php] Use of undefined constant xml_data - assumed 'xml_data' (this will throw an Error in a future version of PHP) (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:539)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/landing-pages/systemtrans/experience-cdl-a-drivers?no-track
+2019/06/21 23:51:01 [error] [php] Undefined index: years_experience (/Applications/MAMP/htdocs/protected/controllers/LandingpagesController.php:468)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(286): LandingpagesController->runAction()
+#4 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CController.php(265): LandingpagesController->runActionWithFilters()
+#5 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): LandingpagesController->run()
+#6 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/MAMP/htdocs/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/index.php(18): CWebApplication->run()
+REQUEST_URI=/landing-pages/systemtrans/experience-cdl-a-drivers?no-track

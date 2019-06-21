@@ -57,13 +57,22 @@
   color: #fff;
   margin: 0; }
 .header-copy p {
-  font-family: Arial;
+  font-family: helvetica;
   font-size: 21px;
   text-align: center;
   color: #fff;
   line-height: 30px;
   margin: 0;
   margin-bottom: 30px; }
+
+.social {
+  margin: auto;
+  text-align: center;
+}
+
+.social img {
+  padding: 1em 1em;
+}
 
 .btn-click-here {
   display: block;
@@ -106,7 +115,9 @@
   -moz-text-shadow: 1px 1px 1px #fff; }
 
 .middle-container .middle-wrap {
-  padding: 5em 0 5em 0; }
+  padding: 5em 0 5em 0;
+  max-width: 600px;
+  margin: auto; }
 .middle-container h2 {
   font-family: "HelveticaNeueW01-77BdCn_692722";
   font-size: 72px;
@@ -119,6 +130,7 @@
 .middle-container .heading { 
   color: #000;
   font-size: 36px;
+  font-family: Conv_Vitesse-Bold;
 }
 .middle-container h4 {
   max-width: 410px;

@@ -465,7 +465,7 @@ class LandingpagesController extends Controller {
             $postalCode = $_POST['zip_code'];
             $email = $_POST['email'];
             $primaryPhone = $_POST['phone'];
-            $moving_violation = $_POST['moving_violation'];
+            $years_experience = $_POST['years_experience'];
             $cdl_valid = $_POST['cdl_valid'];
             $template_type = $_POST['template_type'];
 
@@ -492,8 +492,6 @@ class LandingpagesController extends Controller {
                 $view = 'thankyou4';
                 $target = 1;
             }
-
-            /*
 
             $xml_data = '
             <TenstreetData>
@@ -527,8 +525,8 @@ class LandingpagesController extends Controller {
                     <AppReferrer>' . $appReferrer . '</AppReferrer>
                     <DisplayFields>
                         <DisplayField>
-                            <DisplayPrompt>List any Moving Violations</DisplayPrompt>
-                            <DisplayValue>' . $moving_violation . '</DisplayValue>
+                            <DisplayPrompt>Years Experience:</DisplayPrompt>
+                            <DisplayValue>' . $years_experience . '</DisplayValue>
                         </DisplayField>
                         <DisplayField>
                             <DisplayPrompt>Do you have your class A CDL?</DisplayPrompt>
@@ -537,6 +535,9 @@ class LandingpagesController extends Controller {
                     </DisplayFields>
                 </ApplicationData>
             </TenstreetData>';
+
+            // var_dump($xml_data);
+            // die();
 
             $ch = curl_init();
 
@@ -554,6 +555,10 @@ class LandingpagesController extends Controller {
 
 
             $responseObject = simplexml_load_string($response_xml);
+
+            // var_dump($responseObject);
+            // die();
+
             //Steelhousepilot
             if ($trim_slug == 'steelhousepilot') {
                 $publisher = 'steelhousepilot';
@@ -562,7 +567,7 @@ class LandingpagesController extends Controller {
             //American driver network customized
             if ($publisher == 'americandrivernetwork') {
                 $need_redirect = true;
-            } */
+            }
 
             $user = Yii::app()->user;
             $user->setFlash('phone', $phone);
@@ -570,13 +575,18 @@ class LandingpagesController extends Controller {
             $user->setFlash('first_name', $givenName);
             $user->setFlash('template_type', $template_type);
 
-            /* if ($responseObject->Status == 'Accepted') {
-                /* SAVING XML RESPONSE TO LOCAL STORAGE 
+            // we will know if this works if we get this working
+
+            //var_dump($responseObject->Status);
+            // die();
+
+            if ($responseObject->Status == 'Accepted') {
+                // SAVING XML RESPONSE TO LOCAL STORAGE 
                 $model_for_save = new MOutputXml();
                 $model_for_save->tenstreet_xml = $response_xml;
                 $model_for_save->save(false);
 
-                /* SAVING FORM DATA ONLY FOR RHINOLABS
+                /* SAVING FORM DATA ONLY FOR RHINOLABS */
                 if ($publisher == 'rhinolabs') {
                     $newRhinolabsFormModel = new MRhinolabsForm();
                     $newRhinolabsFormModel->referral_code = $appReferrer;
@@ -593,7 +603,7 @@ class LandingpagesController extends Controller {
                     $newRhinolabsFormModel->save(false);
                 }
 
-                /* LEADS COUNTER
+                /* LEADS COUNTER */
                 $currentDate = date('Y-m-d');
                 $lead = MLeads::model()->find('referral_code=:referral_code AND state=:state AND city=:city AND date=:date', array(
                     ':referral_code' => $appReferrer,
@@ -615,7 +625,7 @@ class LandingpagesController extends Controller {
                     $new_lead->save(false);
                 }
 
-                $this->formHasSend = true; */
+                $this->formHasSend = true;
 
                 if ($need_redirect) {
                     $params = '?target=' . $target;
@@ -640,11 +650,11 @@ class LandingpagesController extends Controller {
                         'ga_tp' => !empty($model->ga_tp) ? $model->ga_tp : false
                             )
                     );
-                } /*
+                } 
             } else {
                 Yii::app()->user->setFlash('status', 'rejected');
                 $this->redirect(Yii::app()->request->urlReferrer);
-            } */
+            }
         }
     }
 

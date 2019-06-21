@@ -44,6 +44,8 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
             $footer_color = '#1d1d1d';
             $website_name = 'systemtrans.com';
             $website_url = '';
+            $fb_url = '';
+            $ig_url = '';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/systrans/images';
             break;
         case 'JJW1':
@@ -58,6 +60,8 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
             $footer_color = '#252525';
             $website_name = 'jjwilliams.com';
             $website_url = '';
+            $fb_url = '';
+            $ig_url = '';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/jjw/images';
             break;
         case 'TWT1':
@@ -74,6 +78,8 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
             $footer_color = '#1d1d1d';
             $website_name = 'twtrans.com';
             $website_url = 'http://twtrans.com';
+            $fb_url = '';
+            $ig_url = '';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/twt/images';
             break;
         default:
@@ -89,7 +95,10 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
     background: <?php echo $primary_color ?>;
   }
   .header {
-    background: <?php echo 'url(' . $assets . '/' . $name . '-thankyou-hero-gfx.jpg);' ?>
+    background: <?php echo 'url(' . $assets . '/' . $name . '-thankyou-hero-gfx.jpg) bottom center;' ?>
+  }
+  .sub-heading {
+    background: <?php echo $rgba_secondary ?>;
   }
 </style>
 <div class="main" id="swift-thankyou">
@@ -111,7 +120,7 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
         <div class="header-copy">
           <h1>Thanks <?php echo $first_name; ?>!</h1>
           <p>A recruiter will be contacting you within 24-48 hours.<br />
-            Click below if you would like to complete our full online application...</p>
+            Click below if you would like to complete our full online application.</p>
           <a href="https://intelliapp.driverapponline.com/c/<?php echo $intellaappPath; ?>?r=<?php echo $intelliapp_referral_code; ?>" class="btn-click-here" target="_blank" style="background: url(<?php echo $assets; ?>/btn-<?php echo $name; ?>-click-here.png);">
           </a>
         </div>
@@ -120,7 +129,9 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
     <div class="middle-container no-background-color">
       <div class="middle-wrap">
         <h4>Call now to speak to a recruiter</h4>
-        <h2 style="color: <?php echo $primary_color ?>"><?php echo $phone; ?></h2>
+        <div class="sub-heading-phone center">
+            <h1 style="color: <?php echo $primary_color ?>"><?php echo $phone ?></h1>
+        </div>
         <p>If you are not ready at this time, you will be receiving an email shortly <br />
           with the above information so you can apply at your convenience.</p>
       </div>
@@ -128,8 +139,12 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
      <div class="middle-container">
       <div class="middle-wrap">
         <h2 class="heading">JOIN OUR COMMUNITY!</h2>
-        <p>If you are not ready at this time, you will be receiving an email shortly <br />
-          with the above information so you can apply at your convenience.</p>
+        <p>Join our fast-growing community on your favorite social networks for news, tips, photos and a place to share your experiences.
+         Or check us out to see what it's like to be a part of the <?php echo $company; ?> family!</p>
+         <div class="social">
+          <a href="<?php echo $fb_url ?>" target="_blank"><img src="<?php echo $assets; ?>/fb-icon-<?php echo $name; ?>.png" alt="facebook" /></a>
+          <a href="<?php echo $ig_url ?>" target="_blank"><img src="<?php echo $assets; ?>/ig-icon-<?php echo $name; ?>.png" alt="instagram" /></a>
+         </div> 
       </div>
     </div>
 
