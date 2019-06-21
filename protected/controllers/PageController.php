@@ -219,24 +219,22 @@ class PageController extends Controller {
                         }
 
                         // background
-                        if ($master->template_type == 'tbl_recent_student' || $type == 'LP1' || $type == 'LP2' || $type == 'LP3') {
-                            if (!empty($model->background)) {
-                                $image = Utils::saveImage($model, 'background', $originalDir, array());
-                                if ($image) {
-                                    $model->background = $image;
-                                }
-                            } else {
-                                $model->background = $_POST['h_b_7'];
+                        if (!empty($model->background)) {
+                            $image = Utils::saveImage($model, 'background', $originalDir, array());
+                            if ($image) {
+                                $model->background = $image;
                             }
+                        } else {
+                            $model->background = $_POST['h_b_7'];
+                        }
 
-                            if (!empty($model->background_mobile)) {
-                                $image = Utils::saveImage($model, 'background_mobile', $originalDir, array());
-                                if ($image) {
-                                    $model->background_mobile = $image;
-                                }
-                            } else {
-                                $model->background_mobile = $_POST['h_b_8'];
+                        if (!empty($model->background_mobile)) {
+                            $image = Utils::saveImage($model, 'background_mobile', $originalDir, array());
+                            if ($image) {
+                                $model->background_mobile = $image;
                             }
+                        } else {
+                            $model->background_mobile = $_POST['h_b_8'];
                         }
                     }
 

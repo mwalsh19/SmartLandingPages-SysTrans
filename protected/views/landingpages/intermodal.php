@@ -7,7 +7,8 @@
     
     $type = '';
     switch ($data->type) {
-        case 'LP1':
+        case 'ST1':
+        case 'ST2':
             $type = 'landing-page-1';
             $name = 'st';
             $company = 'System Transport';
@@ -20,9 +21,9 @@
             $footer_color = '#1d1d1d';
             $website_name = 'systemtrans.com';
             $website_url = '';
-            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/Version-A/images';
+            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/systrans/images';
             break;
-        case 'LP2':
+        case 'JJW1':
             $type = 'landing-page-2';
             $name = 'jjw';
             $company = 'James J. Williams';
@@ -35,9 +36,11 @@
             $footer_color = '#252525';
             $website_name = 'jjwilliams.com';
             $website_url = '';
-            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/Version-B/images';
+            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/jjw/images';
             break;
-        case 'LP3':
+        case 'TWT1':
+        case 'TWT2':
+        case 'TWT3':
             $type = 'landing-page-3';
             $name = 'twt';
             $company = 'TWT Refrigerated Service Transport';
@@ -50,16 +53,19 @@
             $footer_color = '#1d1d1d';
             $website_name = 'twtrans.com';
             $website_url = 'http://twtrans.com';
-            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/Version-C/images';
+            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/twt/images';
             break;
         default:
             $type = 'landing-page-1';
             $name = 'st';
             $primary_color = "#d71e26";
-            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/Version-A/images';
+            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/twt/images';
             break;
     }
     ?>
+
+
+        <link rel="icon" type="image/png" href="<?php echo $assets . '/' . $name ?>-favicon.ico">
 
 <style>
     .main-description h3 span {
@@ -115,15 +121,7 @@
         <div class="top-container">
             <div class="top-container-wrap">
                 <div class="landscape-container" 
-                    <?php if ($data->type == 'LP1') {
-                        echo "style='background: url({$uploadsPath}uploads/systrans_files/{$data->background}) no-repeat;'";
-                    } else if ($data->type == 'LP2') {
-                        echo "style='background: url({$uploadsPath}uploads/systrans_files/{$data->background}) no-repeat;'";
-                    } else if ($data->type == 'LP3') {
-                        echo "style='background: url({$uploadsPath}uploads/systrans_files/{$data->background}) no-repeat;'";
-                    } else {
-                        echo "";
-                    } ?>
+                    <?php echo "style='background: url({$uploadsPath}uploads/systrans_files/{$data->background}) no-repeat;'"; ?>
                 >
                     <div class="landscape-wrap">
                         <div class="main-description">
@@ -149,15 +147,31 @@
         </div>
         <div class="middle-container relative">
             <div class="quote-mobile mobile-only">
-                <img src="<?php echo $assets ?>/quote-experienced-driver.png" />
+                <?php if ($data->type == 'ST1' || $data->type == 'TWT1' || $data->type == 'JJW1') {
+                    echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
+                } ?>
+                <?php if ($data->type == 'ST2' || $data->type == 'TWT2' || $data->type == 'TWT3') {
+                    echo '<img src="' . $assets . '/cdl-a/quote-cdl-a-driver.png" />';
+                } ?>
             </div>
             <div class="row middle-container-wrap clearfix">
-                <div class="col-2 col background-middle" style="background: url(<?php echo $assets; ?>/<?php echo $name; ?>-experienced-driver-gfx.jpg) no-repeat; background-size: cover;"></div>
+                <?php if ($data->type == 'ST2' || $data->type == 'TWT2') {
+                    echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/cdl-a/' . $name . '-recent-cdla-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
+                } else if ($data->type == 'TWT3') {
+                    echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/team/' . $name . '-team-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
+                } else {
+                    echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . '-experienced-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
+                } ?>
                 <div class="col-2 col">
                     <div class="text">
                         <div class="middle-copy flex-center">
                             <div class="quote desktop-only">
-                                <img src="<?php echo $assets ?>/quote-experienced-driver.png" />
+                                <?php if ($data->type == 'ST1' || $data->type == 'TWT1' || $data->type == 'JJW1') {
+                                    echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
+                                } ?>
+                                <?php if ($data->type == 'ST2' || $data->type == 'TWT2' || $data->type == 'TWT3') {
+                                    echo '<img src="' . $assets . '/cdl-a/quote-cdl-a-driver.png" />';
+                                } ?>
                             </div>
                             <div class="copy">
                                 <?php
@@ -196,15 +210,28 @@
                             Experience an award-winning app, The Driver Portal, made for drivers by drivers. With a simple tap, you will receive real-time updates and alerts, access your pay, current trip data, messages/notifications, available PTO, contact information, and so much more! Use the Notification Center to stay in touch when you’re out of your truck. You won’t be sitting in the tractor waiting for dispatch. Instead, conveniently stay informed with your cell while living your life. Access your driver portal anywhere on any device, anytime.</span> 
                         </p>
                     </div>
-                    <div class="box">
-                        <p>
-                            <img src="<?php echo $assets; ?>/icon-<?php echo $name; ?>-referral-program.png" alt="invest-1" />
-                        </p>
-                        <h4>REFERRAL PROGRAM</h4>
-                        <p><span style="color: #abb0b4;">
-                            No one knows good drivers better than you. At <?php echo $company; ?>, our drivers make us who we are – they are the face, heart, and backbone of this company. Their hard work and dedication to get the job done make us proud every day, and set us apart from our competition. If you have met someone you think would be a great addition to the System Transport family, we want an introduction. Your truck driver referrals could earn you up to $1,500!</span>
-                        </p>
-                    </div>
+                    <?php if ($data->type == 'ST1' || $data->type == 'TWT1' || $data->type == 'JJW1') {
+                    echo '<div class="box">
+                            <p>
+                                <img src="' . $assets . '/icon-' . $name . '-referral-program.png" alt="invest-1" />
+                            </p>
+                            <h4>REFERRAL PROGRAM</h4>
+                            <p><span style="color: #abb0b4;">
+                                No one knows good drivers better than you. At ' . $company . ', our drivers make us who we are – they are the face, heart, and backbone of this company. Their hard work and dedication to get the job done make us proud every day, and set us apart from our competition. If you have met someone you think would be a great addition to the System Transport family, we want an introduction. Your truck driver referrals could earn you up to $1,500!</span>
+                            </p>
+                        </div>';
+                    } ?>
+                    <?php if ($data->type == 'ST2' || $data->type == 'TWT2' || $data->type == 'TWT3') {
+                    echo '<div class="box">
+                            <p>
+                                <img src="' . $assets . '/cdl-a/icon-' . $name . '-tuition-reimbursement.png" alt="invest-1" />
+                            </p>
+                            <h4>REFERRAL PROGRAM</h4>
+                            <p><span style="color: #abb0b4;">
+                                Have CDL Tuition debt? We understand it\'s hard to move forward and drive like you mean it when finances are fighting to hold you back. That\'s why we\'ll reimburse up to $5,000 of out of pocket expenses for new graduates and/or drivers waho are still paying off their CDL tuition debt. We deposit 12 monthly payments, starting after just 2 months of employment with our team! Now that\'s how you drive like you mean it.</span>
+                            </p>
+                        </div>';
+                    } ?>
                 </div>
             </div>
         </div>

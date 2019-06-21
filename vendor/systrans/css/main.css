@@ -69,7 +69,7 @@ select.form-control {
   background-color: transparent; }
 .sub-heading {
   background: rgb(33, 38, 52, 0.8);
-  padding: 20px 0;
+  padding: 7px 0;
   position: fixed;
   z-index: 21;
   width: 100%;
@@ -81,10 +81,9 @@ select.form-control {
   padding: 0 10px; }
   .sub-heading-wrap .logo {
     float: left;
-    margin-top: 5px;
     background: url(../Version-A/images/system-trans-logo.png) no-repeat;
     width: 236px;
-    height: 85px; }
+  height: 85px; }
   .sub-heading-wrap .sub-heading-phone {
     float: right; }
   .sub-heading-wrap h1 {
@@ -973,6 +972,9 @@ body.apply-form-showing {
     padding: 0;
     height: 90px;
   }
+
+  .sub-heading-wrap .logo {
+      margin: auto; }
 
   .btnGroup-mobile {
     margin-top: 90px;

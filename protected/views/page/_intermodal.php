@@ -1,8 +1,5 @@
 <?php
 $baseUrl = Yii::app()->getBaseUrl(true);
-if ($model->type !== 'LP1') {
-    Yii::app()->clientScript->registerScriptFile($baseUrl . '/manager/js/search.js', CClientScript::POS_END);
-}
 ?>
 <div class="form-group">
     <label class="col-sm-2 control-label required">Referral code<br> <small>(Lead Form)</small></label>
