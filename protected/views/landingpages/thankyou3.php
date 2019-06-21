@@ -16,56 +16,143 @@ $ga_tp = !empty($_GET['ga_tp']) ? $_GET['ga_tp'] : $ga_tp;
 $email = !empty($_GET['email']) ? $_GET['email'] : $email;
 
 $slug_path = !empty($this->slug_path) ? $this->slug_path : '';
+$template_type = $user->getFlash('template_type');
 ?>
 <?php
 if (strpos($slug, 'swiftrefrigerated') !== false) {
     $intellaappPath = 'centralref';
 } else {
-    $intellaappPath = 'swiftcomp';
+    $intellaappPath = 'tsystem';
 }
 ?>
+
+<?php
+    Yii::app()->clientScript->registerPackage('systrans');
+    $main_directory = Yii::app()->getBaseUrl(true) . '/vendor/systrans';
+    
+    switch ($template_type) {
+        case 'ST1':
+        case 'ST2':
+            $name = 'st';
+            $company = 'System Transport';
+            $primary_color = "#d71e26";
+            $rgba_secondary_full = "rgb(33, 38, 52, 1)";
+            $rgba_secondary = "rgb(33, 38, 52, 0.8)";
+            $overlay_secondary = "rgb(33, 38, 52, .9)";
+            $invest_section_color = '#212634';
+            $invest_section_inner = '#161924';
+            $footer_color = '#1d1d1d';
+            $website_name = 'systemtrans.com';
+            $website_url = '';
+            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/systrans/images';
+            break;
+        case 'JJW1':
+            $name = 'jjw';
+            $company = 'James J. Williams';
+            $primary_color = "#f8e084";
+            $rgba_secondary_full = "rgba(0, 27, 21, 1)";
+            $rgba_secondary = "rgba(0, 27, 21, .75)";
+            $overlay_secondary = "rgba(0, 27, 21, .9)";
+            $invest_section_color = '#005844';
+            $invest_section_inner = '#004c3b';
+            $footer_color = '#252525';
+            $website_name = 'jjwilliams.com';
+            $website_url = '';
+            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/jjw/images';
+            break;
+        case 'TWT1':
+        case 'TWT2':
+        case 'TWT3':
+            $name = 'twt';
+            $company = 'TWT Refrigerated Service Transport';
+            $primary_color = "#ec9f23";
+            $rgba_secondary_full = "rgba(0, 41, 33, 1)";
+            $rgba_secondary = "rgba(0, 41, 33, .75)";
+            $overlay_secondary = "rgba(0, 41, 33, .9)";
+            $invest_section_color = '#01a787';
+            $invest_section_inner = '#00987b';
+            $footer_color = '#1d1d1d';
+            $website_name = 'twtrans.com';
+            $website_url = 'http://twtrans.com';
+            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/twt/images';
+            break;
+        default:
+            $name = 'st';
+            $primary_color = "#d71e26";
+            $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/twt/images';
+            break;
+    }
+    ?>
+<link rel="icon" type="image/png" href="<?php echo $assets . '/' . $name ?>-favicon.ico">
+<style>
+  .btn-click-here {
+    background: <?php echo $primary_color ?>;
+  }
+  .header {
+    background: <?php echo 'url(' . $assets . '/' . $name . '-thankyou-hero-gfx.jpg);' ?>
+  }
+</style>
 <div class="main" id="swift-thankyou">
   <div class="main-wrap">
-    <div class="heading-separator"></div>
+    <!-- header -->
+    <div id="sub-heading" class="sub-heading">
+            <div class="sub-heading-wrap clearfix">
+                <div class="logo" style="background: url(<?php echo $assets; ?>/<?php echo $name; ?>-logo.png) no-repeat"></div>
+                <div class="sub-heading-phone">
+                    <span>Call now to speak with a recruiter</span>
+                    <h1 style="color: <?php echo $primary_color ?>"><?php echo $phone ?></h1>
+                </div>
+            </div>
+    </div>
+
     <div class="header">
       <div class="header-wrap">
-        <div class="logo" <?php echo ($data_type == 'REFRI') ? "style='background:url({$baseUrl}/vendor/recent_student/images/SwiftRefrigerated_logo_white.png) no-repeat;'"
-            : "" ?>></div>
         <div class="checked-icon"></div>
         <div class="header-copy">
           <h1>Thanks <?php echo $first_name; ?>!</h1>
           <p>A recruiter will be contacting you within 24-48 hours.<br />
-            If you would like to complete our full online application...</p>
-          <a href="https://intelliapp2.driverapponline.com/c/<?php echo $intellaappPath; ?>?r=<?php echo $intelliapp_referral_code; ?>" class="btn-click-here" target="_blank">click here</a>
+            Click below if you would like to complete our full online application...</p>
+          <a href="https://intelliapp.driverapponline.com/c/<?php echo $intellaappPath; ?>?r=<?php echo $intelliapp_referral_code; ?>" class="btn-click-here" target="_blank" style="background: url(<?php echo $assets; ?>/btn-<?php echo $name; ?>-click-here.png);">
+          </a>
         </div>
       </div>
     </div>
-    <div class="middle-container">
+    <div class="middle-container no-background-color">
       <div class="middle-wrap">
-        <h4>CALL NOW TO SPEAK WITH A RECRUITER.</h4>
-        <h2><?php echo $phone; ?></h2>
+        <h4>Call now to speak to a recruiter</h4>
+        <h2 style="color: <?php echo $primary_color ?>"><?php echo $phone; ?></h2>
+        <p>If you are not ready at this time, you will be receiving an email shortly <br />
+          with the above information so you can apply at your convenience.</p>
+      </div>
+    </div>
+     <div class="middle-container">
+      <div class="middle-wrap">
+        <h2 class="heading">JOIN OUR COMMUNITY!</h2>
         <p>If you are not ready at this time, you will be receiving an email shortly <br />
           with the above information so you can apply at your convenience.</p>
       </div>
     </div>
 
     <div class="footer-container">
-      <div class="footer-wrap">
-        <div class="top-copy">
-          <a href="<?php echo Yii::app()->createUrl('landing-pages/privacy-policy'); ?>" target="_blank">Privacy Policy</a> |
-
-          <a href="https://intelliapp2.driverapponline.com/c/<?php echo $intellaappPath; ?>?r=<?php echo $intelliapp_referral_code; ?>" target="_blank">Full Online Application</a>
+            <div class="footer-wrap">
+                <div class="phone-number-footer">
+                    <h4>Call now to speak with a recruiter.</h4>
+                    <h3 style="color: <?php echo $primary_color ?>">
+                        <?php echo $phone ?>
+                    </h3>
+                </div>
+                <div class="terms">
+                    <p>
+                        *BY COMPLETING THIS FORM, I AGREE TO RECEIVE CORRESPONDENCE FROM <?php echo $company; ?>. THIS INCLUDES RECEIVING PRERECORDED MESSAGES, TEXT MESSAGES AND EMAILS ABOUT TRUCKING JOB OPPORTUNITIES AT THE CONTACT NUMBER AND ADDRESS I HAVE PROVIDED ABOVE. I UNDERSTAND THAT I AM NOT REQUIRED TO PROVIDE MY CONSENT AS A CONDITION OF SUBMITTING MY APPLICATION.
+                    </p>
+                    <ul>
+                        <li><a href="<?php echo Yii::app()->createUrl('landing-pages/privacy-policy'); ?>" target="_blank">Privacy Policy</a><span>|</span></li>
+                        <li><a target="blank" href="<?php echo $website_url ?>"><?php echo $website_name ?></a><span>|</span></li>
+                        <li><a href="https://intelliapp2.driverapponline.com/c/swiftcomp?r=<?php echo $intelliapp_referral_code ?>" target="_blank">Online Application</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="footer-figure clearfix">
-          <img src="<?php echo $baseUrl ?>vendor/thankyou2/images/footer-left.jpg" class="left">
-          <img src="<?php echo $baseUrl ?>vendor/thankyou2/images/footer-center.jpg" class="center">
-          <img src="<?php echo $baseUrl ?>vendor/thankyou2/images/footer-right.jpg" class="right">
-        </div>
-        <div class="bottom-copy">
-          Swift Transportation Corporation 2200 S 75th Ave, Phoenix, AZ 85043
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 

@@ -442,21 +442,21 @@ class LandingpagesController extends Controller {
         $need_redirect = false;
 
         if ($_POST['form_type'] && !empty($trim_slug)) {
-            $clientID = '62';
-            $password = '5!Mee2TAVy4V#DaofNw5OE35';
+            $clientID = '247';
+            $password = 'sb*V6*0!DacfveNbVgb9';
             $service = 'subject_upload';
             $mode = $isDev ? 'DEV' : 'PROD';
 
             $source = 'LACED Lead';
-            $companyID = $isDev ? '15' : '28680';
-            $companyName = $isDev ? 'Laced Agency' : 'Swift';
+            $companyID = $isDev ? '15' : '806';
+            $companyName = $isDev ? 'Laced Agency' : 'TransSystem';
             $post_address = $isDev ? 'https://devdashboard.tenstreet.com/post/' : 'https://dashboard.tenstreet.com/post/';
-            $appReferrer = ($trim_slug == 'swifttrans') ? 'LACED_DR_swifttrans.com_LeadForm' : $model->referral_code; //REFERRAL CODE
+            $appReferrer = $model->referral_code; //REFERRAL CODE
 
-            if (strpos($trim_slug, 'swiftrefrigerated') !== false) {
+            /*if (strpos($trim_slug, 'swiftrefrigerated') !== false) {
                 $source = 'LACED LeadSR';
                 $companyID = $isDev ? '15' : '1010';
-            }
+            }*/
 
             $givenName = $_POST['first_name'];
             $familyName = $_POST['last_name'];
@@ -467,6 +467,7 @@ class LandingpagesController extends Controller {
             $primaryPhone = $_POST['phone'];
             $moving_violation = $_POST['moving_violation'];
             $cdl_valid = $_POST['cdl_valid'];
+            $template_type = $_POST['template_type'];
 
             if ($trim_slug != 'swifttrans') {
                 switch ($_POST['form_type']) {
@@ -492,6 +493,7 @@ class LandingpagesController extends Controller {
                 $target = 1;
             }
 
+            /*
 
             $xml_data = '
             <TenstreetData>
@@ -560,22 +562,21 @@ class LandingpagesController extends Controller {
             //American driver network customized
             if ($publisher == 'americandrivernetwork') {
                 $need_redirect = true;
-            }
+            } */
 
-            if ($trim_slug != 'swifttrans') {
-                $user = Yii::app()->user;
-                $user->setFlash('phone', $phone);
-                $user->setFlash('intelliapp_referral_code', $model->intelliapp_referral_code);
-                $user->setFlash('first_name', $givenName);
-            }
+            $user = Yii::app()->user;
+            $user->setFlash('phone', $phone);
+            $user->setFlash('intelliapp_referral_code', $model->intelliapp_referral_code);
+            $user->setFlash('first_name', $givenName);
+            $user->setFlash('template_type', $template_type);
 
-            if ($responseObject->Status == 'Accepted') {
-                /* SAVING XML RESPONSE TO LOCAL STORAGE */
+            /* if ($responseObject->Status == 'Accepted') {
+                /* SAVING XML RESPONSE TO LOCAL STORAGE 
                 $model_for_save = new MOutputXml();
                 $model_for_save->tenstreet_xml = $response_xml;
                 $model_for_save->save(false);
 
-                /* SAVING FORM DATA ONLY FOR RHINOLABS */
+                /* SAVING FORM DATA ONLY FOR RHINOLABS
                 if ($publisher == 'rhinolabs') {
                     $newRhinolabsFormModel = new MRhinolabsForm();
                     $newRhinolabsFormModel->referral_code = $appReferrer;
@@ -592,7 +593,7 @@ class LandingpagesController extends Controller {
                     $newRhinolabsFormModel->save(false);
                 }
 
-                /* LEADS COUNTER */
+                /* LEADS COUNTER
                 $currentDate = date('Y-m-d');
                 $lead = MLeads::model()->find('referral_code=:referral_code AND state=:state AND city=:city AND date=:date', array(
                     ':referral_code' => $appReferrer,
@@ -614,7 +615,7 @@ class LandingpagesController extends Controller {
                     $new_lead->save(false);
                 }
 
-                $this->formHasSend = true;
+                $this->formHasSend = true; */
 
                 if ($need_redirect) {
                     $params = '?target=' . $target;
@@ -626,7 +627,7 @@ class LandingpagesController extends Controller {
                     $params.= '&type=' . $type;
                     $params.= '&data_type=' . !empty($data_type) ? $data_type : false;
                     $params.= '&email=' . $email;
-                    $params.= '&ga_tp=' . !empty($model->ga_tp) ? $model->ga_tp : false;
+                    $params.= '&ga_tp=' . !empty($model->ga_tp) ? $model->ga_tp : false; 
 
                     $this->redirect(Yii::app()->request->urlReferrer . $params);
                 } else {
@@ -639,11 +640,11 @@ class LandingpagesController extends Controller {
                         'ga_tp' => !empty($model->ga_tp) ? $model->ga_tp : false
                             )
                     );
-                }
+                } /*
             } else {
                 Yii::app()->user->setFlash('status', 'rejected');
                 $this->redirect(Yii::app()->request->urlReferrer);
-            }
+            } */
         }
     }
 

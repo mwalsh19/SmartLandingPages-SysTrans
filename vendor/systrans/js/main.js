@@ -2,6 +2,12 @@ $(document).ready(function() {
 
 		$(window).scroll(function() {
 			if ($(window).width() > 950) {
+
+                if ($(this).scrollTop() > 200) {
+                    $('#apply-btn2').fadeIn(500);
+                } else {
+                    $('#apply-btn2').fadeOut(500);
+                }
 	          
                 if ($('#sub-heading').attr('data-name') === 'st') {
                     if ($(this).scrollTop() > 0) {
@@ -52,7 +58,8 @@ $(document).ready(function() {
             o = navigator.userAgent.toLowerCase(),
             p = o.indexOf("android") > -1,
             q = navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i);
-        p || q ? c() : ($(window).resize(c), $(window).trigger("resize")), $(window).resize(b), b(), $("#apply-btn").on("click", function() {
+        p || q ? c() : ($(window).resize(c), $(window).trigger("resize")), $(window).resize(b), b(), $("#apply-btn,#apply-btn2").on("click", function() {
+            window.scrollTo(0, 0); 
             var b = e.val();
             return "" == b ? (alert("Please enter your email"), !1) : a(b) ? (h.addClass("apply-form-showing"), d.fadeIn(), g.val(b), void f.fadeIn()) : (alert("Please enter a valid email"), !1)
         }), d.on("click", function() {

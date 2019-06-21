@@ -25,7 +25,7 @@
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #999898;
+  color: #ffffff;
   background-color: #fff;
   background-image: none;
   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
@@ -48,7 +48,6 @@
   border: 0;
   outline: none;
   text-decoration: none;
-  background: #fec90e;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -524,6 +523,18 @@ body.apply-form-showing {
 
 .btnGroup-mobile {
   display: none; }
+
+  .quickform-desktop {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    z-index: 5;
+  }
+
+  #apply-btn2 {
+    display: none;
+  }
 
 .form-heading {
   display: none; }

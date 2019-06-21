@@ -95,6 +95,10 @@
         background: <?php echo $rgba_secondary_full ?> !important;
     }
 
+    .form-control-btn {
+        background: <?php echo $primary_color ?>;
+    }
+
     @media screen and (max-width: 950px) {
         .sub-heading {
             background: <?php echo $rgba_secondary_full ?>;
@@ -117,6 +121,9 @@
                 <a href="tel:<?php echo $data->phone ?>" id="callBtn" class="form-control-btn btn">Click to Call</a>
                 <a href="#quickForm" id="quickFormBtn" class="form-control-btn btn">Quick Form</a>
             </div>
+        </div>
+        <div class="quickform-desktop desktop-only" id="form-desktop-trigger">
+            <a href="javascript:void(0);" id="apply-btn2" class="form-control-btn btn">Quick Form</a>
         </div>
         <div class="top-container">
             <div class="top-container-wrap">
@@ -415,10 +422,11 @@
                             <div class="cdl-valid-control col-half-desktop form-margin">
                                 <select name="moving_violation" class="form-control">
                                     <option>Years of Experience?</option>
-                                    <option value="Beginner">1-3</option>
-                                    <option value="Novice">3-5</option>
-                                    <option value="Intermediate">5-9</option>
-                                    <option value="Experienced">10+</option>
+                                    <option value="0-6-months">0-6 Months</option>
+                                    <option value="6-12-months">6-12 Months</option>
+                                    <option value="1-3-years">1-3 Years</option>
+                                    <option value="3-5 Years">3-5-years</option>
+                                    <option value="5-plus-years">5+</option>
                                 </select>
                             </div>
                             <div class="cdl-valid-control col-half-desktop">
@@ -430,6 +438,7 @@
                             </div>
                         </div>
                         <input type="hidden" name="form_type" value="T3">
+                        <input type="hidden" name="template_type" value="<?php echo $data->type ?>">
                         <input id="submit" type="submit" value="Submit Application" class="form-control-btn btn">
                     </form>
                 </div>
