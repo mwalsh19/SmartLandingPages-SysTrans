@@ -453,6 +453,7 @@ class LandingpagesController extends Controller {
             $post_address = $isDev ? 'https://devdashboard.tenstreet.com/post/' : 'https://dashboard.tenstreet.com/post/';
             $appReferrer = $model->referral_code; //REFERRAL CODE
 
+
             /*if (strpos($trim_slug, 'swiftrefrigerated') !== false) {
                 $source = 'LACED LeadSR';
                 $companyID = $isDev ? '15' : '1010';
@@ -536,9 +537,6 @@ class LandingpagesController extends Controller {
                 </ApplicationData>
             </TenstreetData>';
 
-            // var_dump($xml_data);
-            // die();
-
             $ch = curl_init();
 
             curl_setopt($ch, CURLOPT_URL, $post_address);
@@ -555,9 +553,6 @@ class LandingpagesController extends Controller {
 
 
             $responseObject = simplexml_load_string($response_xml);
-
-            // var_dump($responseObject);
-            // die();
 
             //Steelhousepilot
             if ($trim_slug == 'steelhousepilot') {

@@ -1,5 +1,5 @@
 <?php
-$this->setPageTitle('Landing Pages');
+$this->setPageTitle('System Transport - Smart Landing Pages');
 Yii::app()->clientScript->registerPackage('dataTables');
 
 Yii::app()->clientScript->registerScript('dataTableInit', '

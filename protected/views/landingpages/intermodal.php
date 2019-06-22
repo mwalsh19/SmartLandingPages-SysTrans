@@ -4,6 +4,7 @@
     Yii::app()->clientScript->registerPackage('systrans');
     $main_directory = Yii::app()->getBaseUrl(true) . '/vendor/systrans';
     $uploadsPath = Yii::app()->getBaseUrl(true) . '/';
+    $intellaappPath = 'tsystem';
     
     $type = '';
     switch ($data->type) {
@@ -20,7 +21,8 @@
             $invest_section_inner = '#161924';
             $footer_color = '#1d1d1d';
             $website_name = 'systemtrans.com';
-            $website_url = '';
+            $privacy_url = 'https://systemtrans.com/privacy-policy/';
+            $website_url = 'https://systemtrans.com';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/systrans/images';
             break;
         case 'JJW1':
@@ -35,7 +37,8 @@
             $invest_section_inner = '#004c3b';
             $footer_color = '#252525';
             $website_name = 'jjwilliams.com';
-            $website_url = '';
+            $website_url = 'https://jjwilliams.com';
+            $privacy_url = 'https://jjwilliams.com/privacy-policy/';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/jjw/images';
             break;
         case 'TWT1':
@@ -52,7 +55,8 @@
             $invest_section_inner = '#00987b';
             $footer_color = '#1d1d1d';
             $website_name = 'twtrans.com';
-            $website_url = 'http://twtrans.com';
+            $website_url = 'https://twtrans.com';
+            $privacy_url = 'https://twtrans.com/privacy-policy/';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/twt/images';
             break;
         default:
@@ -123,7 +127,7 @@
             </div>
         </div>
         <div class="quickform-desktop desktop-only" id="form-desktop-trigger">
-            <a href="javascript:void(0);" id="apply-btn2" class="form-control-btn btn">Quick Form</a>
+            <a href="#main-description" id="apply-btn2" class="form-control-btn btn">Quick Form</a>
         </div>
         <div class="top-container">
             <div class="top-container-wrap">
@@ -131,7 +135,7 @@
                     <?php echo "style='background: url({$uploadsPath}uploads/systrans_files/{$data->background}) no-repeat;'"; ?>
                 >
                     <div class="landscape-wrap">
-                        <div class="main-description">
+                        <div id="main-description" class="main-description">
                             <div class="primary-description">
                                 <h3><?php echo $data->main_title; ?></h3>
                             </div>
@@ -457,34 +461,14 @@
                         *BY COMPLETING THIS FORM, I AGREE TO RECEIVE CORRESPONDENCE FROM <?php echo $company; ?>. THIS INCLUDES RECEIVING PRERECORDED MESSAGES, TEXT MESSAGES AND EMAILS ABOUT TRUCKING JOB OPPORTUNITIES AT THE CONTACT NUMBER AND ADDRESS I HAVE PROVIDED ABOVE. I UNDERSTAND THAT I AM NOT REQUIRED TO PROVIDE MY CONSENT AS A CONDITION OF SUBMITTING MY APPLICATION.
                     </p>
                     <ul>
-                        <li><a href="<?php echo Yii::app()->createUrl('landing-pages/privacy-policy'); ?>" target="_blank">Privacy Policy</a><span>|</span></li>
+                        <li><a href="<?php echo $privacy_url; ?>" target="_blank">Privacy Policy</a><span>|</span></li>
                         <li><a target="blank" href="<?php echo $website_url ?>"><?php echo $website_name ?></a><span>|</span></li>
-                        <li><a href="https://intelliapp2.driverapponline.com/c/swiftcomp?r=<?php echo $data->intelliapp_referral_code ?>" target="_blank">Online Application</a></li>
+                        <li><a href="https://intelliapp2.driverapponline.com/c/<?php echo $intellaappPath; ?>?r=<?php echo $data->intelliapp_referral_code ?>" target="_blank">Online Application</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<?php
-    /* THIS GOOGLE ANALYTICS CODE IS ONLY FOR SPECIAL OFFERS */
-    if ($data->type == 'SO' && !empty($data->ga_lp) && !isset($_GET['no-track'])) {
-        ?>
-<script> (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', '<?php echo $data->ga_lp; ?>', 'auto');
-    ga('send', 'pageview');
-</script>
-<?php
-    }
-    ?>
 <?php $this->renderPartial('_specific_converion_codes', array('slug' => $slug)); ?>
 

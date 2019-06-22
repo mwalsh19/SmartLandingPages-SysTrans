@@ -17,13 +17,7 @@ $email = !empty($_GET['email']) ? $_GET['email'] : $email;
 
 $slug_path = !empty($this->slug_path) ? $this->slug_path : '';
 $template_type = $user->getFlash('template_type');
-?>
-<?php
-if (strpos($slug, 'swiftrefrigerated') !== false) {
-    $intellaappPath = 'centralref';
-} else {
-    $intellaappPath = 'tsystem';
-}
+$intellaappPath = 'tsystem';
 ?>
 
 <?php
@@ -43,7 +37,8 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
             $invest_section_inner = '#161924';
             $footer_color = '#1d1d1d';
             $website_name = 'systemtrans.com';
-            $website_url = '';
+            $privacy_url = 'https://systemtrans.com/privacy-policy/';
+            $website_url = 'https://systemtrans.com';
             $fb_url = '';
             $ig_url = '';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/systrans/images';
@@ -59,7 +54,8 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
             $invest_section_inner = '#004c3b';
             $footer_color = '#252525';
             $website_name = 'jjwilliams.com';
-            $website_url = '';
+            $website_url = 'https://jjwilliams.com';
+            $privacy_url = 'https://jjwilliams.com/privacy-policy/';
             $fb_url = '';
             $ig_url = '';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/jjw/images';
@@ -77,7 +73,8 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
             $invest_section_inner = '#00987b';
             $footer_color = '#1d1d1d';
             $website_name = 'twtrans.com';
-            $website_url = 'http://twtrans.com';
+            $website_url = 'https://twtrans.com';
+            $privacy_url = 'https://twtrans.com/privacy-policy/';
             $fb_url = '';
             $ig_url = '';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/twt/images';
@@ -95,10 +92,14 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
     background: <?php echo $primary_color ?>;
   }
   .header {
-    background: <?php echo 'url(' . $assets . '/' . $name . '-thankyou-hero-gfx.jpg) bottom center;' ?>
+    background-size: cover;
+    background: <?php echo 'url(' . $assets . '/' . $name . '-thankyou-hero-gfx.jpg) no-repeat bottom'; ?>
   }
   .sub-heading {
     background: <?php echo $rgba_secondary ?>;
+  }
+  #applyNowBtn {
+    background: <?php echo $primary_color ?>;
   }
 </style>
 <div class="main" id="swift-thankyou">
@@ -121,7 +122,7 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
           <h1>Thanks <?php echo $first_name; ?>!</h1>
           <p>A recruiter will be contacting you within 24-48 hours.<br />
             Click below if you would like to complete our full online application.</p>
-          <a href="https://intelliapp.driverapponline.com/c/<?php echo $intellaappPath; ?>?r=<?php echo $intelliapp_referral_code; ?>" class="btn-click-here" target="_blank" style="background: url(<?php echo $assets; ?>/btn-<?php echo $name; ?>-click-here.png);">
+          <a target="_blank" href="https://intelliapp.driverapponline.com/c/<?php echo $intellaappPath; ?>?r=<?php echo $intelliapp_referral_code; ?>" id="applyNowBtn" class="form-control-btn btn">Apply Now</a>
           </a>
         </div>
       </div>
@@ -161,9 +162,9 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
                         *BY COMPLETING THIS FORM, I AGREE TO RECEIVE CORRESPONDENCE FROM <?php echo $company; ?>. THIS INCLUDES RECEIVING PRERECORDED MESSAGES, TEXT MESSAGES AND EMAILS ABOUT TRUCKING JOB OPPORTUNITIES AT THE CONTACT NUMBER AND ADDRESS I HAVE PROVIDED ABOVE. I UNDERSTAND THAT I AM NOT REQUIRED TO PROVIDE MY CONSENT AS A CONDITION OF SUBMITTING MY APPLICATION.
                     </p>
                     <ul>
-                        <li><a href="<?php echo Yii::app()->createUrl('landing-pages/privacy-policy'); ?>" target="_blank">Privacy Policy</a><span>|</span></li>
+                        <li><a href="<?php echo $privacy_url; ?>" target="_blank">Privacy Policy</a><span>|</span></li>
                         <li><a target="blank" href="<?php echo $website_url ?>"><?php echo $website_name ?></a><span>|</span></li>
-                        <li><a href="https://intelliapp2.driverapponline.com/c/swiftcomp?r=<?php echo $intelliapp_referral_code ?>" target="_blank">Online Application</a></li>
+                        <li><a href="https://intelliapp.driverapponline.com/c/<?php echo $intellaappPath; ?>?r=<?php echo $intelliapp_referral_code; ?>" target="_blank">Online Application</a></li>
                     </ul>
                 </div>
             </div>
@@ -171,25 +172,6 @@ if (strpos($slug, 'swiftrefrigerated') !== false) {
   </div>
 </div>
 
-<?php
-/* THIS GOOGLE ANALYTICS CODE IS ONLY FOR SPECIAL OFFERS */
-if ($data_type == 'SO' && strlen($ga_tp) > 0 && !isset($_GET['no-track'])) {
-    ?>
-    <script> (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-        ga('create', '<?php echo $ga_tp; ?>', 'auto');
-        ga('send', 'pageview');</script>
-    <?php
-}
-?>
 <?php
 $this->renderPartial('_conversion_codes', array('publisher' => $publisher, 'type' => $type, 'email' => $email,
     'slug_path' => $slug_path));

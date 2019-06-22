@@ -27,6 +27,9 @@
 
 .mobile-logo {
   display: none; }
+  .header-copy {
+    text-align: center;
+  }
 
 .header {
   background: url(../images/header.jpg) no-repeat;
@@ -51,14 +54,14 @@
     margin: 0 auto; }
 
 .header-copy h1 {
-  font-family: "HelveticaNeueW01-77BdCn_692722";
+  font-family: Conv_Vitesse-Black;
   text-align: center;
-  font-size: 72px;
+  font-size: 56px;
   color: #fff;
   margin: 0; }
 .header-copy p {
   font-family: helvetica;
-  font-size: 21px;
+  font-size: 18px;
   text-align: center;
   color: #fff;
   line-height: 30px;
@@ -132,19 +135,25 @@
   font-size: 36px;
   font-family: Conv_Vitesse-Bold;
 }
+.sub-heading-phone h1 {
+  font-size: 56px;
+  font-family: helvetica;
+  font-weight: bold;
+}
 .middle-container h4 {
   max-width: 410px;
   margin: 0 auto;
   font-family: helvetica;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1;
   color: #000;
   text-align: center;
   font-weight: bold; }
 .middle-container p {
-  font-family: Arial;
+  font-family: helvetica;
   text-align: center;
   font-size: 18px;
+  line-height: 1.5em;
   color: #3d434d; }
 
 .top-copy {
@@ -181,7 +190,6 @@
     height: 50px;
     margin: 0 auto;
     background-size: 100%; }
-
   .header-copy h1 {
     font-size: 30px; }
   .header-copy p {
