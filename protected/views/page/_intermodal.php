@@ -211,6 +211,7 @@ $baseUrl = Yii::app()->getBaseUrl(true);
                 <div class="col-sm-8">
                     <label class="control-label required">Title</label>
                     <?php echo $form->textField($model, 'benef1_caption_title', array('class' => 'form-control input-sm')); ?>
+                    <?php echo $form->error($model, 'benef1_caption_title', array('class' => 'help-block errorMessage')); ?>
                     <label class="control-label required">Caption</label>
                     <?php
                     echo $form->textArea($model, 'benef1_caption', array('class' => 'form-control input-sm', 'rows' => 5));
@@ -245,6 +246,7 @@ $baseUrl = Yii::app()->getBaseUrl(true);
                 <div class="col-sm-8">
                     <label class="control-label required">Title</label>
                     <?php echo $form->textField($model, 'benef2_caption_title', array('class' => 'form-control input-sm')); ?>
+                    <?php echo $form->error($model, 'benef2_caption_title', array('class' => 'help-block errorMessage')); ?>
                     <label class="control-label required">Caption</label>
                     <?php
                     echo $form->textArea($model, 'benef2_caption', array('class' => 'form-control input-sm', 'rows' => 5));
@@ -279,6 +281,7 @@ $baseUrl = Yii::app()->getBaseUrl(true);
                 <div class="col-sm-8">
                     <label class="control-label required">Title</label>
                     <?php echo $form->textField($model, 'benef3_caption_title', array('class' => 'form-control input-sm')); ?>
+                    <?php echo $form->error($model, 'benef3_caption_title', array('class' => 'help-block errorMessage')); ?>
                     <label class="control-label required">Caption</label>
                     <?php
                     echo $form->textArea($model, 'benef3_caption', array('class' => 'form-control input-sm', 'rows' => 5));
@@ -313,6 +316,7 @@ $baseUrl = Yii::app()->getBaseUrl(true);
                 <div class="col-sm-8">
                     <label class="control-label required">Title</label>
                     <?php echo $form->textField($model, 'benef4_caption_title', array('class' => 'form-control input-sm')); ?>
+                    <?php echo $form->error($model, 'benef4_caption_title', array('class' => 'help-block errorMessage')); ?>
                     <label class="control-label required">Caption</label>
                     <?php
                     echo $form->textArea($model, 'benef4_caption', array('class' => 'form-control input-sm', 'rows' => 5));
@@ -347,6 +351,7 @@ $baseUrl = Yii::app()->getBaseUrl(true);
                 <div class="col-sm-8">
                     <label class="control-label required">Title</label>
                     <?php echo $form->textField($model, 'benef5_caption_title', array('class' => 'form-control input-sm')); ?>
+                    <?php echo $form->error($model, 'benef5_caption_title', array('class' => 'help-block errorMessage')); ?>
                     <label class="control-label required">Caption</label>
                     <?php
                     echo $form->textArea($model, 'benef5_caption', array('class' => 'form-control input-sm', 'rows' => 5));
@@ -381,6 +386,7 @@ $baseUrl = Yii::app()->getBaseUrl(true);
                 <div class="col-sm-8">
                     <label class="control-label required">Title</label>
                     <?php echo $form->textField($model, 'benef6_caption_title', array('class' => 'form-control input-sm')); ?>
+                    <?php echo $form->error($model, 'benef6_caption_title', array('class' => 'help-block errorMessage')); ?>
                     <label class="control-label required">Caption</label>
                     <?php
                     echo $form->textArea($model, 'benef6_caption', array('class' => 'form-control input-sm', 'rows' => 5));

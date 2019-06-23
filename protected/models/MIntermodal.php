@@ -20,13 +20,16 @@
  * @property string $benef4_figure
  * @property string $benef5_figure
  * @property string $benef6_figure
+ * @property string $benef1_caption_title
+ * @property string $benef2_caption_title
+ * @property string $benef3_caption_title
+ * @property string $benef4_caption_title
+ * @property string $benef5_caption_title
  * @property string $benef6_caption_title
  * @property string $body_copy
  * @property string $phone
  * @property string $create_date
  * @property string $id_master
- * @property string $region_graphic
-  * @property string $region_graphic_mobile
  *
  * The followings are the available model relations:
  * @property TblMaster $idMaster
@@ -41,18 +44,16 @@ class MIntermodal extends MIntermodalBase {
     public $h_b_6;
     public $h_b_7;
     public $h_b_9;
-    public $h_b_10;
-    public $search_address_input;
 
     public function rules() {
         return array(
-            array('type, referral_code, intelliapp_referral_code, main_title, main_description, benef1_caption, benef2_caption, benef3_caption, benef4_caption, benef5_caption, benef6_caption, body_copy, phone', 'required', 'message' => 'The field is required'),
+            array('referral_code, intelliapp_referral_code, main_title, main_description, benef1_caption, benef2_caption, benef3_caption, benef4_caption, benef5_caption, benef6_caption, benef1_caption_title, benef2_caption_title, benef3_caption_title, benef4_caption_title, benef5_caption_title, benef6_caption_title, body_copy, phone', 'required', 'message' => 'The field is required'),
             array('benef1_caption, benef2_caption, benef3_caption, benef4_caption, benef5_caption, benef6_caption', 'length', 'max' => 400),
             array('benef1_figure, benef2_figure, benef3_figure, benef4_figure, benef5_figure, benef6_figure', 'length', 'max' => 64),
-            array('sub_title, ga_lp, ga_tp, benef1_caption_title, benef2_caption_title, benef3_caption_title, benef4_caption_title, benef5_caption_title, benef6_caption_title', 'required', 'message' => 'The field is required'),
+            array('sub_title, ga_lp, ga_tp', 'required', 'message' => 'The field is required'),
             array('benef1_figure, benef2_figure, benef3_figure, benef4_figure, benef5_figure, benef6_figure', 'file', 'safe' => true, 'types' => 'jpg, png', 'maxSize' => 5242880, 'tooLarge' => Yii::t('general', 'The file size exceeds the allowed'), 'wrongType' => Yii::t('general', 'Only allow files with extension jpg'), 'allowEmpty' => true, 'on' => 'update'),
             array('background, region_graphic', 'file', 'safe' => true, 'types' => 'jpg, png', 'maxSize' => 5242880, 'tooLarge' => Yii::t('general', 'The file size exceeds the allowed'), 'wrongType' => Yii::t('general', 'Only allow files with extension jpg'), 'allowEmpty' => true, 'on' => 'update'),
-            array('h_b_1, h_b_2, h_b_3, h_b_4, h_b_5, h_b_6, h_b_7, h_b_9, h_b_10, id_master, map_source, search_address_input, sub_title, ga_lp, ga_tp', 'safe')
+            array('h_b_1, h_b_2, h_b_3, h_b_4, h_b_5, h_b_6, h_b_7, h_b_9, id_master, sub_title, ga_lp, ga_tp', 'safe')
         );
     }
 
@@ -80,8 +81,6 @@ class MIntermodal extends MIntermodalBase {
             'benef4_caption_title' => 'Benef4 Caption Title',
             'benef5_caption_title' => 'Benef5 Caption Title',
             'benef6_caption_title' => 'Benef6 Caption Title',
-            'region_graphic' => 'Region Graphic',
-            'region_graphic_mobile' => 'Mobile Region Graphic',
             'body_copy' => 'Body Copy',
             'phone' => 'Phone',
             'create_date' => 'Create Date',

@@ -109,10 +109,10 @@ class PageController extends Controller {
                 $model->benef4_figure = CUploadedFile::getInstance($model, 'benef4_figure');
                 $model->benef5_figure = CUploadedFile::getInstance($model, 'benef5_figure');
                 $model->benef6_figure = CUploadedFile::getInstance($model, 'benef6_figure');
-                $model->region_graphic = CUploadedFile::getInstance($model, 'region_graphic');
-                $model->region_graphic_mobile = CUploadedFile::getInstance($model, 'region_graphic_mobile');
                 $model->background = CUploadedFile::getInstance($model, 'background');
                 $model->background_mobile = CUploadedFile::getInstance($model, 'background_mobile');
+                $model->region_graphic = CUploadedFile::getInstance($model, 'region_graphic');
+                $model->region_graphic_mobile = CUploadedFile::getInstance($model, 'region_graphic_mobile');
             }
             if ($master->validate()) {
                 if ($model->validate()) {
@@ -325,7 +325,11 @@ class PageController extends Controller {
                 $model->region_graphic = CUploadedFile::getInstance($model, 'region_graphic');
                 $model->region_graphic_mobile = CUploadedFile::getInstance($model, 'region_graphic_mobile');
             }
+            //var_dump($model);
+            //die();
             if ($master_model->validate()) {
+                //var_dump($model->validate());
+                //die();
                 if ($model->validate()) {
                     if ($master->template_type == 'tbl_recent_student' || $master->template_type == 'tbl_intermodal') {
                         $originalDir = Yii::getPathOfAlias($dir_files);
@@ -383,24 +387,6 @@ class PageController extends Controller {
                         } else {
                             $model->benef6_figure = $_POST['h_b_6'];
                         }
-                        // region_graphic
-                        if (!empty($model->region_graphic)) {
-                            $image = Utils::saveImage($model, 'region_graphic', $originalDir, array());
-                            if ($image) {
-                                $model->region_graphic = $image;
-                            }
-                        } else {
-                            $model->region_graphic = $_POST['h_b_9'];
-                        }
-                        // region_graphic_mobile
-                        if (!empty($model->region_graphic_mobile)) {
-                            $image = Utils::saveImage($model, 'region_graphic_mobile', $originalDir, array());
-                            if ($image) {
-                                $model->region_graphic_mobile = $image;
-                            }
-                        } else {
-                            $model->region_graphic_mobile = $_POST['h_b_10'];
-                        }
                         // background
                         if (!empty($model->background)) {
                             $image = Utils::saveImage($model, 'background', $originalDir, array());
@@ -417,6 +403,24 @@ class PageController extends Controller {
                             }
                         } else {
                             $model->background_mobile = !empty($_POST['h_b_8']) ? $_POST['h_b_8'] : '';
+                        }
+                        // region_graphic
+                        if (!empty($model->region_graphic)) {
+                            $image = Utils::saveImage($model, 'region_graphic', $originalDir, array());
+                            if ($image) {
+                                $model->region_graphic = $image;
+                            }
+                        } else {
+                            $model->region_graphic = !empty($_POST['h_b_9']) ? $_POST['h_b_9'] : '';
+                        }
+                        // region_graphic_mobile
+                        if (!empty($model->region_graphic_mobile)) {
+                            $image = Utils::saveImage($model, 'region_graphic_mobile', $originalDir, array());
+                            if ($image) {
+                                $model->region_graphic_mobile = $image;
+                            }
+                        } else {
+                            $model->region_graphic_mobile = !empty($_POST['h_b_10']) ? $_POST['h_b_10'] : '';
                         }
                     }
                     if ($master_model->save()) {
@@ -436,8 +440,8 @@ class PageController extends Controller {
                         $model->benef6_figure = $_POST['h_b_6'];
                         $model->background = !empty($_POST['h_b_7']) ? $_POST['h_b_7'] : '';
                         $model->background_mobile = !empty($_POST['h_b_8']) ? $_POST['h_b_8'] : '';
-                        $model->benef5_figure = $_POST['h_b_9'];
-                        $model->benef6_figure = $_POST['h_b_10'];
+                        $model->region_graphic = !empty($_POST['h_b_9']) ? $_POST['h_b_9'] : '';
+                        $model->region_graphic_mobile = !empty($_POST['h_b_10']) ? $_POST['h_b_10'] : '';
                     }
                 }
             }
