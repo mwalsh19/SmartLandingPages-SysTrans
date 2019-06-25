@@ -209,7 +209,7 @@
                             <img src="<?php echo $assets; ?>/icon-<?php echo $name; ?>-truck-checkmark.png" alt="invest-1" />
                         </p>
                         <h4>METICULOUSLY MAINTAINED<br>FOR YOUR SAFETY</h4>
-                        <p><span style="color: #abb0b4;">
+                        <p><span style="color: #fff;">
                             Your safety is paramount to us. Every tractor has a lane departure & forward collision warning system, hard brake monitoring, and a satellite communication device installed. We have invested in building our own shops, staffing a 24/7/365 road service staff, and we have developed a robust network of outside shops to keep our trucks rolling. If a truck needs repairs, it’s not going out until it is 100% ready to the hit the road again safely with you at the wheel. You can count on that.</span>
                         </p>
                     </div>
@@ -218,28 +218,28 @@
                             <img src="<?php echo $assets; ?>/icon-<?php echo $name; ?>-driver-portal.png" alt="invest-1" />
                         </p>
                         <h4>DRIVER PORTAL: SUPPORT 24/7</h4>
-                        <p><span style="color: #abb0b4;">
+                        <p><span style="color: #fff;">
                             Experience an award-winning app, The Driver Portal, made for drivers by drivers. With a simple tap, you will receive real-time updates and alerts, access your pay, current trip data, messages/notifications, available PTO, contact information, and so much more! Use the Notification Center to stay in touch when you’re out of your truck. You won’t be sitting in the tractor waiting for dispatch. Instead, conveniently stay informed with your cell while living your life. Access your driver portal anywhere on any device, anytime.</span> 
                         </p>
                     </div>
-                    <?php if ($data->type == 'ST1' || $data->type == 'TWT1' || $data->type == 'JJW1') {
+                    <?php if ($data->type == 'ST1' || $data->type == 'TWT1' || $data->type == 'JJW1' || $data->type == 'STTeam' || $data->type == 'TWT3') {
                     echo '<div class="box">
                             <p>
                                 <img src="' . $assets . '/icon-' . $name . '-referral-program.png" alt="invest-1" />
                             </p>
-                            <h4>REFERRAL PROGRAM</h4>
-                            <p><span style="color: #abb0b4;">
+                            <h4>DRIVER REFERRAL PROGRAM</h4>
+                            <p><span style="color: #fff;">
                                 No one knows good drivers better than you. At ' . $company . ', our drivers make us who we are – they are the face, heart, and backbone of this company. Their hard work and dedication to get the job done make us proud every day, and set us apart from our competition. If you have met someone you think would be a great addition to the System Transport family, we want an introduction. Your truck driver referrals could earn you up to $1,500!</span>
                             </p>
                         </div>';
                     } ?>
-                    <?php if ($data->type == 'ST2' || $data->type == 'STTeam' || $data->type == 'TWT2' || $data->type == 'TWT3') {
+                    <?php if ($data->type == 'ST2' || $data->type == 'TWT2') {
                     echo '<div class="box">
                             <p>
                                 <img src="' . $assets . '/cdl-a/icon-' . $name . '-tuition-reimbursement.png" alt="invest-1" />
                             </p>
                             <h4>TUITION REIMBURSEMENT</h4>
-                            <p><span style="color: #abb0b4;">
+                            <p><span style="color: #fff;">
                                 Have CDL Tuition debt? We understand it\'s hard to move forward and drive like you mean it when finances are fighting to hold you back. That\'s why our industry-leading program will reimburse up to $5,000 of out of pocket expenses for new graduates and/or drivers who are still paying off their CDL tuition debt. We deposit 12 monthly payments, starting after just 2 months of employment with our team! Now that\'s how you drive like you mean it.</span>
                             </p>
                         </div>';
