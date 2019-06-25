@@ -35,5 +35,5 @@
 </div>
 
 <div style="margin: 75px auto 0px auto; max-width: 705px;">
-    <img src="<?php Yii::app()->baseurl; ?>/manager/images/laced_footer.png">
+    <img src="<?php if ($_SERVER['SERVER_NAME'] != 'localhost') { echo 'landing-pages'; } ?>/manager/images/laced_footer.png">
 </div>

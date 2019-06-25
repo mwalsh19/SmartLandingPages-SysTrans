@@ -248,8 +248,8 @@ return array(
         'db' => array(
             'connectionString' => 'mysql:host=localhost;dbname=systemtransdb',
             'emulatePrepare' => true,
-            'username' => 'laced_agency',
-            'password' => 'a,zwaeyVL87S',
+            'username' => 'root',
+            'password' => 'root',
             'charset' => 'utf8',
             'enableParamLogging' => false
         ),

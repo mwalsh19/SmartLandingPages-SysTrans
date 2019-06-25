@@ -1,11 +1,17 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 // change the following paths if necessary
 $yii = dirname(__FILE__) . '/yii-1.1.14.f0fee9/framework/yii.php';
-$config_static = dirname(__FILE__) . '/protected/config/main.php';
+
+if ($_SERVER['SERVER_NAME'] == 'localhost') {
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+	defined('YII_DEBUG') or define('YII_DEBUG', true);
+	defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL', 3);
+	$config_static = dirname(__FILE__) . '/protected/config/dev.php';
+} else {
+	$config_static = dirname(__FILE__) . '/protected/config/main.php';
+}
 $config_dynamic = dirname(__FILE__) . '/protected/config/config.json';
 
 // remove the following lines when in production mode

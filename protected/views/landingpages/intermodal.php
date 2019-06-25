@@ -427,10 +427,10 @@
                             <div class="cdl-valid-control col-half-desktop form-margin">
                                 <select name="years_experience" class="form-control">
                                     <option>Years of Experience?</option>
-                                    <option value="0-6-months">0-6 Months</option>
-                                    <option value="6-12-months">6-12 Months</option>
-                                    <option value="1-3-years">1-3 Years</option>
-                                    <option value="3-5 Years">3-5-years</option>
+                                    <option value="0-6-months">0 - 6 Months</option>
+                                    <option value="6-12-months">6 - 12 Months</option>
+                                    <option value="1-3-years">1 - 3 Years</option>
+                                    <option value="3-5 Years">3 - 5 Years</option>
                                     <option value="5-plus-years">5+</option>
                                 </select>
                             </div>

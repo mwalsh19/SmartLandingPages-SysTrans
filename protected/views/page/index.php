@@ -200,7 +200,11 @@ $this->renderPartial('_alerts');
                         </thead>
                         <tbody>
                             <?php
-                            $baseUrl = Yii::app()->getBaseUrl(true) . '/landing-pages/';
+                            if ($_SERVER['SERVER_NAME'] == 'localhost') {
+                                $baseUrl = Yii::app()->getBaseUrl(true) . '/landing-pages/';
+                            } else {
+                                $baseUrl = Yii::app()->getBaseUrl(true) . '/';
+                            }
                             if (!empty($data)) {
                                 $referral_code = '';
                                 $phone_number = '';
