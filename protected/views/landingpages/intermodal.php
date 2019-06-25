@@ -10,6 +10,7 @@
     switch ($data->type) {
         case 'ST1':
         case 'ST2':
+        case 'STTeam':
             $type = 'landing-page-1';
             $name = 'st';
             $company = 'System Transport';
@@ -161,14 +162,14 @@
                 <?php if ($data->type == 'ST1' || $data->type == 'TWT1' || $data->type == 'JJW1') {
                     echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
                 } ?>
-                <?php if ($data->type == 'ST2' || $data->type == 'TWT2' || $data->type == 'TWT3') {
+                <?php if ($data->type == 'ST2' || $data->type == 'STTeam' || $data->type == 'TWT2' || $data->type == 'TWT3') {
                     echo '<img src="' . $assets . '/cdl-a/quote-cdl-a-driver.png" />';
                 } ?>
             </div>
             <div class="row middle-container-wrap clearfix">
                 <?php if ($data->type == 'ST2' || $data->type == 'TWT2') {
                     echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/cdl-a/' . $name . '-recent-cdla-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
-                } else if ($data->type == 'TWT3') {
+                } else if ($data->type == 'TWT3' || $data->type == 'STTeam' ) {
                     echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/team/' . $name . '-team-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
                 } else {
                     echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . '-experienced-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
@@ -180,7 +181,7 @@
                                 <?php if ($data->type == 'ST1' || $data->type == 'TWT1' || $data->type == 'JJW1') {
                                     echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
                                 } ?>
-                                <?php if ($data->type == 'ST2' || $data->type == 'TWT2' || $data->type == 'TWT3') {
+                                <?php if ($data->type == 'ST2' || $data->type == 'STTeam' || $data->type == 'TWT2' || $data->type == 'TWT3') {
                                     echo '<img src="' . $assets . '/cdl-a/quote-cdl-a-driver.png" />';
                                 } ?>
                             </div>
@@ -232,12 +233,12 @@
                             </p>
                         </div>';
                     } ?>
-                    <?php if ($data->type == 'ST2' || $data->type == 'TWT2' || $data->type == 'TWT3') {
+                    <?php if ($data->type == 'ST2' || $data->type == 'STTeam' || $data->type == 'TWT2' || $data->type == 'TWT3') {
                     echo '<div class="box">
                             <p>
                                 <img src="' . $assets . '/cdl-a/icon-' . $name . '-tuition-reimbursement.png" alt="invest-1" />
                             </p>
-                            <h4>REFERRAL PROGRAM</h4>
+                            <h4>TUITION REIMBURSEMENT</h4>
                             <p><span style="color: #abb0b4;">
                                 Have CDL Tuition debt? We understand it\'s hard to move forward and drive like you mean it when finances are fighting to hold you back. That\'s why we\'ll reimburse up to $5,000 of out of pocket expenses for new graduates and/or drivers waho are still paying off their CDL tuition debt. We deposit 12 monthly payments, starting after just 2 months of employment with our team! Now that\'s how you drive like you mean it.</span>
                             </p>
@@ -458,7 +459,7 @@
                 </div>
                 <div class="terms">
                     <p>
-                        *BY COMPLETING THIS FORM, I AGREE TO RECEIVE CORRESPONDENCE FROM <?php echo $company; ?>. THIS INCLUDES RECEIVING PRERECORDED MESSAGES, TEXT MESSAGES AND EMAILS ABOUT TRUCKING JOB OPPORTUNITIES AT THE CONTACT NUMBER AND ADDRESS I HAVE PROVIDED ABOVE. I UNDERSTAND THAT I AM NOT REQUIRED TO PROVIDE MY CONSENT AS A CONDITION OF SUBMITTING MY APPLICATION.
+                        *BY COMPLETING THIS FORM, I AGREE TO RECEIVE CORRESPONDENCE FROM <?php echo $company; ?>. THIS INCLUDES RECEIVING <?php if ($data->type == 'STTeam') {echo 'Telephone Calls, ';} ?>PRERECORDED MESSAGES, TEXT MESSAGES AND EMAILS ABOUT TRUCKING JOB OPPORTUNITIES AT THE CONTACT NUMBER AND ADDRESS I HAVE PROVIDED ABOVE. I UNDERSTAND THAT I AM NOT REQUIRED TO PROVIDE MY CONSENT AS A CONDITION OF SUBMITTING MY APPLICATION.
                     </p>
                     <ul>
                         <li><a href="<?php echo $privacy_url; ?>" target="_blank">Privacy Policy</a><span>|</span></li>

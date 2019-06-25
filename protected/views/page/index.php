@@ -63,7 +63,7 @@ $this->renderPartial('_alerts');
 
 
                 // system trans templates start here
-                $templates_sys_trans = Yii::app()->db->createCommand('SELECT tbl_master.id_master, tbl_master.template_type, tbl_sys_trans.type FROM tbl_master LEFT JOIN tbl_sys_trans ON tbl_sys_trans.id_master = tbl_master.id_master WHERE tbl_master.template_type = "tbl_sys_trans" ORDER BY tbl_sys_trans.type ASC')->queryAll();
+                // $templates_sys_trans = Yii::app()->db->createCommand('SELECT tbl_master.id_master, tbl_master.template_type, tbl_sys_trans.type FROM tbl_master LEFT JOIN tbl_sys_trans ON tbl_sys_trans.id_master = tbl_master.id_master WHERE tbl_master.template_type = "tbl_sys_trans" ORDER BY tbl_sys_trans.type ASC')->queryAll();
 
                 $swap_templates_Base = array();
 
