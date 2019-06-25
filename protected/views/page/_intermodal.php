@@ -6,6 +6,7 @@ $baseUrl = Yii::app()->getBaseUrl(true);
     <div class="col-sm-6">
         <?php echo $form->textField($model, 'referral_code', array('class' => 'form-control input-sm')); ?>
         <?php echo $form->error($model, 'referral_code', array('class' => 'help-block errorMessage')); ?>
+        <?php echo $form->hiddenField($model, 'type'); ?>
     </div>
 </div>
 <div class="form-group">

@@ -47,7 +47,7 @@ class MIntermodal extends MIntermodalBase {
 
     public function rules() {
         return array(
-            array('referral_code, intelliapp_referral_code, main_title, main_description, benef1_caption, benef2_caption, benef3_caption, benef4_caption, benef5_caption, benef6_caption, benef1_caption_title, benef2_caption_title, benef3_caption_title, benef4_caption_title, benef5_caption_title, benef6_caption_title, body_copy, phone', 'required', 'message' => 'The field is required'),
+            array('type, referral_code, intelliapp_referral_code, main_title, main_description, benef1_caption, benef2_caption, benef3_caption, benef4_caption, benef5_caption, benef6_caption, benef1_caption_title, benef2_caption_title, benef3_caption_title, benef4_caption_title, benef5_caption_title, benef6_caption_title, body_copy, phone', 'required', 'message' => 'The field is required'),
             array('benef1_caption, benef2_caption, benef3_caption, benef4_caption, benef5_caption, benef6_caption', 'length', 'max' => 400),
             array('benef1_figure, benef2_figure, benef3_figure, benef4_figure, benef5_figure, benef6_figure', 'length', 'max' => 64),
             array('sub_title, ga_lp, ga_tp', 'required', 'message' => 'The field is required'),
@@ -85,6 +85,7 @@ class MIntermodal extends MIntermodalBase {
             'phone' => 'Phone',
             'create_date' => 'Create Date',
             'id_master' => 'Id Master',
+            'type' => 'Type'
         );
     }
 
