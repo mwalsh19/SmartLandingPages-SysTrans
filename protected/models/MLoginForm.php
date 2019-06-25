@@ -51,7 +51,7 @@ class MLoginForm extends CFormModel {
 
 			if (!$this->_identity->authenticate()) {
 				Yii::trace('>>>>>' . $this->_identity->errorCode);
-				$this->addError('password', 'Username or Password is incorrect.' . $this->_identity->errorCode);
+				$this->addError('password', 'Username or Password is incorrect.');
 			}
 		}
 	}

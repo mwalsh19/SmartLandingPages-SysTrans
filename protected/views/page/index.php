@@ -266,9 +266,9 @@ $this->renderPartial('_alerts');
                                                     <span class="sr-only">Toggle Dropdown</span>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="<?php echo Yii::app()->createUrl($this->createUrl('page/duplicate', array('id' => $landingpage->id_master))); ?>">Clone</a></li>
-                                                    <li><a href="<?php echo Yii::app()->createUrl($this->createUrl('page/update', array('id' => $landingpage->id_master))); ?>">Update</a></li>
-                                                    <li><a href="<?php echo Yii::app()->createUrl($this->createUrl('page/archive', array('id' => $landingpage->id_master))); ?>">Archive</a></li>
+                                                    <li><a href="<?php echo '/landing-pages/page/duplicate?id=' . $landingpage->id_master; ?>">Clone</a></li>
+                                                    <li><a href="<?php echo '/landing-pages/page/update?id=' . $landingpage->id_master; ?>">Update</a></li>
+                                                    <li><a href="<?php echo '/landing-pages/page/archive?id=' . $landingpage->id_master; ?>">Archive</a></li>
                                                     <li><a data-toggle="modal" data-target="#swapModal" href="javascript:void(0);" class="swap-btn" data-id="<?php echo $landingpage->id_master ?>">Swap Template</a></li>
                                                 </ul>
                                             </div>
