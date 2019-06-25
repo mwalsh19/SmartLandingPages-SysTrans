@@ -159,10 +159,10 @@
         </div>
         <div class="middle-container relative">
             <div class="quote-mobile mobile-only">
-                <?php if ($data->type == 'ST1' || $data->type == 'TWT1' || $data->type == 'JJW1') {
+                <?php if ($data->type == 'ST1' || $data->type == 'STTeam' || $data->type == 'TWT1' || $data->type == 'TWT3' || $data->type == 'JJW1') {
                     echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
                 } ?>
-                <?php if ($data->type == 'ST2' || $data->type == 'STTeam' || $data->type == 'TWT2' || $data->type == 'TWT3') {
+                <?php if ($data->type == 'ST2' || $data->type == 'TWT2') {
                     echo '<img src="' . $assets . '/cdl-a/quote-cdl-a-driver.png" />';
                 } ?>
             </div>
@@ -178,10 +178,10 @@
                     <div class="text">
                         <div class="middle-copy flex-center">
                             <div class="quote desktop-only">
-                                <?php if ($data->type == 'ST1' || $data->type == 'TWT1' || $data->type == 'JJW1') {
+                                <?php if ($data->type == 'ST1' || $data->type == 'STTeam' || $data->type == 'TWT1'  || $data->type == 'TWT3' || $data->type == 'JJW1') {
                                     echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
                                 } ?>
-                                <?php if ($data->type == 'ST2' || $data->type == 'STTeam' || $data->type == 'TWT2' || $data->type == 'TWT3') {
+                                <?php if ($data->type == 'ST2' || $data->type == 'TWT2') {
                                     echo '<img src="' . $assets . '/cdl-a/quote-cdl-a-driver.png" />';
                                 } ?>
                             </div>
