@@ -240,7 +240,7 @@
                             </p>
                             <h4>TUITION REIMBURSEMENT</h4>
                             <p><span style="color: #abb0b4;">
-                                Have CDL Tuition debt? We understand it\'s hard to move forward and drive like you mean it when finances are fighting to hold you back. That\'s why we\'ll reimburse up to $5,000 of out of pocket expenses for new graduates and/or drivers waho are still paying off their CDL tuition debt. We deposit 12 monthly payments, starting after just 2 months of employment with our team! Now that\'s how you drive like you mean it.</span>
+                                Have CDL Tuition debt? We understand it\'s hard to move forward and drive like you mean it when finances are fighting to hold you back. That\'s why our industry-leading program will reimburse up to $5,000 of out of pocket expenses for new graduates and/or drivers who are still paying off their CDL tuition debt. We deposit 12 monthly payments, starting after just 2 months of employment with our team! Now that\'s how you drive like you mean it.</span>
                             </p>
                         </div>';
                     } ?>
