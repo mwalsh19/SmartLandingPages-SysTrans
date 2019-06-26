@@ -14,6 +14,7 @@
             $type = 'landing-page-1';
             $name = 'st';
             $company = 'System Transport';
+            $company_symbol = 'System Transport';
             $primary_color = "#d71e26";
             $rgba_secondary_full = "rgb(33, 38, 52, 1)";
             $rgba_secondary = "rgb(33, 38, 52, 0.8)";
@@ -29,6 +30,7 @@
         case 'JJW1':
             $type = 'landing-page-2';
             $name = 'jjw';
+            $company_symbol = 'JJW';
             $company = 'James J. Williams';
             $primary_color = "#f8e084";
             $rgba_secondary_full = "rgba(0, 27, 21, 1)";
@@ -47,7 +49,8 @@
         case 'TWT3':
             $type = 'landing-page-3';
             $name = 'twt';
-            $company = 'TWT Refrigerated Service Transport';
+            $company = 'TWT Refrigerated Service';
+            $company_symbol = 'TWT';
             $primary_color = "#ec9f23";
             $rgba_secondary_full = "rgba(0, 41, 33, 1)";
             $rgba_secondary = "rgba(0, 41, 33, .75)";
@@ -159,11 +162,14 @@
         </div>
         <div class="middle-container relative">
             <div class="quote-mobile mobile-only">
-                <?php if ($data->type == 'ST1' || $data->type == 'STTeam' || $data->type == 'TWT1' || $data->type == 'TWT3' || $data->type == 'JJW1') {
+                <?php if ($data->type == 'ST1' || $data->type == 'TWT1' || $data->type == 'JJW1') {
                     echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
                 } ?>
                 <?php if ($data->type == 'ST2' || $data->type == 'TWT2') {
                     echo '<img src="' . $assets . '/cdl-a/quote-cdl-a-driver.png" />';
+                } ?>
+                <?php if ($data->type == 'STTeam' || $data->type == 'TWT3') {
+                    echo '<img src="' . $assets . '/team/quote-team-driver.png" />';
                 } ?>
             </div>
             <div class="row middle-container-wrap clearfix">
@@ -178,11 +184,14 @@
                     <div class="text">
                         <div class="middle-copy flex-center">
                             <div class="quote desktop-only">
-                                <?php if ($data->type == 'ST1' || $data->type == 'STTeam' || $data->type == 'TWT1'  || $data->type == 'TWT3' || $data->type == 'JJW1') {
+                                <?php if ($data->type == 'ST1' || $data->type == 'TWT1' || $data->type == 'JJW1') {
                                     echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
                                 } ?>
                                 <?php if ($data->type == 'ST2' || $data->type == 'TWT2') {
                                     echo '<img src="' . $assets . '/cdl-a/quote-cdl-a-driver.png" />';
+                                } ?>
+                                <?php if ($data->type == 'STTeam' || $data->type == 'TWT3') {
+                                    echo '<img src="' . $assets . '/team/quote-team-driver.png" />';
                                 } ?>
                             </div>
                             <div class="copy">
@@ -210,7 +219,8 @@
                         </p>
                         <h4>METICULOUSLY MAINTAINED<br>FOR YOUR SAFETY</h4>
                         <p><span style="color: #fff;">
-                            Your safety is paramount to us. Every tractor has a lane departure & forward collision warning system, hard brake monitoring, and a satellite communication device installed. We have invested in building our own shops, staffing a 24/7/365 road service staff, and we have developed a robust network of outside shops to keep our trucks rolling. If a truck needs repairs, it’s not going out until it is 100% ready to the hit the road again safely with you at the wheel. You can count on that.</span>
+                            Your safety is paramount to us. Every tractor has a lane departure & forward collision warning system, hard brake monitoring, and a satellite communication device installed. We have invested in building our own shops, staffing a 24/7/365 road service staff, and developed a robust network of outside shops to keep our trucks rolling. If a truck needs repairs, it’s not going out until it is 100% ready to the hit the road again safely with you at the wheel. You can count on that.
+                            </span>
                         </p>
                     </div>
                     <div class="box">
@@ -229,7 +239,7 @@
                             </p>
                             <h4>DRIVER REFERRAL PROGRAM</h4>
                             <p><span style="color: #fff;">
-                                No one knows good drivers better than you. At ' . $company . ', our drivers make us who we are – they are the face, heart, and backbone of this company. Their hard work and dedication to get the job done make us proud every day, and set us apart from our competition. If you have met someone you think would be a great addition to the System Transport family, we want an introduction. Your truck driver referrals could earn you up to $1,500!</span>
+                                No one knows good drivers better than you. At ' . $company . ', our drivers make us who we are – they are the face, heart, and backbone of this company. Their hard work and dedication to get the job done make us proud every day, and set us apart from our competition. If you have met someone you think would be a great addition to the ' . $company_symbol . ' family, we want an introduction. Your truck driver referrals could earn you up to $1,500!</span>
                             </p>
                         </div>';
                     } ?>
