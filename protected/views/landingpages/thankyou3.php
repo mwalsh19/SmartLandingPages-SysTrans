@@ -27,7 +27,9 @@ $intellaappPath = 'tsystem';
     switch ($template_type) {
         case 'ST1':
         case 'ST2':
+        case 'STTeam':
             $name = 'st';
+            $company_symbol = 'System Transport';
             $company = 'System Transport';
             $primary_color = "#d71e26";
             $rgba_secondary_full = "rgb(33, 38, 52, 1)";
@@ -45,6 +47,7 @@ $intellaappPath = 'tsystem';
             break;
         case 'JJW1':
             $name = 'jjw';
+            $company_symbol = 'JJW';
             $company = 'James J. Williams';
             $primary_color = "#f8e084";
             $rgba_secondary_full = "rgba(0, 27, 21, 1)";
@@ -64,6 +67,7 @@ $intellaappPath = 'tsystem';
         case 'TWT2':
         case 'TWT3':
             $name = 'twt';
+            $company_symbol = 'TWT';
             $company = 'TWT Refrigerated Service Transport';
             $primary_color = "#ec9f23";
             $rgba_secondary_full = "rgba(0, 41, 33, 1)";
@@ -159,7 +163,7 @@ $intellaappPath = 'tsystem';
                 </div>
                 <div class="terms">
                     <p>
-                        *BY COMPLETING THIS FORM, I AGREE TO RECEIVE CORRESPONDENCE FROM <?php echo $company; ?>. THIS INCLUDES RECEIVING PRERECORDED MESSAGES, TEXT MESSAGES AND EMAILS ABOUT TRUCKING JOB OPPORTUNITIES AT THE CONTACT NUMBER AND ADDRESS I HAVE PROVIDED ABOVE. I UNDERSTAND THAT I AM NOT REQUIRED TO PROVIDE MY CONSENT AS A CONDITION OF SUBMITTING MY APPLICATION.
+                        *BY COMPLETING THIS FORM, I AGREE TO RECEIVE CORRESPONDENCE FROM <?php echo $company; ?>. THIS INCLUDES RECEIVING, TELEPHONE CALLS, PRERECORDED MESSAGES, TEXT MESSAGES AND EMAILS ABOUT TRUCKING JOB OPPORTUNITIES AT THE CONTACT NUMBER AND ADDRESS I HAVE PROVIDED ABOVE. I UNDERSTAND THAT I AM NOT REQUIRED TO PROVIDE MY CONSENT AS A CONDITION OF SUBMITTING MY APPLICATION.
                     </p>
                     <ul>
                         <li><a href="<?php echo $privacy_url; ?>" target="_blank">Privacy Policy</a><span>|</span></li>
