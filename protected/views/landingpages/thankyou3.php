@@ -96,8 +96,8 @@ $intellaappPath = 'tsystem';
     background: <?php echo $primary_color ?>;
   }
   .header {
-    background-size: cover;
-    background: <?php echo 'url(' . $assets . '/' . $name . '-thankyou-hero-gfx.jpg) no-repeat bottom'; ?>
+    background: <?php echo 'url(' . $assets . '/' . $name . '-thankyou-hero-gfx.jpg) no-repeat bottom'; ?>;
+    background-size: 100%;
   }
   .sub-heading {
     background: <?php echo $rgba_secondary ?>;
@@ -124,7 +124,7 @@ $intellaappPath = 'tsystem';
         <div class="checked-icon"></div>
         <div class="header-copy">
           <h1>Thanks <?php echo $first_name; ?>!</h1>
-          <p>A recruiter will be contacting you within 24-48 hours.<br />
+          <p>A recruiter will be contacting you soon.<br />
             Click below if you would like to complete our full online application.</p>
           <a target="_blank" href="https://intelliapp.driverapponline.com/c/<?php echo $intellaappPath; ?>?r=<?php echo $intelliapp_referral_code; ?>" id="applyNowBtn" class="form-control-btn btn">Apply Now</a>
           </a>
@@ -163,7 +163,7 @@ $intellaappPath = 'tsystem';
                 </div>
                 <div class="terms">
                     <p>
-                        *BY COMPLETING THIS FORM, I AGREE TO RECEIVE CORRESPONDENCE FROM <?php echo $company; ?>. THIS INCLUDES RECEIVING, TELEPHONE CALLS, PRERECORDED MESSAGES, TEXT MESSAGES AND EMAILS ABOUT TRUCKING JOB OPPORTUNITIES AT THE CONTACT NUMBER AND ADDRESS I HAVE PROVIDED ABOVE. I UNDERSTAND THAT I AM NOT REQUIRED TO PROVIDE MY CONSENT AS A CONDITION OF SUBMITTING MY APPLICATION.
+                        *BY COMPLETING THIS FORM, I AGREE TO RECEIVE CORRESPONDENCE FROM <?php echo $company; ?>. THIS INCLUDES RECEIVING TELEPHONE CALLS, PRERECORDED MESSAGES, TEXT MESSAGES AND EMAILS ABOUT TRUCKING JOB OPPORTUNITIES AT THE CONTACT NUMBER AND ADDRESS I HAVE PROVIDED ABOVE. I UNDERSTAND THAT I AM NOT REQUIRED TO PROVIDE MY CONSENT AS A CONDITION OF SUBMITTING MY APPLICATION.
                     </p>
                     <ul>
                         <li><a href="<?php echo $privacy_url; ?>" target="_blank">Privacy Policy</a><span>|</span></li>
@@ -175,6 +175,20 @@ $intellaappPath = 'tsystem';
         </div>
   </div>
 </div>
+
+<script> (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', '<?php echo $ga_tp; ?>', 'auto');
+        ga('send', 'pageview');</script>
+
 
 <?php
 $this->renderPartial('_conversion_codes', array('publisher' => $publisher, 'type' => $type, 'email' => $email,
