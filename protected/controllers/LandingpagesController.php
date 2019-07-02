@@ -22,7 +22,6 @@ class LandingpagesController extends Controller {
 
     public function actionIndex($slug = '') {
 
-        //$url = Yii::app()->request->pathInfo;
         //$url = Yii::app()->request->requestUri;
         //$path = str_replace('/landing-pages/', '', $url);
         //echo $slug . '<br>';
@@ -41,7 +40,8 @@ class LandingpagesController extends Controller {
         //TODO do we need to use strpos or an exact evaluation??
         if ($trim_slug != 'swifttrans') {
             $slug_path = explode('/', $trim_slug);
-            $publisher = '';
+            // $publisher = '';
+            $publisher = $slug_path;
             $type = '';
             $state = '';
             $publisher_pos = 0;
@@ -372,6 +372,7 @@ class LandingpagesController extends Controller {
                     $template = 'intermodal';
                     $page_title = $query->title;
                     $data = $query->tblIntermodals;
+                    $publisher = $publisher;
                     $model = $data[0];
                     $phone = $model->phone;
                     $data_type = $model->type;

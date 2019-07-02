@@ -1,3 +1,8 @@
+<!--<script>
+    document.location = document.location.href+"&#thankyou=1";
+</script>-->
+
+
 <?php
 Yii::app()->clientScript->registerCssFile('http://fast.fonts.net/cssapi/fdbec8c1-bb62-4a79-9b2e-74758d1444a9.css');
 $baseUrl = Yii::app()->getBaseUrl(true) . "/";
@@ -41,8 +46,8 @@ $intellaappPath = 'tsystem';
             $website_name = 'systemtrans.com';
             $privacy_url = 'https://systemtrans.com/privacy-policy/';
             $website_url = 'https://systemtrans.com';
-            $fb_url = '';
-            $ig_url = '';
+            $fb_url = 'https://www.facebook.com/SystemTransport/';
+            $ig_url = 'https://www.instagram.com/system_transport/';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/systrans/images';
             break;
         case 'JJW1':
@@ -59,8 +64,8 @@ $intellaappPath = 'tsystem';
             $website_name = 'jjwilliams.com';
             $website_url = 'https://jjwilliams.com';
             $privacy_url = 'https://jjwilliams.com/privacy-policy/';
-            $fb_url = '';
-            $ig_url = '';
+            $fb_url = 'https://www.facebook.com/JamesJWilliamsTankers';
+            $ig_url = 'https://www.instagram.com/james.j.williams/';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/jjw/images';
             break;
         case 'TWT1':
@@ -79,8 +84,8 @@ $intellaappPath = 'tsystem';
             $website_name = 'twtrans.com';
             $website_url = 'https://twtrans.com';
             $privacy_url = 'https://twtrans.com/privacy-policy/';
-            $fb_url = '';
-            $ig_url = '';
+            $fb_url = 'https://www.facebook.com/TWTRefrigerated';
+            $ig_url = 'https://www.instagram.com/twt_refrigerated/';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/twt/images';
             break;
         default:
@@ -97,7 +102,7 @@ $intellaappPath = 'tsystem';
   }
   .header {
     background: <?php echo 'url(' . $assets . '/' . $name . '-thankyou-hero-gfx.jpg) no-repeat bottom'; ?>;
-    background-size: 100%;
+    background-size: cover;
   }
   .sub-heading {
     background: <?php echo $rgba_secondary ?>;
