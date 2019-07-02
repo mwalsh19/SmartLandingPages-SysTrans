@@ -1,5 +1,5 @@
 
-<?php if ($publisher[0] === 'randallreilly' && strpos($publisher[1], 'jjw') !== false ) { ?>
+<?php if ($publisher[1] === 'randallreilly' && strpos($publisher[0], 'jjw') !== false ) { ?>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -14,7 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<?php } else if ($publisher[0] === 'randallreilly' && strpos($publisher[1], 'systemtrans') !== false) { ?>
+<?php } else if ($publisher[1] === 'randallreilly' && strpos($publisher[0], 'systemtrans') !== false) { ?>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
