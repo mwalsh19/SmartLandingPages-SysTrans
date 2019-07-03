@@ -1,6 +1,6 @@
-<!--<script>
-    document.location = document.location.href+"&#thankyou=1";
-</script>-->
+<script>
+    window.history.replaceState({}, '', document.location.href + '/thankyou/');
+</script>
 
 
 <?php
