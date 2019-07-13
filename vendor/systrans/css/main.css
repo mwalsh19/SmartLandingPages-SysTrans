@@ -18,13 +18,14 @@
 
 /* close commented backslash hack */
 .form-control {
+  height: 50px;
   display: block;
   width: 100%;
   padding: 4px 10px;
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #999898;
+  color: #ffffff;
   background-color: #fff;
   background-image: none;
   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
@@ -47,8 +48,6 @@
   border: 0;
   outline: none;
   text-decoration: none;
-  background: #fec90e;
-  background: url(../Version-A/images/btn-st-next.png);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -69,7 +68,7 @@ select.form-control {
   background-color: transparent; }
 .sub-heading {
   background: rgb(33, 38, 52, 0.8);
-  padding: 20px 0;
+  padding: 7px 0;
   position: fixed;
   z-index: 21;
   width: 100%;
@@ -81,10 +80,9 @@ select.form-control {
   padding: 0 10px; }
   .sub-heading-wrap .logo {
     float: left;
-    margin-top: 5px;
     background: url(../Version-A/images/system-trans-logo.png) no-repeat;
-    width: 216px;
-    height: 58px; }
+    width: 236px;
+  height: 85px; }
   .sub-heading-wrap .sub-heading-phone {
     float: right; }
   .sub-heading-wrap h1 {
@@ -144,15 +142,13 @@ color: #fff; }
     line-height: 1;
     font-weight: normal;
     letter-spacing: 5px; }
-  .main-description h3 span {
-    color: #d71e26;
-  }
+  .main-description h3 span {}
   .main-description .primary-description {
     margin-bottom: 5px; }
   .main-description .secondary-description {
     font-family: Arial;
     font-size: 18px;
-    width: 600px;
+    max-width: 600px;
     line-height: 27px;
     text-align: left; }
     .main-description .secondary-description span {
@@ -221,7 +217,8 @@ font-family: Conv_Vitesse-Bold;
 }
 
 .icon-section .icons {
-  margin: 2em 0;
+  margin: 2em 0 2em 0;
+  /*border: 1px solid #000;*/
 }
 
 .icon-section ul {
@@ -231,9 +228,9 @@ font-family: Conv_Vitesse-Bold;
 .icon-section img {
   width: 55px;
   height: 55px;
-  padding: 15px;
+  padding: 0px 15px 0px 15px;
   position: relative;
-  top: -20px;
+  top: 15px;
 }
 
 .icon-section h2 {
@@ -244,18 +241,21 @@ font-family: Conv_Vitesse-Bold;
 }
 
 .icon-section .section-text {
-  width: 250px;
+  width: 260px;
+  /*border: 1px solid #000;*/
 }
 
 .icon-section .section-text h3 {
   font-family: 'helvetica';
   font-size: 18px;
   font-weight: bold;
+  color: #212634;
 }
 
 .icon-section .section-text p {
   font-family: 'helvetica';
   font-size: 14px;
+  color: #212634;
   line-height: 1.5em;
 }
 
@@ -269,7 +269,7 @@ font-family: Conv_Vitesse-Bold;
 
 .invest-section {
   width: 100%;
-  height: 550px;
+  height: 600px;
   background: #212634;
   margin-bottom: -36px;
   padding-bottom: 40px;
@@ -316,12 +316,12 @@ body.apply-form-showing {
 #apply-form-overlay {
   display: none;
   position: fixed;
-  top: 76px;
+  top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 20;
-  background-color: rgba(0, 0, 0, 0.8); }
+  z-index: 21;
+  background-color: rgba(33, 38, 52, 0.95); }
 
 .apply-form-showing .heading-separator {
   position: fixed;
@@ -331,13 +331,67 @@ body.apply-form-showing {
   z-index: 21; }
 .apply-form-showing .sub-heading {
   position: fixed;
-  top: 10px;
-  background-color: #fff;
+  top: 0;
   left: 0;
   right: 0;
-  z-index: 21; }
+  z-index: 22;
+  background: rgb(33, 38, 52, 1); }
 .apply-form-showing .main {
   padding-top: 76px; }
+
+.btn {
+    color: white;
+    font-size: 20px;
+    font-family: helvetica;
+    line-height: 2em;
+    text-shadow: none;
+}
+
+.container-form .form-control {
+    font-family: helvetica;
+    border-radius: 3px;
+    background: #bdc3c7;
+    color: black;
+}
+
+#submit {
+    background: #d71e26;
+}
+
+@media screen and (min-width: 951px) {
+  .col-half-desktop {
+    width: 50% !important;
+  }
+
+  .flex-center-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-margin {
+    margin-right: 30px !important;
+    margin: 10px;
+  }
+
+  .container-form {
+    width: 600px;
+  }
+
+  #submit {
+    width: 280px;
+    height: 50px;
+    line-height: 1em;
+    margin-left: 10px;
+  }
+
+  .desktop-heading {
+    color: #bdc3c7;
+    margin-left: 10px;
+    line-height: .5em;
+    font-family: helvetica;
+  }
+}
 
 .container-form {
   display: none;
@@ -345,12 +399,10 @@ body.apply-form-showing {
   top: 136px;
   left: 50%;
   z-index: 21;
-  width: 490px;
   height: 580px;
   margin-left: -245px; }
   .container-form .form-control {
-    font-family: "Helvetica LT W01 Light Cond";
-    font-size: 26px; }
+    font-size: 16px; }
 
 .email-control input {
   background-color: transparent;
@@ -358,8 +410,7 @@ body.apply-form-showing {
 
 .firstname-control, .phone-control, .state-control {
   float: left;
-  width: 49%;
-  margin-right: 9px; }
+  width: 49%; }
 
 .lastname-control, .email-control, .zip-control {
   float: left;
@@ -381,7 +432,6 @@ body.apply-form-showing {
   background-color: #f2f3f4; }
 
 .background-middle {
-  background: url(../Version-A/images/system-trans-experienced-driver-gfx.jpg) no-repeat;
   background-size: cover;
   background-position-x: 0;
 }
@@ -396,7 +446,7 @@ body.apply-form-showing {
     padding: 50px; }
   .middle-container-wrap .text .quote {
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     margin-left: -400px;
   }
@@ -474,6 +524,18 @@ body.apply-form-showing {
 .btnGroup-mobile {
   display: none; }
 
+  .quickform-desktop {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    z-index: 5;
+  }
+
+  #apply-btn2 {
+    display: none;
+  }
+
 .form-heading {
   display: none; }
 
@@ -490,6 +552,7 @@ body.apply-form-showing {
 
 .inline-block {
   display: inline-block;
+  vertical-align: top;
 }
 
 .col-3 {
@@ -528,6 +591,10 @@ body.apply-form-showing {
 
 .center {
   text-align: center;
+}
+
+.capitalize {
+  text-transform: uppercase;
 }
 
 .desktop-only {
@@ -603,8 +670,16 @@ body.apply-form-showing {
     display: block;
   }
 
+  .mobile-block {
+    width: 600px;
+  }
+
   .col-3 {
     width: 100%;
+  }
+
+  .top-container {
+    margin-top: 208px;
   }
   .middle-container-wrap .copy p {
     font-size: 16px;
@@ -615,9 +690,6 @@ body.apply-form-showing {
     display: block;
     max-width: 100%;
     height: auto; }
-  .sub-heading {
-    background: rgb(33, 38, 52, 1) !important;
-  }  
   .sub-heading-wrap {
     padding: 0 10px; }
     .sub-heading-wrap .sub-heading-phone {
@@ -631,7 +703,11 @@ body.apply-form-showing {
     margin: 0 auto;
     background-color: rgba(33, 38, 52, 0.6);
     padding: 10px 5px;
-    margin-top: 128px; }
+    margin-top: 128px;
+    position: fixed;
+    top: 0;
+    z-index: 22;
+    width: 100%; }
     .btnGroup-mobile .grouBtn-wrap {
       max-width: 480px;
       margin: 0 auto; }
@@ -666,10 +742,6 @@ body.apply-form-showing {
       }
 
       #callBtn {
-        background: #d71e26;
-      }
-
-      #submit {
         background: #d71e26;
       }
 
@@ -761,9 +833,9 @@ body.apply-form-showing {
     display: initial;
   }
 
-  .icon-section {
+  /*.icon-section {
     margin-bottom: 1em;
-  }
+  }*/
 
   .footer-container .phone-number-footer {
     float: none;
@@ -797,8 +869,8 @@ body.apply-form-showing {
   #apply-form-overlay {
     display: none !important; }
 
-  select.form-control {
-    height: 32px; }
+  /*select.form-control {
+    height: 32px; }*/
 
   .form-wrap {
     padding: 10px; }
@@ -912,9 +984,16 @@ body.apply-form-showing {
     height: 90px;
   }
 
+  .sub-heading-wrap .logo {
+      margin: auto; }
+
   .btnGroup-mobile {
     margin-top: 90px;
     text-align: center; 
+  }
+
+  .top-container {
+    margin-top: 142px;
   }
 
   .btnGroup-mobile a {
@@ -985,10 +1064,6 @@ body.apply-form-showing {
     font-size: 26px;
   }
 
-  .icon-section {
-    margin-bottom: 1em;
-  }
-
   .icon-section .section-text h3 {
     text-align: left;
   }
@@ -1047,8 +1122,6 @@ body.apply-form-showing {
       .cdl-valid-control span, .cdl-valid-control label {
           font-size: 15px;
       }*/
-  select.form-control {
-    height: 34px; }
 
   .middle-container-wrap .phone-number h3 {
     font-size: 45px; }

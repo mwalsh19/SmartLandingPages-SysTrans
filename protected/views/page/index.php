@@ -1,5 +1,5 @@
 <?php
-$this->setPageTitle('Landing Pages');
+$this->setPageTitle('System Transport - Smart Landing Pages');
 Yii::app()->clientScript->registerPackage('dataTables');
 
 Yii::app()->clientScript->registerScript('dataTableInit', '
@@ -63,7 +63,7 @@ $this->renderPartial('_alerts');
 
 
                 // system trans templates start here
-                $templates_sys_trans = Yii::app()->db->createCommand('SELECT tbl_master.id_master, tbl_master.template_type, tbl_sys_trans.type FROM tbl_master LEFT JOIN tbl_sys_trans ON tbl_sys_trans.id_master = tbl_master.id_master WHERE tbl_master.template_type = "tbl_sys_trans" ORDER BY tbl_sys_trans.type ASC')->queryAll();
+                // $templates_sys_trans = Yii::app()->db->createCommand('SELECT tbl_master.id_master, tbl_master.template_type, tbl_sys_trans.type FROM tbl_master LEFT JOIN tbl_sys_trans ON tbl_sys_trans.id_master = tbl_master.id_master WHERE tbl_master.template_type = "tbl_sys_trans" ORDER BY tbl_sys_trans.type ASC')->queryAll();
 
                 $swap_templates_Base = array();
 
@@ -200,7 +200,11 @@ $this->renderPartial('_alerts');
                         </thead>
                         <tbody>
                             <?php
-                            $baseUrl = Yii::app()->getBaseUrl(true) . '/landing-pages/';
+                            if ($_SERVER['SERVER_NAME'] == 'localhost') {
+                                $baseUrl = Yii::app()->getBaseUrl(true) . '/landing-pages/';
+                            } else {
+                                $baseUrl = Yii::app()->getBaseUrl(true) . '/';
+                            }
                             if (!empty($data)) {
                                 $referral_code = '';
                                 $phone_number = '';
@@ -262,9 +266,9 @@ $this->renderPartial('_alerts');
                                                     <span class="sr-only">Toggle Dropdown</span>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="<?php echo Yii::app()->createUrl($this->createUrl('page/duplicate', array('id' => $landingpage->id_master))); ?>">Clone</a></li>
-                                                    <li><a href="<?php echo Yii::app()->createUrl($this->createUrl('page/update', array('id' => $landingpage->id_master))); ?>">Update</a></li>
-                                                    <li><a href="<?php echo Yii::app()->createUrl($this->createUrl('page/archive', array('id' => $landingpage->id_master))); ?>">Archive</a></li>
+                                                    <li><a href="<?php echo $_SERVER['SERVER_NAME'] == 'localhost' ? '/page/duplicate?id=' . $landingpage->id_master : '/landing-pages/page/duplicate?id=' . $landingpage->id_master; ?>">Clone</a></li>
+                                                    <li><a href="<?php echo $_SERVER['SERVER_NAME'] == 'localhost' ? '/page/update?id=' . $landingpage->id_master : '/landing-pages/page/update?id=' . $landingpage->id_master; ?>">Update</a></li>
+                                                    <li><a href="<?php echo $_SERVER['SERVER_NAME'] == 'localhost' ? '/page/archive?id=' . $landingpage->id_master : '/landing-pages/page/archive?id=' . $landingpage->id_master; ?>">Archive</a></li>
                                                     <li><a data-toggle="modal" data-target="#swapModal" href="javascript:void(0);" class="swap-btn" data-id="<?php echo $landingpage->id_master ?>">Swap Template</a></li>
                                                 </ul>
                                             </div>

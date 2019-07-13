@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title><?php echo $this->getPageTitle(); ?></title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <link rel="icon" type="image/png" href="<?php echo Yii::app()->getBaseUrl(true) ?>/favicon_swift.ico">
+        <link rel="icon" type="image/png" href="<?php echo Yii::app()->getBaseUrl(true) ?>/favicon_ST.ico">
 
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -19,7 +19,7 @@
         <header class="header">
             <a href="<?php echo Yii::app()->getBaseUrl(true); ?>" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                <img src="<?php echo Yii::app()->baseurl; ?>/manager/images/swift_analytics.jpg" />
+                <img width="150" src="<?php echo Yii::app()->baseurl; ?>/manager/images/system-trans-logo.png" />
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -63,76 +63,6 @@
                         <li>
                             <a href="<?php echo Yii::app()->createUrl('page/publisher'); ?>">
                                 <i class="fa fa-globe"></i> <span>Publishers</span>
-                            </a>
-                        </li>
-                        <hr style="margin: 0;">
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/views'); ?>">
-                                <i class="fa fa-bar-chart-o"></i> <span>Views</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/views', array('filter' => 'state')); ?>">
-                                <i class="fa fa-bar-chart-o"></i> <span>Views by State</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/views', array('filter' => 'city')); ?>">
-                                <i class="fa fa-bar-chart-o"></i> <span>Views by City</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/views', array('filter' => 'publisher')); ?>">
-                                <i class="fa fa-bar-chart-o"></i> <span>Views by Publisher</span>
-                            </a>
-                        </li>
-                        <hr style="margin: 0;">
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/leads'); ?>">
-                                <i class="fa fa-list-alt"></i> <span>Leads</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/leads', array('filter' => 'state')); ?>">
-                                <i class="fa fa-list-alt"></i> <span>Leads by State</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/leads', array('filter' => 'city')); ?>">
-                                <i class="fa fa-list-alt"></i> <span>Leads by City</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/leads', array('filter' => 'referral_code')); ?>">
-                                <i class="fa fa-list-alt"></i> <span>Leads by Referrer</span>
-                            </a>
-                        </li>
-                        <hr style="margin: 0;">
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/tenstreetreport'); ?>">
-                                <i class="fa fa-list-alt"></i> <span>Tenstreet</span>
-                            </a>
-                        </li>
-                        <hr style="margin: 0;">
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/missingpages'); ?>">
-                                <i class="fa fa-exclamation-triangle"></i> <span>Missing Pages</span>
-                            </a>
-                        </li>
-                        <hr style="margin: 0;">
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/rhinolabs'); ?>">
-                                <i class="fa fa-archive"></i> <span>Rhinolabs</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/shorturl'); ?>">
-                                <i class="fa fa-archive"></i> <span>Google URL Shortner</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('manager/analyticsshorturl'); ?>">
-                                <i class="fa fa-archive"></i> <span>Google URL Analytics</span>
                             </a>
                         </li>
                         <li>

@@ -6,7 +6,7 @@
 // CWebApplication properties can be configured here.
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    'name' => 'Swift url manager',
+    'name' => 'System Transport Smartlandingpages',
     // preloading 'log' component
     'preload' => array('log'),
     // autoloading model and component classes
@@ -246,10 +246,10 @@ return array(
 //        ),
 // uncomment the following to use a MySQL database
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=swiftlp',
+            'connectionString' => 'mysql:host=localhost;dbname=systemtransdb',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => 'root',
+            'username' => 'laced_agency',
+            'password' => 'a,zwaeyVL87S',
             'charset' => 'utf8',
             'enableParamLogging' => false
         ),

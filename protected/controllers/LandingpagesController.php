@@ -22,7 +22,6 @@ class LandingpagesController extends Controller {
 
     public function actionIndex($slug = '') {
 
-        //$url = Yii::app()->request->pathInfo;
         //$url = Yii::app()->request->requestUri;
         //$path = str_replace('/landing-pages/', '', $url);
         //echo $slug . '<br>';
@@ -41,7 +40,8 @@ class LandingpagesController extends Controller {
         //TODO do we need to use strpos or an exact evaluation??
         if ($trim_slug != 'swifttrans') {
             $slug_path = explode('/', $trim_slug);
-            $publisher = '';
+            // $publisher = '';
+            $publisher = $slug_path;
             $type = '';
             $state = '';
             $publisher_pos = 0;
@@ -372,6 +372,7 @@ class LandingpagesController extends Controller {
                     $template = 'intermodal';
                     $page_title = $query->title;
                     $data = $query->tblIntermodals;
+                    $publisher = $publisher;
                     $model = $data[0];
                     $phone = $model->phone;
                     $data_type = $model->type;
@@ -442,21 +443,22 @@ class LandingpagesController extends Controller {
         $need_redirect = false;
 
         if ($_POST['form_type'] && !empty($trim_slug)) {
-            $clientID = '62';
-            $password = '5!Mee2TAVy4V#DaofNw5OE35';
+            $clientID = '247';
+            $password = 'sb*V6*0!DacfveNbVgb9';
             $service = 'subject_upload';
             $mode = $isDev ? 'DEV' : 'PROD';
 
             $source = 'LACED Lead';
-            $companyID = $isDev ? '15' : '28680';
-            $companyName = $isDev ? 'Laced Agency' : 'Swift';
+            $companyID = $isDev ? '15' : '806';
+            $companyName = $isDev ? 'Laced Agency' : 'TransSystem';
             $post_address = $isDev ? 'https://devdashboard.tenstreet.com/post/' : 'https://dashboard.tenstreet.com/post/';
-            $appReferrer = ($trim_slug == 'swifttrans') ? 'LACED_DR_swifttrans.com_LeadForm' : $model->referral_code; //REFERRAL CODE
+            $appReferrer = $model->referral_code; //REFERRAL CODE
 
-            if (strpos($trim_slug, 'swiftrefrigerated') !== false) {
+
+            /*if (strpos($trim_slug, 'swiftrefrigerated') !== false) {
                 $source = 'LACED LeadSR';
                 $companyID = $isDev ? '15' : '1010';
-            }
+            }*/
 
             $givenName = $_POST['first_name'];
             $familyName = $_POST['last_name'];
@@ -465,8 +467,9 @@ class LandingpagesController extends Controller {
             $postalCode = $_POST['zip_code'];
             $email = $_POST['email'];
             $primaryPhone = $_POST['phone'];
-            $moving_violation = $_POST['moving_violation'];
+            $years_experience = $_POST['years_experience'];
             $cdl_valid = $_POST['cdl_valid'];
+            $template_type = $_POST['template_type'];
 
             if ($trim_slug != 'swifttrans') {
                 switch ($_POST['form_type']) {
@@ -491,7 +494,6 @@ class LandingpagesController extends Controller {
                 $view = 'thankyou4';
                 $target = 1;
             }
-
 
             $xml_data = '
             <TenstreetData>
@@ -525,8 +527,8 @@ class LandingpagesController extends Controller {
                     <AppReferrer>' . $appReferrer . '</AppReferrer>
                     <DisplayFields>
                         <DisplayField>
-                            <DisplayPrompt>List any Moving Violations</DisplayPrompt>
-                            <DisplayValue>' . $moving_violation . '</DisplayValue>
+                            <DisplayPrompt>Years Experience:</DisplayPrompt>
+                            <DisplayValue>' . $years_experience . '</DisplayValue>
                         </DisplayField>
                         <DisplayField>
                             <DisplayPrompt>Do you have your class A CDL?</DisplayPrompt>
@@ -552,6 +554,7 @@ class LandingpagesController extends Controller {
 
 
             $responseObject = simplexml_load_string($response_xml);
+
             //Steelhousepilot
             if ($trim_slug == 'steelhousepilot') {
                 $publisher = 'steelhousepilot';
@@ -562,15 +565,19 @@ class LandingpagesController extends Controller {
                 $need_redirect = true;
             }
 
-            if ($trim_slug != 'swifttrans') {
-                $user = Yii::app()->user;
-                $user->setFlash('phone', $phone);
-                $user->setFlash('intelliapp_referral_code', $model->intelliapp_referral_code);
-                $user->setFlash('first_name', $givenName);
-            }
+            $user = Yii::app()->user;
+            $user->setFlash('phone', $phone);
+            $user->setFlash('intelliapp_referral_code', $model->intelliapp_referral_code);
+            $user->setFlash('first_name', $givenName);
+            $user->setFlash('template_type', $template_type);
+
+            // we will know if this works if we get this working
+
+            //var_dump($responseObject->Status);
+            // die();
 
             if ($responseObject->Status == 'Accepted') {
-                /* SAVING XML RESPONSE TO LOCAL STORAGE */
+                // SAVING XML RESPONSE TO LOCAL STORAGE 
                 $model_for_save = new MOutputXml();
                 $model_for_save->tenstreet_xml = $response_xml;
                 $model_for_save->save(false);
@@ -626,7 +633,7 @@ class LandingpagesController extends Controller {
                     $params.= '&type=' . $type;
                     $params.= '&data_type=' . !empty($data_type) ? $data_type : false;
                     $params.= '&email=' . $email;
-                    $params.= '&ga_tp=' . !empty($model->ga_tp) ? $model->ga_tp : false;
+                    $params.= '&ga_tp=' . !empty($model->ga_tp) ? $model->ga_tp : false; 
 
                     $this->redirect(Yii::app()->request->urlReferrer . $params);
                 } else {
@@ -639,7 +646,7 @@ class LandingpagesController extends Controller {
                         'ga_tp' => !empty($model->ga_tp) ? $model->ga_tp : false
                             )
                     );
-                }
+                } 
             } else {
                 Yii::app()->user->setFlash('status', 'rejected');
                 $this->redirect(Yii::app()->request->urlReferrer);
