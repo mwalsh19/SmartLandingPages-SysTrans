@@ -69,7 +69,7 @@ $(document).ready(function() {
         var d = {};
         d.UTIL = {
             setupFormValidation: function() {
-                a("#leadForm").validate({
+                a("#leadForm,#leadform2").validate({
                     rules: {
                         first_name: "required",
                         last_name: "required",

@@ -1134,3 +1134,97 @@ body.apply-form-showing {
       text-transform: uppercase;
       color: #fff; } }
 
+
+
+/* template version B */
+
+.main-description {
+    padding-top: 250px;
+    padding-left: 50px;
+}
+
+.footer-container .phone-number-footer {
+    padding-right: 50px;
+}
+
+.footer-container .footer-wrap .terms {
+    padding-left: 50px;
+}
+
+.systrans-landing-page-1 {
+  display: flex;
+}
+
+.version-b-form {
+  width: 900px;
+}
+
+.version-b-form #form {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  overflow-y: scroll;
+}
+
+
+.top-form {
+  background: #ff0050;
+  top: 99px;
+  position: relative;
+  color: #fff;
+  padding: 35px 20px 20px 20px;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 10% 100%, 0% 80%, 0 0);
+}
+
+.bottom-form {
+  background: red;
+  min-height: 500px;
+  position: relative;
+  top: 99px;
+  clip-path: polygon(10% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0% 5%);
+  padding: 100px 20px 20px 20px;
+}
+
+.bottom-form input[type="text"] {
+  background:transparent;
+  border:0;
+  border-bottom: 1px solid #fff;
+  height: 40px;
+}
+
+.bottom-form select {
+  background: transparent;
+  border: 0;
+  height: 30px;
+  margin-top: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+.bottom-form label {
+  color: white;
+}
+
+.bottom-form div {
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
