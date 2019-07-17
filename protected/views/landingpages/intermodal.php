@@ -43,6 +43,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         case 'ST2':
         case 'STTeam':
         case 'ST1VB':
+        case 'ST2VB':
+        case 'STTeamVB':
             $type = 'landing-page-1';
             $name = 'st';
             $company = 'System Transport';
@@ -60,6 +62,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/systrans/images';
             break;
         case 'JJW1':
+        case 'JJW1VB':
             $type = 'landing-page-2';
             $name = 'jjw';
             $company_symbol = 'JJW';
@@ -79,6 +82,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         case 'TWT1':
         case 'TWT2':
         case 'TWT3':
+        case 'TWT1VB':
+        case 'TWT2VB':
+        case 'TWT3VB':
             $type = 'landing-page-3';
             $name = 'twt';
             $company = 'TWT Refrigerated Service';
@@ -110,7 +116,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         color: <?php echo $primary_color ?>;
     }
     .sub-heading {
-        background: <?php echo $rgba_secondary ?>;
+        background: <?php if(strpos($data->type, 'VB')) {
+                            echo $rgba_secondary_full;
+                        } else {
+                            echo $rgba_secondary;
+                        } 
+                    ?>
     }
     #callBtn, #quickFormBtn, #submit, .form-heading {
         background: <?php echo $primary_color ?>;
@@ -124,7 +135,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     .footer-container {
         background: <?php echo $footer_color ?>;
     }
-
     #apply-form-overlay {
         background: <?php echo $overlay_secondary ?>;
     }
@@ -137,6 +147,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         background: <?php echo $primary_color ?>;
     }
 
+    #submit-version-b {
+        background: <?php echo $rgba_secondary_full; ?>;
+        margin-left: 0;
+        width: 100%;
+        text-transform: none;
+    }
+    .bottom-form {
+        background: <?php echo $primary_color; ?>;
+    }
+    .top-form {
+      background: #b8171e;
+      /*background: <?php echo $rgba_secondary_full; ?>; */
+    }
+
     @media screen and (max-width: 950px) {
         .sub-heading {
             background: <?php echo $rgba_secondary_full ?>;
@@ -144,9 +168,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 </style>
 <div class="main systrans-<?php echo $type; ?>" id="systrans-<?php echo $type; ?>">
-    <div class="main-wrap">
+    <div class="main-wrap <?php if(strpos($data->type, 'VB')) {echo 'main-wrap-version-b';} ?>">
         <div class="">
-            <div id="sub-heading" class="sub-heading" data-name="<?php echo $name ?>">
+            <div id="sub-heading" class="sub-heading" data-name="<?php if(!strpos($data->type, 'VB')) {echo $name;} ?>">
                 <div class="sub-heading-wrap clearfix">
                     <div class="logo" style="background: url(<?php echo $assets; ?>/<?php echo $name; ?>-logo.png) no-repeat"></div>
                     <div class="sub-heading-phone">
@@ -161,7 +185,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a href="#quickForm" id="quickFormBtn" class="form-control-btn btn">Quick Form</a>
                 </div>
             </div>
-            <?php if ($data->type !== 'ST1VB') {
+            <?php if(!strpos($data->type, 'VB')) {
                 echo '<div class="quickform-desktop desktop-only" id="form-desktop-trigger">
                     <a href="#main-description" id="apply-btn2" class="form-control-btn btn">Quick Form</a>
                 </div>';
@@ -181,13 +205,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         echo $data->main_description;
                                         ?>
                                 </div>
-                                <?php if ($data->type !== 'ST1VB') {
+                                <?php if(!strpos($data->type, 'VB')) {
                                     echo '<div class="apply-form clearfix desktop-only">
                                         <h2> Get Started! </h2>
                                         <p>Enter your email address below to get started.</p>
                                         <input type="text" id="apply-email-field" class="form-control" placeholder="Please Enter Your Email Address">
                                         <a href="javascript:void(0);
-                                            " id="apply-btn" class="form-control-btn" style="background: url(<?php echo $assets; ?>/btn-<?php echo $name; ?>-next.png);"></a>
+                                            " id="apply-btn" class="form-control-btn" style="background: url(' . $assets . '/btn-' . $name . '-next.png);"></a>
                                     </div>';
                                 } ?>
                             </div>
@@ -197,20 +221,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="middle-container relative">
                 <div class="quote-mobile mobile-only">
-                    <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1' || $data->type == 'JJW1') {
+                    <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1' || $data->type == 'JJW1' || $data->type == 'JJW1VB') {
                         echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
                     } ?>
-                    <?php if ($data->type == 'ST2' || $data->type == 'TWT2') {
+                    <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2') {
                         echo '<img src="' . $assets . '/cdl-a/quote-cdl-a-driver.png" />';
                     } ?>
-                    <?php if ($data->type == 'STTeam' || $data->type == 'TWT3') {
+                    <?php if ($data->type == 'STTeam' || $data->type == 'STTeamVB' || $data->type == 'TWT3') {
                         echo '<img src="' . $assets . '/team/quote-team-driver.png" />';
                     } ?>
                 </div>
                 <div class="row middle-container-wrap clearfix">
-                    <?php if ($data->type == 'ST2' || $data->type == 'TWT2') {
+                    <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2') {
                         echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/cdl-a/' . $name . '-recent-cdla-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
-                    } else if ($data->type == 'TWT3' || $data->type == 'STTeam' ) {
+                    } else if ($data->type == 'TWT3' || $data->type == 'STTeam' || $data->type == 'STTeamVB') {
                         echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/team/' . $name . '-team-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
                     } else {
                         echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . '-experienced-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
@@ -219,13 +243,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="text">
                             <div class="middle-copy flex-center">
                                 <div class="quote desktop-only">
-                                    <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1' || $data->type == 'JJW1') {
+                                    <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1' || $data->type == 'JJW1' || $data->type == 'JJW1VB') {
                                         echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
                                     } ?>
-                                    <?php if ($data->type == 'ST2' || $data->type == 'TWT2') {
+                                    <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2') {
                                         echo '<img src="' . $assets . '/cdl-a/quote-cdl-a-driver.png" />';
                                     } ?>
-                                    <?php if ($data->type == 'STTeam' || $data->type == 'TWT3') {
+                                    <?php if ($data->type == 'STTeam' || $data->type == 'STTeamVB' || $data->type == 'TWT3') {
                                         echo '<img src="' . $assets . '/team/quote-team-driver.png" />';
                                     } ?>
                                 </div>
@@ -267,7 +291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 Experience an award-winning app, The Driver Portal, made for drivers by drivers. With a simple tap, you will receive real-time updates and alerts, access your pay, current trip data, messages/notifications, available PTO, contact information, and so much more! Use the Notification Center to stay in touch when you’re out of your truck. You won’t be sitting in the tractor waiting for dispatch. Instead, conveniently stay informed with your cell while living your life. Access your driver portal anywhere on any device, anytime.</span> 
                             </p>
                         </div>
-                        <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1' || $data->type == 'JJW1' || $data->type == 'STTeam' || $data->type == 'TWT3') {
+                        <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1' || $data->type == 'JJW1' || $data->type == 'JJW1VB' || $data->type == 'STTeam' || $data->type == 'STTeamVB' || $data->type == 'TWT3') {
                         echo '<div class="box">
                                 <p>
                                     <img src="' . $assets . '/icon-' . $name . '-referral-program.png" alt="invest-1" />
@@ -278,7 +302,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </p>
                             </div>';
                         } ?>
-                        <?php if ($data->type == 'ST2' || $data->type == 'TWT2') {
+                        <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2') {
                         echo '<div class="box">
                                 <p>
                                     <img src="' . $assets . '/cdl-a/icon-' . $name . '-tuition-reimbursement.png" alt="invest-1" />
@@ -379,7 +403,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
             <div id="apply-form-overlay"></div>
-            <div class="container-form">
+            <div class="container-form <?php if(strpos($data->type, 'VB')) {echo 'hidden';} ?>">
                 <div class="form-heading">
                     <h1>Get Started!</h1>
                     <p>
@@ -394,7 +418,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="form">
                     <div class="form-wrap">
-                        <form action="" method="post" id="<?php if ($data->type == 'ST1VB') { echo 'version-a-lead'; } ?>leadForm" novalidate="novalidate">
+                        <form action="" method="post" id="<?php if(strpos($data->type, 'VB')) { echo 'version-a-lead'; } ?>leadForm" novalidate="novalidate">
                             <div class="groupfields flex-center">
                                 <div class="firstname-control col-half col-half-desktop form-margin">
                                     <input type="text" name="first_name" placeholder="First name" class="form-control">
@@ -494,6 +518,109 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             </div>
+            <div class="version-b-form-mobile <?php if(strpos($data->type, 'VB')) {echo 'shown';} else {echo 'hidden';} ?>">
+                <div id="form">
+                    <div class="top-form">
+                        <h1>Get Started Now!</h1>
+                        <p>
+                            Just fill out our short form below and a recruiter will call you. It's that quick!
+                        </p>
+                    </div>
+                    <div class="bottom-form">
+                        <form action="" method="post" id="<?php if(strpos($data->type, 'VB')) {echo 'leadForm';} ?>" novalidate="novalidate">
+                            <div>
+                                <input id="first_name" type="text" name="first_name" placeholder="First Name" class="form-control">
+                            </div>
+                            <div>
+                                <input id="last_name" type="text" name="last_name" placeholder="Last Name" class="form-control">
+                            </div>
+                            <div>
+                                <input id="email" type="text" name="email" placeholder="Email Address" class="form-control">
+                            </div>
+                            <div>
+                                <input id="phone" type="text" name="phone" placeholder="Phone Number" class="form-control">
+                            </div>
+                            <div>
+                                <input id="street_address" type="text" name="street_address" placeholder="Street Address" class="form-control">
+                            </div>
+                            <div>
+                                <input id="city" type="text" name="city" placeholder="City" class="form-control">
+                            </div>
+                            <div>
+                                <select name="state" id="state" class="form-control">
+                                                <option value="">Select a state</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="AZ">Arizona</option>
+                                                <option value="AR">Arkansas</option>
+                                                <option value="CA">California</option>
+                                                <option value="CO">Colorado</option>
+                                                <option value="CT">Connecticut</option>
+                                                <option value="DE">Delaware</option>
+                                                <option value="DC">District Of Columbia</option>
+                                                <option value="FL">Florida</option>
+                                                <option value="GA">Georgia</option>
+                                                <option value="ID">Idaho</option>
+                                                <option value="IL">Illinois</option>
+                                                <option value="IN">Indiana</option>
+                                                <option value="IA">Iowa</option>
+                                                <option value="KS">Kansas</option>
+                                                <option value="KY">Kentucky</option>
+                                                <option value="LA">Louisiana</option>
+                                                <option value="MA">Massachusetts</option>
+                                                <option value="MI">Michigan</option>
+                                                <option value="MN">Minnesota</option>
+                                                <option value="MS">Mississippi</option>
+                                                <option value="MO">Missouri</option>
+                                                <option value="MT">Montana</option>
+                                                <option value="NE">Nebraska</option>
+                                                <option value="NV">Nevada</option>
+                                                <option value="NH">New Hampshire</option>
+                                                <option value="NJ">New Jersey</option>
+                                                <option value="NM">New Mexico</option>
+                                                <option value="NY">New York</option>
+                                                <option value="NC">North Carolina</option>
+                                                <option value="OH">Ohio</option>
+                                                <option value="OK">Oklahoma</option>
+                                                <option value="OR">Oregon</option>
+                                                <option value="PA">Pennsylvania</option>
+                                                <option value="RI">Rhode Island</option>
+                                                <option value="SC">South Carolina</option>
+                                                <option value="TN">Tennessee</option>
+                                                <option value="TX">Texas</option>
+                                                <option value="UT">Utah</option>
+                                                <option value="VA">Virginia</option>
+                                                <option value="WA">Washington</option>
+                                                <option value="WI">Wisconsin</option>
+                                                <option value="WY">Wyoming</option>
+                                            </select>
+                            </div>
+                            <div>
+                                <input id="zip_code" type="text" name="zip_code" placeholder="Zip" class="form-control">
+                            </div>
+                             <div>
+                                <select name="years_experience" class="form-control">
+                                                <option>Years of Experience?</option>
+                                                <option value="0-6-months">0 - 6 Months</option>
+                                                <option value="6-12-months">6 - 12 Months</option>
+                                                <option value="1-3-years">1 - 3 Years</option>
+                                                <option value="3-5 Years">3 - 5 Years</option>
+                                                <option value="5-plus-years">5+</option>
+                                            </select>
+                            </div>
+                             <div>
+                                <select name="cdl_valid" class="form-control">
+                                                <option>Do you have your Class A CDL?</option>
+                                                <option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                            </select>
+                            </div>
+                            <input type="hidden" name="form_type" value="T3">
+                            <input type="hidden" name="template_type" value="<?php echo $data->type ?>">
+                            <input id="submit-version-b" type="submit" value="Submit Application" class="form-control-btn btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
             <div class="footer-container">
                 <div class="footer-wrap">
                     <div class="phone-number-footer">
@@ -516,42 +643,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </div>
-    <div class="version-b-form">
+    <div class="version-b-form-desktop desktop-b <?php if(strpos($data->type, 'VB')) {echo 'shown';} else {echo 'hidden';} ?>">
         <div id="form">
             <div class="top-form">
                 <h1>Get Started Now!</h1>
                 <p>
-                    Just fill out our short application below and a recruiter will call you. It's that quick!
+                    Just fill out our short form below and a recruiter will call you. It's that quick!
                 </p>
             </div>
             <div class="bottom-form">
-                <form action="" method="post" id="leadForm" novalidate="novalidate">
+                <form action="" method="post" id="<?php if(strpos($data->type, 'VB')) {echo 'leadForm';} ?>" novalidate="novalidate">
                     <div>
-                        <label for="first_name">First Name </label>
-                        <input id="first_name" type="text" name="first_name" class="form-control">
+                        <input id="first_name" type="text" name="first_name" placeholder="First Name" class="form-control">
                     </div>
                     <div>
-                        <label for="last_name">Last Name </label>
-                        <input id="last_name" type="text" name="last_name" class="form-control">
+                        <input id="last_name" type="text" name="last_name" placeholder="Last Name" class="form-control">
                     </div>
                     <div>
-                        <label for="email">Email Address </label>
-                        <input id="email" type="text" name="email" class="form-control">
+                        <input id="email" type="text" name="email" placeholder="Email Address" class="form-control">
                     </div>
                     <div>
-                        <label for="phone">Phone Number </label>
-                        <input id="phone" type="text" name="phone" class="form-control">
+                        <input id="phone" type="text" name="phone" placeholder="Phone Number" class="form-control">
                     </div>
                     <div>
-                        <label for="street_address">Street Address </label>
-                        <input id="street_address" type="text" name="street_address" class="form-control">
+                        <input id="street_address" type="text" name="street_address" placeholder="Street Address" class="form-control">
                     </div>
                     <div>
-                        <label for="city">City</label>
-                        <input id="city" type="text" name="city" class="form-control">
+                        <input id="city" type="text" name="city" placeholder="City" class="form-control">
                     </div>
                     <div>
-                        <label for="city">State</label>
                         <select name="state" id="state" class="form-control">
                                         <option value="">Select a state</option>
                                         <option value="AL">Alabama</option>
@@ -600,11 +720,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     </select>
                     </div>
                     <div>
-                        <label for="zip_code">Zip</label>
-                        <input id="zip_code" type="text" name="zip_code" class="form-control">
+                        <input id="zip_code" type="text" name="zip_code" placeholder="Zip" class="form-control">
                     </div>
                      <div>
-                        <label for="zip_code">Years of Experience?</label>
                         <select name="years_experience" class="form-control">
                                         <option>Years of Experience?</option>
                                         <option value="0-6-months">0 - 6 Months</option>
@@ -615,7 +733,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     </select>
                     </div>
                      <div>
-                        <label for="zip_code">Do you have your Class A CDL?</label>
                         <select name="cdl_valid" class="form-control">
                                         <option>Do you have your Class A CDL?</option>
                                         <option value="Yes">Yes</option>
@@ -624,7 +741,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     <input type="hidden" name="form_type" value="T3">
                     <input type="hidden" name="template_type" value="<?php echo $data->type ?>">
-                    <input id="" type="submit" value="Submit Application" class="form-control-btn btn">
+                    <input id="submit-version-b" type="submit" value="Submit Application" class="form-control-btn btn">
                 </form>
             </div>
         </div>

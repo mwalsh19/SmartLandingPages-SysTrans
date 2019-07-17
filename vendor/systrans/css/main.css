@@ -1,4 +1,10 @@
+.hidden {
+  display:none !important;
+}
 
+.shown {
+  display: block;
+}
 
 .clearfix:after {
   visibility: hidden;
@@ -269,7 +275,7 @@ font-family: Conv_Vitesse-Bold;
 
 .invest-section {
   width: 100%;
-  height: 600px;
+  min-height: 600px;
   background: #212634;
   margin-bottom: -36px;
   padding-bottom: 40px;
@@ -661,7 +667,7 @@ body.apply-form-showing {
     width: 49.33%;
   }
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1200px) {
   .desktop-only {
     display: none;
   }
@@ -850,7 +856,7 @@ body.apply-form-showing {
     background: url(../images/landscape_dedicated.jpg); }
 
   .container-form {
-    display: block !important;
+    display: block;
     max-width: 100%;
     position: static;
     width: auto;
@@ -1138,28 +1144,108 @@ body.apply-form-showing {
 
 /* template version B */
 
-.main-description {
-    padding-top: 250px;
-    padding-left: 50px;
+.main-wrap-version-b .footer-container .footer-wrap {
+  width: 95%;
 }
 
-.footer-container .phone-number-footer {
-    padding-right: 50px;
+.main-wrap-version-b .footer-container .footer-wrap .terms {
+    width: 500px;
 }
 
-.footer-container .footer-wrap .terms {
-    padding-left: 50px;
-}
-
-.systrans-landing-page-1 {
+.systrans-landing-page-1, .systrans-landing-page-2 {
   display: flex;
 }
 
-.version-b-form {
-  width: 900px;
+.main-wrap-version-b .main-description {
+
+    width: 100%;
+    max-width: 850px;
+    position: absolute;
+    left: 25px;
+    z-index: 4;
+    color: #fff;
+    padding-top: 200px;
+
 }
 
-.version-b-form #form {
+@media(max-width:1200px) {
+  .desktop-b {
+    display:none;
+  }
+
+  .systrans-landing-page-1, .systrans-landing-page-2 {
+    display: unset;
+  }
+
+  .main-wrap-version-b .footer-container .footer-wrap .terms {
+    width: 100%;
+  }
+}
+@media(min-width:1201px) {
+  .version-b-form-mobile {
+    display:none;
+  }
+}
+
+/* mobile */
+.version-b-form-mobile .top-form {
+  background: #b8171e;
+  color: #fff;
+  padding: 35px 20px 20px 20px;
+  clip-path: polygon(20% 0%, 40% 0%, 100% 0, 100% 80%, 100% 100%, 3% 100%, 0% 90%, 0 0);
+}
+
+.version-b-form-mobile .top-form h1 {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: helvetica;
+}
+
+.version-b-form-mobile .top-form p {
+  font-size: 18px;
+  font-family: helvetica;
+  line-height: 1.5em;
+}
+
+.version-b-form-mobile .bottom-form {
+  min-height: 500px;
+  clip-path: polygon(3% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0% 3%);
+  padding: 50px 20px 20px 20px;
+}
+
+.version-b-form-mobile .bottom-form input[type="text"] {
+  background:transparent;
+  border:0;
+  border-bottom: 1px solid #fff;
+  height: 40px;
+}
+
+.version-b-form-mobile .bottom-form select {
+  background: transparent;
+  border: 0;
+  height: 30px;
+  margin-top: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+.version-b-form-mobile .bottom-form label {
+  color: white;
+}
+
+.version-b-form-mobile .bottom-form div {
+  margin-bottom: 30px;
+}
+
+/* desktop */
+.version-b-form-desktop {}
+
+@media(min-width: 1450px) {
+  .main-wrap-version-b {
+    margin-right: 270px;
+  }
+}
+
+.version-b-form-desktop #form {
   width: 300px;
   height: 100vh;
   position: fixed;
@@ -1168,32 +1254,42 @@ body.apply-form-showing {
 }
 
 
-.top-form {
-  background: #ff0050;
+.version-b-form-desktop .top-form {
   top: 99px;
   position: relative;
   color: #fff;
   padding: 35px 20px 20px 20px;
-  clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 10% 100%, 0% 80%, 0 0);
+  clip-path: polygon(20% 0%, 40% 0%, 100% 0, 100% 80%, 100% 100%, 10% 100%, 0% 90%, 0 0);
 }
 
-.bottom-form {
-  background: red;
+.version-b-form-desktop .top-form h1 {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: helvetica;
+}
+
+.version-b-form-desktop .top-form p {
+  font-size: 18px;
+  font-family: helvetica;
+  line-height: 1.5em;
+}
+
+.version-b-form-desktop .bottom-form {
   min-height: 500px;
   position: relative;
   top: 99px;
-  clip-path: polygon(10% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0% 5%);
-  padding: 100px 20px 20px 20px;
+  clip-path: polygon(10% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0% 3%);
+  padding: 50px 20px 20px 20px;
 }
 
-.bottom-form input[type="text"] {
+.version-b-form-desktop .bottom-form input[type="text"] {
   background:transparent;
   border:0;
   border-bottom: 1px solid #fff;
   height: 40px;
 }
 
-.bottom-form select {
+.version-b-form-desktop .bottom-form select {
   background: transparent;
   border: 0;
   height: 30px;
@@ -1201,14 +1297,27 @@ body.apply-form-showing {
   border-bottom: 1px solid #fff;
 }
 
-.bottom-form label {
+.version-b-form-desktop .bottom-form label {
   color: white;
 }
 
-.bottom-form div {
+.version-b-form-desktop .bottom-form div {
   margin-bottom: 30px;
 }
 
+@media(min-width: 1201px) and (max-width:1450px) {
+  .main-wrap-version-b {
+    margin-right: 285px;
+  }
+
+  .version-b-form-desktop .bottom-form {
+    clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0% 3%);
+  }
+
+  .version-b-form-desktop .top-form {
+    clip-path: polygon(20% 0%, 40% 0%, 100% 0, 100% 80%, 100% 100%, 5% 100%, 0% 90%, 0 0);
+  }
+}
 
 
 

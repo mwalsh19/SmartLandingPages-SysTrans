@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+        if ($(window).width() > 1200) {
+
+                $('.version-b-form-mobile form').removeAttr('id');
+        }
+
 		$(window).scroll(function() {
 			if ($(window).width() > 950) {
 
@@ -69,7 +74,7 @@ $(document).ready(function() {
         var d = {};
         d.UTIL = {
             setupFormValidation: function() {
-                a("#leadForm,#leadform2").validate({
+                a("#leadForm").validate({
                     rules: {
                         first_name: "required",
                         last_name: "required",
