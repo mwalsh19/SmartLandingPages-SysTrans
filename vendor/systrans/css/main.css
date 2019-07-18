@@ -1152,7 +1152,7 @@ body.apply-form-showing {
     width: 500px;
 }
 
-.systrans-landing-page-1, .systrans-landing-page-2 {
+.systrans-landing-page-1, .systrans-landing-page-2, .systrans-landing-page-3 {
   display: flex;
 }
 
@@ -1173,7 +1173,7 @@ body.apply-form-showing {
     display:none;
   }
 
-  .systrans-landing-page-1, .systrans-landing-page-2 {
+  .systrans-landing-page-1, .systrans-landing-page-2, .systrans-landing-page-3 {
     display: unset;
   }
 

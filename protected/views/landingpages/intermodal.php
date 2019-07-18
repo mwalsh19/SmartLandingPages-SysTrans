@@ -148,17 +148,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     #submit-version-b {
-        background: <?php echo $rgba_secondary_full; ?>;
         margin-left: 0;
         width: 100%;
         text-transform: none;
+        color: <?php if ($data->type == 'JJW1VB' ) { echo $invest_section_color; } else { echo '#ffffff'; } ?>;
+        background: <?php if ($data->type == 'ST1VB' || $data->type == 'STTeamVB' || $data->type == 'ST2VB' ) { echo $invest_section_color; } else { echo $primary_color; } ?>
     }
     .bottom-form {
-        background: <?php echo $primary_color; ?>;
+        /* background: <?php echo $rgba_secondary_full; ?>; */
+        background: <?php if ($data->type == 'ST1VB' || $data->type == 'STTeamVB' || $data->type == 'ST2VB' ) { echo $primary_color; } else { echo $invest_section_color; } ?>
     }
     .top-form {
-      background: #b8171e;
-      /*background: <?php echo $rgba_secondary_full; ?>; */
+      background: <?php if ($data->type == 'ST1VB' || $data->type == 'STTeamVB' || $data->type == 'ST2VB' ) { echo '#b8171e'; } else { echo $primary_color; } ?>
+    }
+
+    .version-b-form-desktop .top-form h1, .version-b-form-desktop .top-form p {
+        color: <?php if ($data->type == 'JJW1VB' ) { echo $invest_section_color; } else { echo '#ffffff'; } ?>;
+
     }
 
     @media screen and (max-width: 950px) {
@@ -221,20 +227,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="middle-container relative">
                 <div class="quote-mobile mobile-only">
-                    <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1' || $data->type == 'JJW1' || $data->type == 'JJW1VB') {
+                    <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1' || $data->type == 'TWT1VB' || $data->type == 'JJW1' || $data->type == 'JJW1VB') {
                         echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
                     } ?>
-                    <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2') {
+                    <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2' || $data->type == 'TWT2VB') {
                         echo '<img src="' . $assets . '/cdl-a/quote-cdl-a-driver.png" />';
                     } ?>
-                    <?php if ($data->type == 'STTeam' || $data->type == 'STTeamVB' || $data->type == 'TWT3') {
+                    <?php if ($data->type == 'STTeam' || $data->type == 'STTeamVB' || $data->type == 'TWT3' || $data->type == 'TWT3VB') {
                         echo '<img src="' . $assets . '/team/quote-team-driver.png" />';
                     } ?>
                 </div>
                 <div class="row middle-container-wrap clearfix">
-                    <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2') {
+                    <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2' || $data->type == 'TWT2VB') {
                         echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/cdl-a/' . $name . '-recent-cdla-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
-                    } else if ($data->type == 'TWT3' || $data->type == 'STTeam' || $data->type == 'STTeamVB') {
+                    } else if ($data->type == 'TWT3' || $data->type == 'TWT3VB' || $data->type == 'STTeam' || $data->type == 'STTeamVB') {
                         echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/team/' . $name . '-team-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
                     } else {
                         echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . '-experienced-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
@@ -243,13 +249,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="text">
                             <div class="middle-copy flex-center">
                                 <div class="quote desktop-only">
-                                    <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1' || $data->type == 'JJW1' || $data->type == 'JJW1VB') {
+                                    <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1'  || $data->type == 'TWT1VB' || $data->type == 'JJW1' || $data->type == 'JJW1VB') {
                                         echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
                                     } ?>
-                                    <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2') {
+                                    <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2' || $data->type == 'TWT2VB') {
                                         echo '<img src="' . $assets . '/cdl-a/quote-cdl-a-driver.png" />';
                                     } ?>
-                                    <?php if ($data->type == 'STTeam' || $data->type == 'STTeamVB' || $data->type == 'TWT3') {
+                                    <?php if ($data->type == 'STTeam' || $data->type == 'STTeamVB' || $data->type == 'TWT3' || $data->type == 'TWT3VB') {
                                         echo '<img src="' . $assets . '/team/quote-team-driver.png" />';
                                     } ?>
                                 </div>
@@ -291,7 +297,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 Experience an award-winning app, The Driver Portal, made for drivers by drivers. With a simple tap, you will receive real-time updates and alerts, access your pay, current trip data, messages/notifications, available PTO, contact information, and so much more! Use the Notification Center to stay in touch when you’re out of your truck. You won’t be sitting in the tractor waiting for dispatch. Instead, conveniently stay informed with your cell while living your life. Access your driver portal anywhere on any device, anytime.</span> 
                             </p>
                         </div>
-                        <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1' || $data->type == 'JJW1' || $data->type == 'JJW1VB' || $data->type == 'STTeam' || $data->type == 'STTeamVB' || $data->type == 'TWT3') {
+                        <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1'  || $data->type == 'TWT1VB' || $data->type == 'JJW1' || $data->type == 'JJW1VB' || $data->type == 'STTeam' || $data->type == 'STTeamVB' || $data->type == 'TWT3' || $data->type == 'TWT3VB') {
                         echo '<div class="box">
                                 <p>
                                     <img src="' . $assets . '/icon-' . $name . '-referral-program.png" alt="invest-1" />
@@ -302,7 +308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </p>
                             </div>';
                         } ?>
-                        <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2') {
+                        <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2' || $data->type == 'TWT2VB') {
                         echo '<div class="box">
                                 <p>
                                     <img src="' . $assets . '/cdl-a/icon-' . $name . '-tuition-reimbursement.png" alt="invest-1" />
