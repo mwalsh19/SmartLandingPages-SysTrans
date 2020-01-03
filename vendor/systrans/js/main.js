@@ -103,6 +103,7 @@ $(document).ready(function() {
                         cdl_valid: "This field is required"
                     },
                     submitHandler: function(a) {
+                        ga('send','event','ThankYouPage','Click','ApplyNow');
                         a.submit()
                     }
                 })

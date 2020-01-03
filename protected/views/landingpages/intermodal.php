@@ -31,6 +31,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <?php } ?>
 
+<?php if ((isset($publisher[1]) && $publisher[1] === 'google') !== false ) { ?>
+    <!-- weboganic google tag manager
+
+        // gtag('config', 'AW-1069865639');
+        // update 9-23-2019
+
+     -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1069865639"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-1069865639/qmu7CJKE5asBEKe1k_4D', {
+            'phone_conversion_number': '866 696-3420'
+        });
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+
+            gtag('event', 'conversion', {
+                'send_to': 'AW-1069865639/gJfhCIW776sBEKe1k_4D',
+                'event_callback': callback
+            });
+
+            return false;
+        }
+
+    </script>
+<?php } ?>
+
 <?php
     Yii::app()->clientScript->registerPackage('systrans');
     $main_directory = Yii::app()->getBaseUrl(true) . '/vendor/systrans';
@@ -162,11 +195,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       background: <?php if ($data->type == 'ST1VB' || $data->type == 'STTeamVB' || $data->type == 'ST2VB' ) { echo '#b8171e'; } else { echo $primary_color; } ?>
     }
 
-    .version-b-form-desktop .top-form h1, .version-b-form-desktop .top-form p {
+    .version-b-form-desktop .top-form h1, .version-b-form-desktop .top-form p, .version-b-form-mobile .top-form h1, .version-b-form-mobile .top-form p {
         color: <?php if ($data->type == 'JJW1VB' ) { echo $invest_section_color; } else { echo '#ffffff'; } ?>;
-
     }
-
     @media screen and (max-width: 950px) {
         .sub-heading {
             background: <?php echo $rgba_secondary_full ?>;
@@ -238,13 +269,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     } ?>
                 </div>
                 <div class="row middle-container-wrap clearfix">
+                    <!-- pre jan 3rd live switch
                     <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2' || $data->type == 'TWT2VB') {
                         echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/cdl-a/' . $name . '-recent-cdla-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
                     } else if ($data->type == 'TWT3' || $data->type == 'TWT3VB' || $data->type == 'STTeam' || $data->type == 'STTeamVB') {
                         echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/team/' . $name . '-team-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
                     } else {
                         echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . '-experienced-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
-                    } ?>
+                    } ?> -->
+                    <?php 
+                        $versionBAddPrefix = '';
+                        if (strpos($data->type, 'VB') !== false) {
+                            $versionBAddPrefix = '-old';
+                        }
+                        if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2' || $data->type == 'TWT2VB') {
+                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/cdl-a/' . $name . $versionBAddPrefix . '-recent-cdla-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
+                        } else if ($data->type == 'TWT3' || $data->type == 'TWT3VB' || $data->type == 'STTeam' || $data->type == 'STTeamVB') {
+                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/team/' . $name . $versionBAddPrefix . '-team-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
+                        } else {
+                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . $versionBAddPrefix . '-experienced-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
+                        } 
+                    ?>
                     <div class="col-2 col">
                         <div class="text">
                             <div class="middle-copy flex-center">
@@ -761,7 +806,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             return "" == b ? (alert("Please enter your email"), !1) : a(b) ? (h.addClass("apply-form-showing"), d.fadeIn(), g.val(b), void f.fadeIn()) : (alert("Please enter a valid email"), !1)
         })*/
 </script>
-
 <script> (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {

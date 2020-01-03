@@ -1180,6 +1180,26 @@ body.apply-form-showing {
   .main-wrap-version-b .footer-container .footer-wrap .terms {
     width: 100%;
   }
+
+  .main-wrap-version-b .main-description {
+    width: 90%;
+    padding-top: 150px;
+  }
+  .main-description h3 {
+    font-size: 30px;
+  }
+  .landscape-container {
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.2);
+    background-position: center !important;
+  }
+}
+@media(max-width:500px) {
+  .main-wrap-version-b .main-description {
+    padding-top: 50px;
+  }
+  .main-wrap-version-b .footer-container .footer-wrap {
+    width: auto;
+  }
 }
 @media(min-width:1201px) {
   .version-b-form-mobile {
@@ -1189,7 +1209,6 @@ body.apply-form-showing {
 
 /* mobile */
 .version-b-form-mobile .top-form {
-  background: #b8171e;
   color: #fff;
   padding: 35px 20px 20px 20px;
   clip-path: polygon(20% 0%, 40% 0%, 100% 0, 100% 80%, 100% 100%, 3% 100%, 0% 90%, 0 0);
@@ -1276,6 +1295,7 @@ body.apply-form-showing {
 
 .version-b-form-desktop .bottom-form {
   min-height: 500px;
+  height: 100vh;
   position: relative;
   top: 99px;
   clip-path: polygon(10% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0% 3%);

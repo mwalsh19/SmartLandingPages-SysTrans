@@ -460,6 +460,10 @@ class LandingpagesController extends Controller {
                 $companyID = $isDev ? '15' : '1010';
             }*/
 
+            if (strpos($trim_slug, 'indeed') !== false) {
+                $source = 'Indeed';
+            }
+
             $givenName = $_POST['first_name'];
             $familyName = $_POST['last_name'];
             $municipality = $_POST['city'];
