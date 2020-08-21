@@ -33,6 +33,10 @@ $intellaappPath = 'tsystem';
         case 'ST1':
         case 'ST2':
         case 'STTeam':
+        case 'ST1VB':
+        case 'ST2VB':
+        case 'STTeamVB':
+        case 'OWNER-ST':
             $name = 'st';
             $company_symbol = 'System Transport';
             $company = 'System Transport';
@@ -51,6 +55,7 @@ $intellaappPath = 'tsystem';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/systrans/images';
             break;
         case 'JJW1':
+        case 'JJW1VB':
             $name = 'jjw';
             $company_symbol = 'JJW';
             $company = 'James J. Williams';
@@ -71,6 +76,9 @@ $intellaappPath = 'tsystem';
         case 'TWT1':
         case 'TWT2':
         case 'TWT3':
+        case 'TWT1VB':
+        case 'TWT2VB':
+        case 'TWT3VB':
             $name = 'twt';
             $company_symbol = 'TWT';
             $company = 'TWT Refrigerated Service Transport';
@@ -95,6 +103,56 @@ $intellaappPath = 'tsystem';
             break;
     }
     ?>
+    
+    <?php if (isset($publisher) && $publisher[1] === 'google') { ?>
+    <!-- Begin Google Tag Manager code for Weboganic 
+    
+    // gtag('config', 'AW-1069865639');
+    // update 9-23-2019
+    
+    -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1069865639"></script>
+      <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-1069865639/qmu7CJKE5asBEKe1k_4D', {
+    'phone_conversion_number': '866 696-3420'
+  });
+</script>
+      <script>
+  gtag('event', 'conversion', {'send_to': 'AW-1069865639/qZTACO7TuqkBEKe1k_4D'});
+</script>
+    <!-- End Google Tag Manager code for Weboganic -->
+    <?php } ?>
+    
+    <?php if (isset($publisher) && $publisher[1] === 'indeed') { ?>
+
+      <!-- Begin INDEED conversion code -->
+      <script type="text/javascript">
+      /* <![CDATA[ */
+      var indeed_conversion_id = "7851872115071040";
+      var indeed_conversion_label = "";
+      /* ]]> */
+      </script>
+      <script type="text/javascript" src="//conv.indeed.com/applyconversion.js">
+      </script>
+      <noscript>
+      <img height=1 width=1 border=0 src="//conv.indeed.com/pagead/conv/7851872115071040/?script=0">
+      </noscript>
+      <!-- End INDEED conversion code -->
+
+    <?php } ?>
+    
+    <?php if (isset($publisher) && $publisher[1] === 'ziprecruiter') { ?>
+      <!-- Begin ZipRecruiter pixel code -->
+      <img style="position:absolute;" src="https://track.ziprecruiter.com/conversion?enc_account_id=e8f198c7" width="1" height="1"/>
+      <!-- End ZipRecruiter pixel code -->
+    <?php } ?>
+    
+    <!-- System Transport-->
+    <img style="position:absolute;" src="https://www.hiremaster.com/img/markertpa.php?conv=gEX96YuaOF&ty=47" width="1" height="1" />
+    
 <link rel="icon" type="image/png" href="<?php echo $assets . '/' . $name ?>-favicon.ico">
 <style>
   .btn-click-here {
@@ -193,6 +251,24 @@ $intellaappPath = 'tsystem';
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
         ga('create', '<?php echo $ga_tp; ?>', 'auto');
         ga('send', 'pageview');</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '824397174323085');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=824397174323085&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
 
 
 <?php

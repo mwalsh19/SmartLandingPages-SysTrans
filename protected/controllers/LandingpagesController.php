@@ -451,7 +451,7 @@ class LandingpagesController extends Controller {
             $source = 'LACED Lead';
             $companyID = $isDev ? '15' : '806';
             $companyName = $isDev ? 'Laced Agency' : 'TransSystem';
-            $post_address = $isDev ? 'https://devdashboard.tenstreet.com/post/' : 'https://dashboard.tenstreet.com/post/';
+            $post_address = $isDev ? 'https://devdashboard.tenstreet.com/post/' : 'https://api.tenstreet.com';
             $appReferrer = $model->referral_code; //REFERRAL CODE
 
 
