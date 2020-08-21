@@ -2,9 +2,9 @@
 
 ## Instructions
 
-- You will need to run the latest systemtransdb-<Date-Here>.sql file in database-usage folder in phpMyAdmin, this can be done by clicking on the database, then import, upload new .sql file, and press "GO" button.
+- You will need to run the latest systemtransdb-<Date-Here>.sql file in database-usage folder in phpMyAdmin, this can be done by truncating all data in the systemtransdb databaser, clicking on the systemtransdb database, then import tab, upload new .sql file, and press "GO" button.
 - Database settings are in protected/config/main.php line 232, make sure your credentials match phpMyAdmin's, or the app will throw an error and not run.
-- Files need to run in your MAMP/htdocs folder which is the base folder, to run this application.
+- Files need to run in your MAMP/htdocs folder which is the base folder, add the files into the htdocs folder and start mamp server to run this application.
 
 ### Admin Login
 
