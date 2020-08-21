@@ -69,6 +69,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     $main_directory = Yii::app()->getBaseUrl(true) . '/vendor/systrans';
     $uploadsPath = Yii::app()->getBaseUrl(true) . '/';
     $intellaappPath = 'tsystem';
+    $change_form = false;
     
     $type = '';
     switch ($data->type) {
@@ -78,6 +79,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         case 'ST1VB':
         case 'ST2VB':
         case 'STTeamVB':
+        case 'OWNER-ST':
             $type = 'landing-page-1';
             $name = 'st';
             $company = 'System Transport';
@@ -93,6 +95,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             $privacy_url = 'https://systemtrans.com/privacy-policy/';
             $website_url = 'https://systemtrans.com';
             $assets = Yii::app()->getBaseUrl(true) . '/vendor/systrans/systrans/images';
+            $change_form = true;
             break;
         case 'JJW1':
         case 'JJW1VB':
@@ -198,9 +201,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     .version-b-form-desktop .top-form h1, .version-b-form-desktop .top-form p, .version-b-form-mobile .top-form h1, .version-b-form-mobile .top-form p {
         color: <?php if ($data->type == 'JJW1VB' ) { echo $invest_section_color; } else { echo '#ffffff'; } ?>;
     }
+    .owner-image {
+        position: relative;
+        top: -260px;
+    }
     @media screen and (max-width: 950px) {
         .sub-heading {
             background: <?php echo $rgba_secondary_full ?>;
+        }
+        .owner-image {
+            top: 0;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 800px) {
+        .background-middle {
+            padding-bottom: 100%;
+        }
+    }
+    @media screen and (max-width: 414px) {
+        <?php if ($data->type == 'OWNER-ST') {
+            echo ".landscape-container {
+                background: url({$uploadsPath}uploads/systrans_files/{$data->background_mobile}) !important;
+                background-size: 100% !important;
+            }";
+        } ?>
+        .owner-image {
+            top: -130px;
+            max-width: 305px;
+            left: -26px;
+        }
+    }
+    @media screen and (max-width: 360px) {
+        .owner-image {
+            top: -145px;
         }
     }
 </style>
@@ -219,7 +252,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="btnGroup-mobile clearfix">
                 <div class="grouBtn-wrap">
                     <a href="tel:<?php echo $data->phone ?>" id="callBtn" class="form-control-btn btn">Click to Call</a>
-                    <a href="#quickForm" id="quickFormBtn" class="form-control-btn btn">Quick Form</a>
+                    <a href="#quickForm" id="quickFormBtn" class="form-control-btn btn">Quick Apply</a>
                 </div>
             </div>
             <?php if(!strpos($data->type, 'VB')) {
@@ -267,6 +300,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <?php if ($data->type == 'STTeam' || $data->type == 'STTeamVB' || $data->type == 'TWT3' || $data->type == 'TWT3VB') {
                         echo '<img src="' . $assets . '/team/quote-team-driver.png" />';
                     } ?>
+                    <?php if ($data->type == 'OWNER-ST') {
+                        echo '<img class="owner-image" src="' . $assets . '/team/quote-team-driver.png" />';
+                    } ?>
                 </div>
                 <div class="row middle-container-wrap clearfix">
                     <!-- pre jan 3rd live switch
@@ -286,6 +322,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/cdl-a/' . $name . $versionBAddPrefix . '-recent-cdla-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
                         } else if ($data->type == 'TWT3' || $data->type == 'TWT3VB' || $data->type == 'STTeam' || $data->type == 'STTeamVB') {
                             echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/team/' . $name . $versionBAddPrefix . '-team-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
+                        } else if ($data->type == 'OWNER-ST') {
+                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . $versionBAddPrefix . '-LandingPage-Owner-GFX.jpg) no-repeat; background-size: cover;"></div>';
                         } else {
                             echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . $versionBAddPrefix . '-experienced-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
                         } 
@@ -302,6 +340,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     } ?>
                                     <?php if ($data->type == 'STTeam' || $data->type == 'STTeamVB' || $data->type == 'TWT3' || $data->type == 'TWT3VB') {
                                         echo '<img src="' . $assets . '/team/quote-team-driver.png" />';
+                                    } ?>
+                                    <?php if ($data->type == 'OWNER-ST') {
+                                        echo '<img class="owner-image" src="' . $assets . '/team/quote-team-driver.png" />';
                                     } ?>
                                 </div>
                                 <div class="copy">
@@ -323,16 +364,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="grid-container">
                     <h3>We Invest In You.</h3>
                     <div class="flex-container">
-                        <div class="box">
-                            <p>
-                                <img src="<?php echo $assets; ?>/icon-<?php echo $name; ?>-truck-checkmark.png" alt="invest-1" />
-                            </p>
-                            <h4>METICULOUSLY MAINTAINED<br>FOR YOUR SAFETY</h4>
-                            <p><span style="color: #fff;">
-                                Your safety is paramount to us. Every tractor has a lane departure & forward collision warning system, hard brake monitoring, and a satellite communication device installed. We have invested in building our own shops, staffing a 24/7/365 road service staff, and developed a robust network of outside shops to keep our trucks rolling. If a truck needs repairs, it’s not going out until it is 100% ready to the hit the road again safely with you at the wheel. You can count on that.
-                                </span>
-                            </p>
-                        </div>
+                        <?php if ($data->type !== 'OWNER-ST') {
+                        echo '<div class="box">
+                                    <p>
+                                        <img src="' . $assets . '/icon-' . $name . '-truck-checkmark.png" alt="invest-1" />
+                                    </p>
+                                    <h4>METICULOUSLY MAINTAINED<br>FOR YOUR SAFETY</h4>
+                                    <p><span style="color: #fff;">
+                                        Your safety is paramount to us. Every tractor has a lane departure & forward collision warning system, hard brake monitoring, and a satellite communication device installed. We have invested in building our own shops, staffing a 24/7/365 road service staff, and developed a robust network of outside shops to keep our trucks rolling. If a truck needs repairs, it’s not going out until it is 100% ready to the hit the road again safely with you at the wheel. You can count on that.
+                                        </span>
+                                    </p>
+                                </div>';
+                        } else {
+                            echo '<div class="box">
+                                    <p>
+                                        <img src="' . $assets . '/icon-' . $name . '-truck-checkmark.png" alt="invest-1" />
+                                    </p>
+                                    <h4>METICULOUSLY MAINTAINED &<br>SUPPORT FOR YOUR SAFETY</h4>
+                                    <p><span style="color: #fff;">
+                                        Your safety is paramount to us. That’s why our top quality trailers and support equipment are meticulously maintained to ensure precision performance when driving. As an Owner Operator driver, you have access to our 24/7/365 roadside trailer service when hauling our trailers, as well as our Tire & Equipment Maintenance Program to keep you driving safely.
+                                        </span>
+                                    </p>
+                                </div>';
+                        } ?>
                         <div class="box">
                             <p>
                                 <img src="<?php echo $assets; ?>/icon-<?php echo $name; ?>-driver-portal.png" alt="invest-1" />
@@ -352,7 +406,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     No one knows good drivers better than you. At ' . $company . ', our drivers make us who we are – they are the face, heart, and backbone of this company. Their hard work and dedication to get the job done make us proud every day, and set us apart from our competition. If you have met someone you think would be a great addition to the ' . $company_symbol . ' family, we want an introduction. Your truck driver referrals could earn you up to $1,500!</span>
                                 </p>
                             </div>';
-                        } ?>
+                        } ?> 
                         <?php if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2' || $data->type == 'TWT2VB') {
                         echo '<div class="box">
                                 <p>
@@ -361,6 +415,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <h4>TUITION REIMBURSEMENT</h4>
                                 <p><span style="color: #fff;">
                                     Have CDL Tuition debt? We understand it\'s hard to move forward and drive like you mean it when finances are fighting to hold you back. That\'s why our industry-leading program will reimburse up to $5,000 of out of pocket expenses for new graduates and/or drivers who are still paying off their CDL tuition debt. We deposit 12 monthly payments, starting after just 2 months of employment with our team! Now that\'s how you drive like you mean it.</span>
+                                </p>
+                            </div>';
+                        } ?>
+                        <?php if ($data->type == 'OWNER-ST') {
+                        echo '<div class="box">
+                                <p>
+                                    <img src="' . $assets . '/icon-' . $name . '-fuel-tank.png" alt="invest-1" />
+                                </p>
+                                <h4>GENEROUS FUEL DISCOUNT PROGRAM</h4>
+                                <p><span style="color: #fff;">
+                                    As an Owner Operator driver for System Transport, you will take advantage of our discounted fuel program at most stations nationwide, allowing you to keep your overhead low while driving a higher profit margin for your bottom line.    
                                 </p>
                             </div>';
                         } ?>
@@ -548,10 +613,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <select name="years_experience" class="form-control">
                                         <option>Years of Experience?</option>
                                         <!-- <option value="0-6-months">0 - 6 Months</option> -->
-                                        <option value="6-12-months">6 - 12 Months</option>
+                                        <?php if ($change_form) { echo '<option value="5-12-months">5 - 12 Months</option>'; } else { echo '<option value="6-12-months">6 - 12 Months</option>'; } ?>
                                         <option value="1-3-years">1 - 3 Years</option>
                                         <option value="3-5 Years">3 - 5 Years</option>
-                                        <option value="5-plus-years">5+</option>
+                                        <?php if ($change_form) { echo '<option value="5-plus-years">5+ Years</option>'; } else { echo '<option value="5-plus-years">5+</option>'; } ?>
                                     </select>
                                 </div>
                                 <div class="cdl-valid-control col-half-desktop">
@@ -650,13 +715,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                              <div>
                                 <select name="years_experience" class="form-control">
-                                                <option>Years of Experience?</option>
-                                                <!-- <option value="0-6-months">0 - 6 Months</option> -->
-                                                <option value="6-12-months">6 - 12 Months</option>
-                                                <option value="1-3-years">1 - 3 Years</option>
-                                                <option value="3-5 Years">3 - 5 Years</option>
-                                                <option value="5-plus-years">5+</option>
-                                            </select>
+                                        <option>Years of Experience?</option>
+                                        <!-- <option value="0-6-months">0 - 6 Months</option> -->
+                                        <?php if ($change_form) { echo '<option value="5-12-months">5 - 12 Months</option>'; } else { echo '<option value="6-12-months">6 - 12 Months</option>'; } ?>
+                                        <option value="1-3-years">1 - 3 Years</option>
+                                        <option value="3-5 Years">3 - 5 Years</option>
+                                        <?php if ($change_form) { echo '<option value="5-plus-years">5+ Years</option>'; } else { echo '<option value="5-plus-years">5+</option>'; } ?>
+                                    </select>
                             </div>
                              <div>
                                 <select name="cdl_valid" class="form-control">
@@ -777,10 +842,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <select name="years_experience" class="form-control">
                                         <option>Years of Experience?</option>
                                         <!-- <option value="0-6-months">0 - 6 Months</option> -->
-                                        <option value="6-12-months">6 - 12 Months</option>
+                                        <?php if ($change_form) { echo '<option value="5-12-months">5 - 12 Months</option>'; } else { echo '<option value="6-12-months">6 - 12 Months</option>'; } ?>
                                         <option value="1-3-years">1 - 3 Years</option>
                                         <option value="3-5 Years">3 - 5 Years</option>
-                                        <option value="5-plus-years">5+</option>
+                                        <?php if ($change_form) { echo '<option value="5-plus-years">5+ Years</option>'; } else { echo '<option value="5-plus-years">5+</option>'; } ?>
                                     </select>
                     </div>
                      <div>
