@@ -270,15 +270,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="primary-description">
                                     <h3><?php echo $data->main_title; ?></h3>
                                 </div>
-                                <div class="secondary-description">
+                                <div class="secondary-description desktop-only">
                                     <?php
                                         echo $data->main_description;
                                         ?>
                                 </div>
                                 <?php if(!strpos($data->type, 'VB')) {
                                     echo '<div class="apply-form clearfix desktop-only">
-                                        <h2> Get Started! </h2>
-                                        <p>Enter your email address below to get started.</p>
+                                        <h2> Apply Now! </h2>
+                                        <p>Our 2-minute Short Form begins with entering your email address.</p>
                                         <input type="text" id="apply-email-field" class="form-control" placeholder="Please Enter Your Email Address">
                                         <a href="javascript:void(0);
                                             " id="apply-btn" class="form-control-btn" style="background: url(' . $assets . '/btn-' . $name . '-next.png);"></a>
@@ -291,6 +291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="middle-container relative">
                 <div class="quote-mobile mobile-only">
+                    <!--
                     <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1' || $data->type == 'TWT1VB' || $data->type == 'JJW1' || $data->type == 'JJW1VB') {
                         echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
                     } ?>
@@ -303,6 +304,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <?php if ($data->type == 'OWNER-ST') {
                         echo '<img class="owner-image" src="' . $assets . '/team/quote-team-driver.png" />';
                     } ?>
+                -->
                 </div>
                 <div class="row middle-container-wrap clearfix">
                     <!-- pre jan 3rd live switch
@@ -313,24 +315,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     } else {
                         echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . '-experienced-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
                     } ?> -->
-                    <?php 
-                        $versionBAddPrefix = '';
-                        if (strpos($data->type, 'VB') !== false) {
-                            $versionBAddPrefix = '-old';
-                        }
-                        if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2' || $data->type == 'TWT2VB') {
-                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/cdl-a/' . $name . $versionBAddPrefix . '-recent-cdla-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
-                        } else if ($data->type == 'TWT3' || $data->type == 'TWT3VB' || $data->type == 'STTeam' || $data->type == 'STTeamVB') {
-                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/team/' . $name . $versionBAddPrefix . '-team-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
-                        } else if ($data->type == 'OWNER-ST') {
-                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . $versionBAddPrefix . '-LandingPage-Owner-GFX.jpg) no-repeat; background-size: cover;"></div>';
-                        } else {
-                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . $versionBAddPrefix . '-experienced-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
-                        } 
-                    ?>
                     <div class="col-2 col">
                         <div class="text">
                             <div class="middle-copy flex-center">
+                                <!--
                                 <div class="quote desktop-only">
                                     <?php if ($data->type == 'ST1' || $data->type == 'ST1VB' || $data->type == 'TWT1'  || $data->type == 'TWT1VB' || $data->type == 'JJW1' || $data->type == 'JJW1VB') {
                                         echo '<img src="' . $assets . '/quote-experienced-driver.png" />';
@@ -344,7 +332,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <?php if ($data->type == 'OWNER-ST') {
                                         echo '<img class="owner-image" src="' . $assets . '/team/quote-team-driver.png" />';
                                     } ?>
-                                </div>
+                                </div> 
+                                -->
                                 <div class="copy">
                                     <?php
                                         echo $data->body_copy;
@@ -353,6 +342,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                     </div>
+                    <?php 
+                        $versionBAddPrefix = '';
+                        if (strpos($data->type, 'VB') !== false) {
+                            $versionBAddPrefix = '-old';
+                        }
+                        if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2' || $data->type == 'TWT2VB') {
+                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/cdl-a/' . $name . $versionBAddPrefix . '-recent-cdla-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
+                        } else if ($data->type == 'TWT3' || $data->type == 'TWT3VB' || $data->type == 'STTeam' || $data->type == 'STTeamVB') {
+                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/team/' . $name . $versionBAddPrefix . '-team-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
+                        } else if ($data->type == 'OWNER-ST') {
+                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . $versionBAddPrefix . '-LandingPage-Owner-GFX.jpg) no-repeat; background-size: cover;"></div>';
+                        } else {
+                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . $versionBAddPrefix . '-fall-2020-exp-inset-gfx.jpg) no-repeat; background-size: cover; background-position: 50%;"></div>';
+                        } 
+                    ?>
+                    
                 </div>
             </div>
             <div class="open-road" <?php echo "style='background: url({$uploadsPath}uploads/systrans_files/{$data->region_graphic}) no-repeat center; background-size: cover;'" ?>>
@@ -360,6 +365,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h3><?php echo $data->sub_title; ?></h3>
                 </div>
             </div>
+            <!--
             <div class="invest-section">
                 <div class="grid-container">
                     <h3>We Invest In You.</h3>
@@ -432,10 +438,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             </div>
+        -->
             <div class="icon-section">
                 <div class="grid-container">
                     <div>
-                        <h2>What Drives You?</h2>
+                        <h2>Excellent Benefits</h2>
                     </div>
                     <div class="icons col-3 item1 inline-block center">
                         <div class="inline-block">
