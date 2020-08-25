@@ -348,13 +348,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             $versionBAddPrefix = '-old';
                         }
                         if ($data->type == 'ST2' || $data->type == 'ST2VB' || $data->type == 'TWT2' || $data->type == 'TWT2VB') {
-                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/cdl-a/' . $name . $versionBAddPrefix . '-recent-cdla-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
+                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/cdl-a/' . $name . $versionBAddPrefix . '-recent-cdla-driver-gfx.jpg) no-repeat; background-size: cover;background-position: 50%;"></div>';
                         } else if ($data->type == 'TWT3' || $data->type == 'TWT3VB' || $data->type == 'STTeam' || $data->type == 'STTeamVB') {
-                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/team/' . $name . $versionBAddPrefix . '-team-driver-gfx.jpg) no-repeat; background-size: cover;"></div>';
+                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/team/' . $name . $versionBAddPrefix . '-team-driver-gfx.jpg) no-repeat; background-size: cover;background-position: 50%;"></div>';
                         } else if ($data->type == 'OWNER-ST') {
-                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . $versionBAddPrefix . '-LandingPage-Owner-GFX.jpg) no-repeat; background-size: cover;"></div>';
+                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . $versionBAddPrefix . '-LandingPage-Owner-GFX.jpg) no-repeat; background-size: cover;background-position: 50%;"></div>';
                         } else {
-                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . $versionBAddPrefix . '-fall-2020-exp-inset-gfx.jpg) no-repeat; background-size: cover; background-position: 50%;"></div>';
+                            echo '<div class="col-2 col background-middle" style="background: url(' . $assets . '/' . $name . $versionBAddPrefix . '-experienced-driver-gfx.jpg) no-repeat; background-size: cover; background-position: 50%;"></div>';
                         } 
                     ?>
                     
@@ -442,7 +442,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="icon-section">
                 <div class="grid-container">
                     <div>
-                        <h2>Excellent Benefits</h2>
+                        <h2>EXCELLENT BENEFITS</h2>
                     </div>
                     <div class="icons col-3 item1 inline-block center">
                         <div class="inline-block">

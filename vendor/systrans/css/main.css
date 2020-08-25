@@ -449,7 +449,7 @@ body.apply-form-showing {
     width: 100%;
     overflow: hidden; }
   .middle-container-wrap .text .middle-copy {
-    padding: 50px; }
+    padding: 50px; min-height: 700px; }
   .middle-container-wrap .text .quote {
     position: absolute;
     top: 45%;
@@ -658,6 +658,9 @@ body.apply-form-showing {
 
   .middle-copy .copy h4 {
     font-size: 16px; }
+
+  .middle-container-wrap .text .middle-copy {
+    min-height: auto; }
 
   .footer-container .footer-wrap {
     width: auto;
@@ -1041,6 +1044,7 @@ body.apply-form-showing {
   .landscape-container {
     box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.2);
     background-position: center !important;
+    min-height: 250px !important;
   }
 
   .quote-mobile {
