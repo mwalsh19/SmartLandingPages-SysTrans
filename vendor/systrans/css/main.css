@@ -453,7 +453,7 @@ body.apply-form-showing {
     width: 100%;
     overflow: hidden; }
   .middle-container-wrap .text .middle-copy {
-    padding: 50px; min-height: 700px; }
+    padding: 20px; min-height: 400px; }
   .middle-container-wrap .text .quote {
     position: absolute;
     top: 45%;
